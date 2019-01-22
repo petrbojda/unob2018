@@ -15,50 +15,50 @@ def setup_cnf_file_parser(cnf_file):
         path_home = config.get('paths', 'home_dir')
     except configparser.NoOptionError as err:
         print("The path to a home folder of the project is not defined.", err)
-        path_home = "../"
+        path_home = ".."
     except configparser.NoSectionError as err:
         print("The section which defines paths to folders missing.", err)
-        path_home = "../"
+        path_home = ".."
 
-    # Read a path to a folder with python modules
+    # Read a path to an analysis folder
     try:
-        path_srcpy = config.get('paths', 'modules_dir')
+        path_analysis = config.get('paths', 'analysis_dir')
     except configparser.NoOptionError as err:
-        print("The path to a folder containing the project's source files not defined.", err)
-        path_srcpy = "srcpy/"
+        print("The path to a folder containing the project's data not defined.", err)
+        path_analysis = "analysis"
     except configparser.NoSectionError as err:
         print("The section which defines paths to folders missing.", err)
-        path_srcpy = "srcpy/"
+        path_analysis = "analysis"
 
     # Read a path to a folder with data
     try:
         path_data = config.get('paths', 'data_dir')
     except configparser.NoOptionError as err:
         print("The path to a folder containing the project's data not defined.", err)
-        path_data = "data/"
+        path_data = "data"
     except configparser.NoSectionError as err:
         print("The section which defines paths to folders missing.", err)
-        path_data = "data/"
+        path_data = "data"
 
     # Read a path to a folder with config files
     try:
         path_cnf = config.get('paths', 'config_dir')
     except configparser.NoOptionError as err:
         print("The path to a folder containing the project's configuration files not defined.", err)
-        path_cnf = "cfg/"
+        path_cnf = "cfg"
     except configparser.NoSectionError as err:
         print("The section which defines paths to folders missing.", err)
-        path_cnf = "cfg/"
+        path_cnf = "cfg"
 
     # Read a path to a folder with data
     try:
         path_log = config.get('paths', 'logger_dir')
     except configparser.NoOptionError as err:
         print("The path to a folder containing the project's log files not defined.", err)
-        path_log = "log/"
+        path_log = "log"
     except configparser.NoSectionError as err:
         print("The section which defines paths to folders missing.", err)
-        path_log = "log/"
+        path_log = "log"
 
     # Read a name of the csv file where a sequence of the ssrg states is stored
     try:
@@ -78,15 +78,6 @@ def setup_cnf_file_parser(cnf_file):
     except configparser.NoSectionError as err:
         print("The section which defines filenames missing.", err)
         filename_code = "coder_sequence_output.csv"
-    # Read a name of the log file where an output of the logger is directed
-    try:
-        filename_log = config.get('filenames', 'logger_filename')
-    except configparser.NoOptionError as err:
-        print("The filename of a project's log not defined.", err)
-        filename_log = "run.log"
-    except configparser.NoSectionError as err:
-        print("The section which defines filenames missing.", err)
-        filename_log = "run.log"
     # Read a name of the cnf file to configure coder and analysis
     try:
         filename_cnf = config.get('filenames', 'config_filename')
@@ -115,14 +106,12 @@ def setup_cnf_file_parser(cnf_file):
         print("The section which defines filenames missing.", err)
         filename_plt_cnf = "plotting.cnf"
 
-    setup_data = {"srcpy": path_home + path_srcpy,
-                  "data_path": path_home + path_data,
-                  "data_state": path_home + path_data + filename_state,
-                  "data_code": path_home + path_data + filename_code,
-                  "setup":path_home + path_cnf + filename_setup,
-                  "cnf": path_home + path_cnf + filename_cnf,
-                  "log": path_home + path_log + filename_log,
-                  "plt": path_home + path_cnf + filename_plt_cnf}
+    setup_data = {"data_path": path_home + '/' + path_analysis + '/' + path_data,
+                  "data_state": path_home + '/' + path_analysis + '/' + path_data + '/' + filename_state,
+                  "data_code": path_home + '/' + path_analysis + '/' + path_data + '/' + filename_code,
+                  "setup":path_home + '/' + path_analysis + '/' + path_cnf + '/' + filename_setup,
+                  "cnf": path_home + '/' + path_analysis + '/' + path_cnf + '/' + filename_cnf,
+                  "plt": path_home + '/' + path_analysis + '/' + path_cnf + '/' + filename_plt_cnf}
     return setup_data
 
 
@@ -148,16 +137,29 @@ def parse_CMDLine():
 def logger_setup(cnf_logger_file):
     logging.config.fileConfig(cnf_logger_file)
     logger = logging.getLogger(__name__)
-    logger.info("Logger implemented and analysis framework starter")
+    logger.info("Logger implemented for analysis")
 
 def analysis_cnf_file_parser(cnf_file):
     #TODO: add configurations for two coders and different king of coders (Kasami, etc)
 
+    logger = logging.getLogger(__name__)
+    logger.debug("Parsing of the file %s started.", cnf_file)
+
     # Reads the configuration file
     config = configparser.ConfigParser()
     config.read(cnf_file)  # "../analysis.cnf"
+    logger.debug("sections in a cnf file: %s ", config.sections())
 
-    chip_rate = float(config.get('baseband', 'chip_rate'))
+    # configure logging options
+    try:
+        analysis_setup = {"chip_rate": float(config.get('baseband', 'chip_rate'))}
+    except configparser.NoOptionError as err:
+        print("The path to a log config file is not defined in a main config file; ", err)
+        analysis_setup = {"chip_rate": 0.0}
+    except configparser.NoSectionError as err:
+        print("The section which defines a path to a log config file missing in a main config file; ", err)
+        analysis_setup = {"chip_rate": 0.0}
+
     oversampling_factor = float(config.get('baseband', 'oversampling_factor'))
     n_o_periods = int(config.get('coder', 'number_of_periods'))
     ssrg_init = np.matrix(np.fromstring(config.get('coder', 'ssrg_init'), dtype=int, sep=','))
@@ -171,7 +173,7 @@ def analysis_cnf_file_parser(cnf_file):
     code_period = 2**poly_degree - 1
     n_o_samples = n_o_periods * code_period * oversampling_factor
 
-    analysis_setup = {"chip_rate": chip_rate,
+    analysis_setup.update({
                       "oversampling_factor": oversampling_factor,
                       "poly_degree": poly_degree,
                       "ssrg_init": ssrg_init,
@@ -180,7 +182,7 @@ def analysis_cnf_file_parser(cnf_file):
                       "code_period":code_period,
                       "n_o_samples":n_o_samples,
                       "time_accelerating_factor": tau,
-                      "time_offset": td}
+                      "time_offset": td})
 
     return analysis_setup
 

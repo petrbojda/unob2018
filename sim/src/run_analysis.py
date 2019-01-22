@@ -18,17 +18,17 @@ from siggens import PRN_bitstreams as prn
 from dsp import corrNumpy as ncorr
 
 
+# class NoLoggerConfiguration(Exception): pass
+
 def main(setup_data):
 
     stp.logger_setup(setup_data["setup"])
     logger = logging.getLogger(__name__)
     logger.info("Main function started.")
 
-    logger.debug("Kasami coder analysis configuration file %s", setup_data["cnf"])
+    logger.debug("Coder analysis configuration file %s", setup_data["cnf"])
     logger.debug("Setup configuration file %s", setup_data["setup"])
     logger.debug("Plotting configuration file %s",setup_data["plt"])
-    logger.debug("Logger output file %s", setup_data["log"])
-    logger.debug("Python files %s", setup_data["srcpy"])
     logger.debug("SSRG state output file %s", setup_data["data_state"])
     logger.debug("Coder PRN output file %s", setup_data["data_code"])
 
@@ -100,6 +100,7 @@ def main(setup_data):
     logger.debug("Autocorrelation function calculated, number of samples %s", A1_c.size)
 
     ##################### Plots ###########################
+    # TODO: Create set of plotting functions in a separate module
     plotting_setup = stp.plotting_cnf_file_parser(setup_data["plt"])
     logger.debug("%s file read to setup plotting results", setup_data["plt"])
 
@@ -115,6 +116,7 @@ def main(setup_data):
         aplt.timedomain_plot(f1ax1,t,c,texts=texts)
 
         #  Autocorrelated
+        # TODO: Corr plots need to re-arrange a time axis, set correct values
         # f2 = plt.figure(2, figsize=(10, 7), dpi=300)
         # f2ax1 = f2.add_subplot(212)
         f1ax2 = f1.add_subplot(212)
@@ -139,10 +141,9 @@ def main(setup_data):
             # f2.savefig(ssrg_corr, format=plotting_setup["plot_saving_format"])
 
 
-
-
 if __name__ == '__main__':
     setup_file = stp.parse_CMDLine()
     print (setup_file)
     setup_data = stp.setup_cnf_file_parser(setup_file)
+    print(setup_data)
     main(setup_data)

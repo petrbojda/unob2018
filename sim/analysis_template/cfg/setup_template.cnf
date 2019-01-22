@@ -5,20 +5,19 @@
 ############### basic setup of the analysis #############
 # setting paths to folders
 [paths]
-home_dir: ../
-data_dir: data/
-modules_dir: srcpy/
-logger_dir: log/
-config_dir: cfg/
+home_dir: ..
+analysis_dir: analysis_template
+data_dir: data
+config_dir: cfg
 
 # setting names of particular files
 [filenames]
-ssrg_state_output_filename: state_output_ssrg_01.csv
-coder_output_filename: coder_output_ssrg_01.csv
-logger_filename: run_ssrg_01.log
-config_filename: analysis_ssrg_01.cnf
-setup_filename: setup_ssrg_01.cnf
-plotting_filename: plotting_ssrg_01.cnf
+ssrg_state_output_filename: state_output_template.csv
+coder_output_filename: coder_output_template.csv
+logger_filename: run_template.log
+config_filename: analysis_template.cnf
+setup_filename: setup_template.cnf
+plotting_filename: plotting_template.cnf
 
 
 ############### setting parameters of the logger ########
