@@ -1,0 +1,26 @@
+ 
+\tikzstyle{block} = [draw, fill=blue!20, rectangle, 
+    minimum height=3em, minimum width=5em]
+\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+
+
+\begin{tikzpicture}[node distance=1.7in,auto,>=latex']
+
+
+% We start by placing the blocks
+    \node [input, name=input] {};
+    
+    \node [block, right of=input] (system_A) {$\dfrac{s+b}{s+b}$};
+% We draw an edge between the controller and system block to 
+% calculate the coordinate u. We need it to place the measurement block. 
+    \node [output, right of=system_A] (output) {};
+
+
+% Once the nodes are placed, connecting them is easy. 
+    \draw [draw,->] (input) -- node {$V^{STEP}_{in}(s)=\dfrac{1}{s}$} (system_A);
+    \draw [->] (system_A) -- node {$V^{STEP}_{out}(s)$} (output);
+\end{tikzpicture}

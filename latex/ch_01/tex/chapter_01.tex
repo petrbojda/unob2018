@@ -1,0 +1,17 @@
+% ********************************** CHAPTER 1 source ***********************************************
+\section{Úvod}
+
+
+\marginpar{\textcolor{txt_blue}{Hlavní cíl zprávy}} 
+Zpráva vzniká na podnět výzkumného týmu Katedry Leteckých elektrotechnických systémů k podpoře výzkumného úkolu v oblasti terestriálních navigačních systémů s rozprostřeným spektrem. Cílem je nalézt vhodnou strukturu a parametry signálu tak, aby co nejlépe vyhověl požadavkům na celkový systém. Tato práce, vzniklá v průběhu roku 2018, se zabývá analýzou pseudonáhodných posloupností, čili kódů PRN, které v systémech s rozprostřeným spektrem plní dvě úlohy. Jednak zajišťují jednoznačnost při výběru zdroje signálu v přijímači (tzv. CDMA - Code Division Multiple Access) a potom plní úlohu tzv. časoměrného kódu. Obě hlediska je potřeba při návrhu systému zohlednit a přizpůsobit jim volbu kódu. Zpracovaná práce se těmito otázkami zabývá.
+
+
+
+\marginpar{\textcolor{txt_blue}{Použité prostředky}} 
+Zpráva vznikla jako komentovaný popis a dokumentace návrhu generátorů kódů, jejich simulace, analýzy a implementace. Cílovou platformou je SDR, a veškeré kroky směřují k nalezení efektivního způsobu realizace bloků generátorů kódu pomocí vhodných softwarových modulů. Veškeré softwarové nástroje a prostředky použité při zpracování této zprávy jsou v kategorii "Open-Source Software License", zejména BSD licence v případě simulačních nástrojů a GNU GPL v případě implementačních nástrojů. Textová část je editována v systému Latex. Jednotlivé práce byly odvedeny na počítačích s operačním systémem Linux, distribuce Ubuntu. Nebyly použity žádné softwarové nástroje podléhající komerční licenci.
+
+K simulacím je využit systém knihoven v jazyce Python, zejména pak knihovny NumPy, Matplotlib a SciPy nainstalovaných v rámci balíku Anaconda 4.3.24. Tyto nástroje umožnily jednak ověření konceptu generování kódů a také analýzu jejich vlastností. Následné implementace generátorů kódů byly uskutečněny pomocí software GNU Radio a to ve verzi 3.7.10.1.
+
+S využitím funkcí těchto knihoven byly vytvořeny soubory funkcí vypočítávajících korelační koeficient v časové i kmitočtové oblasti. Jak bylo uvedeno výše, všechny simulace jsou psány v programovacím jazyce Python.
+
+

@@ -1,0 +1,7 @@
+\section{A Few Notes About Modeling}
+
+I a mechanical engenering problem a simplification of the mechanical system has been done. I know for a lot of youu it was not easy, sometimes even paintfull  to accept a system without a mass. The question is: Are you willing in your EE classes accept electrical circuit with a voltage source and one capacitor, one inductor both in series? Why are you able to accept something what is in the same way distant from reality in electrical area, but you are not in mechanical?
+
+This might be probably simply explained. Your mental picture of the electrical circuit is abstract from the very begining of your study. On the contrary, the mechanical model is every time being confronted with your 25 years long tangible experience. 
+
+There is nothing, literaly nothing in a real world what behaves as siply as a first order dynamical system. Therefore, no real problem can be succesfuly modeled by one ordinary differential equation with constant coefficients. If we want to be close to reality, then our models become significantly more complex. 

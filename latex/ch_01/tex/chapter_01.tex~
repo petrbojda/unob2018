@@ -1,0 +1,62 @@
+% ********************************** CHAPTER 1 source ***********************************************
+\section{Block Algebra Reduction}
+
+
+\marginpar{\textcolor{txt_blue}{Assignment}} 
+Reduce the block diagram in the Fig.\ref{fig:Block_ass} to the canonical form. The canonical form is a single feedback loop with one block $G$ in forward path and one in a feedback $H$.
+   
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=4in]{./ch_01/img/ass.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Assigned block schema.\label{fig:Block_ass}}
+ \end{minipage}
+\end{figure}
+
+\marginpar{\textcolor{txt_blue}{Eliminate the positive feedback loop $G_3(s)G_4(s)H_1(s)$}} 
+Before we are able to eliminate the loop, let's move $H_2(s)$ behind block $G_4(s)$ as in Fig.\ref{fig:Block_step0}. 
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=4in]{./ch_01/img/step0.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Step 1. Block $G_4$ moved in front of the pick--off point. \label{fig:Block_step0}}
+ \end{minipage}
+\end{figure}
+
+
+Then after the loop $G_3(s)G_4(s)H_1(s)$ is eliminated we have asystem as in the Fig.\ref{fig:Block_step1}.
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=4in]{./ch_01/img/step1.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Step 2. Positive feedback loop $G_3(s)G_4(s)H_1(s)$ eliminated. \label{fig:Block_step1}}
+ \end{minipage}
+\end{figure}
+
+The next step is to simplify the schema by reducing the feedback loop $\frac{H_2}{G_4}$ and combining two block in a fordward path. See the Fig.\ref{fig:Block_step2}. The result is desired canonical form -- to be 100\% correct the $G_1$ has to be combined with the second block $\dfrac{G_2G_3G_4}{1-G_3G_4H_1+G_2G_3H_2}$. However, the solution is obvious. For the reference a single-block form is in the Fig.\ref{fig:Block_step3}.
+
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=4in]{./ch_01/img/step2.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Step 3. Canonical form -- single negative feedback loop with one block in forward path and one block in feedback -- is obvious here.\label{fig:Block_step2}}
+ \end{minipage}
+\end{figure}
+
+
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=4in]{./ch_01/img/step3.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Step 4. Single block form. Was not required in a test.\label{fig:Block_step3}}
+ \end{minipage}
+\end{figure}

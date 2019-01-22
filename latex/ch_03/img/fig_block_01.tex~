@@ -1,0 +1,19 @@
+ 
+\tikzstyle{block} = [draw, fill=blue!20, rectangle, 
+    minimum height=3em, minimum width=5em]
+\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+
+
+\begin{tikzpicture}[node distance=1.7in,auto,>=latex']
+
+    \node [input, name=input] {};
+    \node [block, right of=input] (system_A) {$\dfrac{0.04}{s+4}$};
+    \node [output, right of=system_A] (output) {};
+ 
+    \draw [draw,->] (input) -- node {$F(s)=\dfrac{1}{s}$} (system_A);
+    \draw [->] (system_A) -- node {$X^{}STEP(s)$} (output);
+\end{tikzpicture}

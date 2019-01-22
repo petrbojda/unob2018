@@ -1,0 +1,178 @@
+% ********************************** CHAPTER 1 source ***********************************************
+\section{Generátory pseudonáhodných posloupností}
+
+
+
+\marginpar{\textcolor{txt_blue}{Role pseudonáhodných posloupností v systému s rozprostřeným spektrem}} 
+Pseudonáhodné posloupnosti (PRS - Pseudo Random Sequence) jsou základním stavebním prvkem systému a rozprostřeným spektrem typu DSSS (Direct Sequence Spread Spectrum). Plní následující role: 
+
+\begin{itemize}
+\item Rozprostření spektra přenášeného signálu
+\item Výběr požadovaného signálu v přijímači a potlačení rušení a šumu
+\item Sesynchronizování kopie signálu generované v přijímači se signálem přijímaným
+\end{itemize}
+
+ 
+\vspace{0.25in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Druhy PRN %%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Druhy pseudonáhodných posloupností}
+
+Pro rozdělení pseudonáhodných posloupností by se jistě našlo více různých kritérií. Zde zvolené kritérium \cite{holmes2007} \cite{levanon2004radar} souvisí s charakterem použití posloupnosti v radionavigačním  systému k měření času. Obecně všechny pseudonáhodné posloupnosti mají jednu ze základních charakteristik - svou \textsl{délku}. Tedy počet bitů obsažených v posloupnosti, zde značené $N$. Záleží pak na způsobu tvorby vysílaného signálu, jestli se bude posloupnost generovat periodicky nebo jen jednorázově. To potom ovlivňuje charakter autokorelační funkce $C_{xx}$. Pokud je posloupnost generována opakovaně, pracuje tento systém s korelační funkcí \textsl{periodickou}, naopak při jednorázovém vyslání posloupnosti jde o systém s \textsl{aperiodickou} korelační  funkcí.
+
+\marginpar{\textcolor{txt_blue}{Posloupnosti využívané s periodickou korelační funkcí}} 
+Jak již bylo řečeno, systémy s periodickou korelační funkcí pracují tak, že průběh pseudonáhodné posloupnosti se při vysílání periodicky v čase opakuje. Tudíž i jejich korelační funkce vykazuje periodický charakter s postupně se opakujícími maximy. Hlavní využití je v komunikačních systémech typu CDMA. Tímto způsobem se využívají zejména následující posloupnosti:
+
+\begin{itemize}
+\item posloupnost maximální délky (MSL - Maximum Length Sequence, m-sequence)
+\item Goldovy posloupnosti
+\item odvozené Goldovy posloupnosti (Gold like sequences)
+\item Kasamiho posloupnosti
+\item Ipatovovy posloupnosti
+\item Huffmanovy posloupnosti
+\end{itemize}
+
+
+\marginpar{\textcolor{txt_blue}{Posloupnosti využívané s aperiodickou korelační funkcí}} 
+Systémy s aperiodickou korelační funkcí používají signál, v němž se pseudonáhodná posloupnost neopakuje, ba co víc, nebývá ani celá vygenerovaná. V signálu se často vysílá pouze její část. Tyto typy systémů využívají signál DSSS výhradně k synchronizaci a měření času. Posloupnosti využívané v těchto systémech jsou hlavně
+
+\begin{itemize}
+\item Williardovy kódy
+\item Barkerovy kódy
+\item Neuman-Hoffmanovy kódy
+\item Frankovy kódy
+\item Zadovovy-Chu kódy
+\end{itemize}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Generátor posloupnosti %%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Způsob generování pseudonáhodné posloupnosti}
+Algoritmy používané ke generování pseudonáhodných posloupností jsou s výhodou popisovány pomocí polynomů s binárními koeficienty. Hardwarová realizace generujících polynomů pak využívá struktury posuvných registrů s vyvedenými zpětnými vazbami (SSRG - Simple Shift Register Generator). Dále je důležité zmínit, že se využívají výhradně \textsl{lineární} registry \cite{holmes2007}. Pojem linearity se tady odkazuje na tvar stavového diagramu, kdy je žádoucí, aby každému jednomu ze stavů registru předcházel zase jen jeden jediný stav. Tedy stavový diagram je tvořen "řetězem" stavů -- jeden za druhým -- bez větvení. Respektive, jde o~propojení stavů do kruhu, kdy se z posledního stavu dostává registr opět do stavu prvního.
+ 
+
+
+%%%%%%%%% Definice Matematického aparátu 
+
+\subsubsection{Použitý matematický aparát}
+Před popisem jednotlivých algoritmů generátorů je užitečné definovat základní pojmy a předestřít matematický aparát, který bude v popisu použit \footnote{Omlouvám se čtenáři za s největší pravděpodobností nepřesnou českou terminologii. Prezentovaný a zúžený výklad potřebných matematických pojmů čerpá převážně z anglicky psaných zdrojů a literatury. Nebyla provedena patřičná jazyková korektura ani ověřena správnost zde uváděných pojmů v českém jazyce. Výklad vychází z matematické disciplíny či oboru \textsl{Teorie grup} podle Évariste Galoise nebo \textsl{Modulární aritmetiky} podle Karla Friedricha Gausse. Dělení popisovaných objektů na grupy, cyklické grupy a pole, potažmo konečná neboli Galoisova pole nemusí být plně v souladu s českou odbornou terminologií a vychází z překladu anglických pojmů "\textsl{Groups}", "\textsl{Rings}" a "\textsl{Fields}", resp. "\textsl{Galoise Fields}" neboli "\textsl{Finite Fields}".}. Zejména zde bude prostor věnován aritmetice Galoisových (konečných) polí a aritmetice polynomů, \cite{holmes2007}. 
+
+
+%% Definice Galoisova pole
+\marginpar{\textcolor{txt_blue}{Galoisovy pole}} 
+\textsl{Galoisovo pole} je zjednodušeně definovat jako množinu prvků konečného počtu. Počet prvků pole je $q$. Aby pole mohlo být označeno za Galoisovo, musí pro ně platit následujících devět podmínek: 
+\\ Nechť $a$, $b$ a $c$ jsou prvky pole $\mathcal{G}$. Potom 
+
+\begin{enumerate}[i]
+\item Pro všechny $a,b \in \mathcal{G}$ jsou definovány dvě základní operace mezi prvky pole, a sice \textsl{sčítání} $a + b$ a \textsl{násobení} $a \cdot b$.
+\item Všechny operace mezi prvky pole jsou uzavřené: $a,b \in \mathcal{G} \Rightarrow a \circ b = c \in \mathcal{G}$.
+\item Existuje nulový prvek (angl. \textsl{additive identity element}) $0$: $a\in \mathcal{G}: a+0=a$.
+\item Existuje jednotkový prvek (angl. \textsl{multiplicative identity element}) $0$: $a\in \mathcal{G}: 1 \cdot a=a$.
+\item Existuje záporný prvek (angl. \textsl{additive inverse element}) $(-a)$: $a\in \mathcal{G}: a+(-a)=0$. Tento prvek umožňuje odečítání.
+\item Existuje prvek s opačnou hodnotou (angl. \textsl{multiplicative inverse element}) $(a^{-1})$: $a\in \mathcal{G}: a \cdot a^{-1}=1$. Tento prvek umožňuje opraci dělení.
+\item Platí asociativní zákon: $a,b,c\in \mathcal{G}: a+(b+c)=(a+b)+c, a\cdot(b\cdot c)=(a\cdot b)\cdot c$
+\item Platí komutativní zákon: $a,b\in \mathcal{G}: a+b=b+a, a\cdot b = b\cdot a$
+\item Platí distributivní zákon: $a,b,c\in \mathcal{G}: a\cdot(b+c)=a\cdot b+a\cdot c$
+\end{enumerate}
+
+ Další podmínka se vztahuje k počtu prvků $q$. Aby pole bylo považováno za Galoisovo, pro $q$ musí platit:
+
+ \begin{equation}
+ q =  p^{m}, \label{eq_GF_num_q}
+\end{equation}
+
+kde $p$ je prvočíslo (angl. \textsl{prime}) a $m$ je kladné celé číslo (angl. \textsl{positive integer}). Galoisovy pole se potom značí: $\mathbf{GF}(q)$ z angl. \textsl{Galoise Field}. Příklady polí: $\mathbf{GF}(11)$, $\mathbf{GF}(81)=\mathbf{GF}(3^{4})$. Třeba pole $\mathbf{GF}(256)=\mathbf{GF}(2^8)$ je používáno při popisu kryptoalgoritmu standardu AES (angl. \textsl{Advanced Encryption Standard}). Zvláštní pozornost bude dále v souvislosti s popisem generátorů binárních pseudonáhodných posloupností věnována poli $\mathbf{GF}(2^1)$, tedy poli binárnímu.
+
+\vspace{0.35in}
+%% Aritmetika Galoisova pole
+\marginpar{\textcolor{txt_blue}{Aritmetika Galoisových polí}} 
+Aby operace s prvky Galoisových polí splňovaly výše uvedené podmínky, je nutné dodržet určité zásady jejich provádění.
+\\ Pro $a,b,c,d,e\in \mathbf{GF}(p) = \{ 0,1,2, \ldots p-1\}$ se operace definují následovně:
+
+Sčítání (spolu s odečítáním) a násobení jsou počítány známým způsobem. Ovšem aby byla dodržena podmínka uzavřenosti (ii), jsou doplněny navíc operací modulo $p$.
+
+\begin{enumerate}[I]
+\item sčítání: $a+b\equiv c \mod{p}$
+\item odečítání: $a-b\equiv c \mod{p}$
+\item násobení: $a\cdot b\equiv c \mod{p}$
+\end{enumerate}
+
+Dělení, nebo inverze podle (vi) je operace, jež zasluhuje zvláštní pozornost. Pro $a\in \mathbf{GF}(p) = \{ 0,1,2, \ldots p-1\}$ prvek $a^{-1}$ musí splňovat podmínku:
+
+\begin{equation}
+ a \cdot a^{-1} \equiv 1 \mod{p}, \label{eq_GF_inv}
+\end{equation}
+
+Inverzní prvek $a^{-1}$ je pak nalezen pomocí Euklidova algoritmu.
+
+
+
+\vspace{0.35in}
+%% Aritmetika polymomů
+\marginpar{\textcolor{txt_blue}{Aritmetika polynomů}}
+Následuje popis operací prováděných nad polynomy.
+Nechť $f(x)$ je polynom řádu $n$ jehož koeficienty jsou prvky binárního pole $\mathbf{GF}(2)$.
+
+\begin{equation}
+ f(x) =  f_0 + f_1 x + f_2 x^2 + \ldots + f_n x^n, \label{eq_polyf_def}
+\\ f_i \in \mathbf{GF}(2)
+\end{equation}
+
+a polynom $g(x)$, což je polynom řádu $m$ rovněž nad polem $\mathbf{GF}(2)$
+
+\begin{equation}
+ g(x) =  g_0 + g_1 x + g_2 x^2 + \ldots + g_m x^m, \label{eq_polyg_def}
+\\ g_i \in \mathbf{GF}(2)
+\end{equation}
+přičemž platí $n>m$.
+
+
+Potom operace nad těmito polynomy jsou definovány následovně:
+\begin{enumerate}[I]
+\item sčítání
+\begin{eqnarray}
+ f(x) + g(x) &=& (f_0+g_0) +  (f_1+g_1) x +  (f_2+g_2) x^2 + \ldots +  (f_m+g_m) x^m  \nonumber \\ 
+ && + (f_{m+1}) x^{m+1} + \ldots + f_n x^n, \label{eq_poly_add}
+\end{eqnarray}
+
+\item násobení
+\begin{equation}
+ f(x) \cdot g(x) = a_0 +  a_1 x + a_2 x^2 + \ldots +  a_{n+m} x^{n+m}, \label{eq_poly_multipl}
+\end{equation}
+kde 
+\begin{eqnarray}
+ a_0 &=& f_0 g_0  \nonumber \\ 
+ a_1 &=& f_0 g_1 +  f_1 g_0 \nonumber \\ 
+ a_2 &=& f_0 g_2 +  f_1 g_1 +  f_2 g_0 \nonumber \\ 
+ \vdots \nonumber \\ 
+ a_i &=& f_0 g_i +  f_1 g_{i-1} + f_2 g_{i-2} + \ldots + f_i g_0 \nonumber \\ 
+ \vdots \nonumber \\ 
+ a_{n+m} &=& f_n g_m, \nonumber
+\end{eqnarray}
+
+\item dělení, resp. inverze
+\begin{eqnarray}
+ \frac{f(x)}{g(x)} &= q(x) +  \frac{r(x)}{g(x)}, \nonumber \\
+ f(x) &= q(x)g(x) + r(x), \label{eq_poly_div}
+\end{eqnarray}
+přičemž $q(x)$ je nazýván \textsl{podílem}, angl. \textsl{quotient} a $r(x)$ \textsl{zbytkem}, angl. \textsl{reminder}. Podíl a zbytek jsou pak nalezeny pomocí rozšířeného Euklidova algoritmu.
+
+\end{enumerate}
+
+Je nutno podotknout, že všechny dílčí operace sčítání a násobení s koeficienty  polynomů jsou prováděny v souladu s pravidly platnými pro aritmetiku nad polem $\mathbf{GF}(2)$. To znamená, že jsou doplněny o modulo 2.
+
+
+
+
+
+%%%%%%%%% Implementace kodéru
+ \subsubsection{Realizace generátoru posloupnosti}
+
+
+
+

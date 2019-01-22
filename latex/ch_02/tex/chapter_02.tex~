@@ -1,0 +1,417 @@
+% ********************************** CHAPTER 1 source ***********************************************
+\section{Time Response - 1st Order Electrical System}
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=4in]{./ch_02/img/circuit_timedom.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Assigned 1st order circuit.\label{fig_E_circT}}
+ \end{minipage}
+\end{figure}
+
+
+\marginpar{\textcolor{txt_blue}{Analyze the 1st order system}} 
+We are required to analyze a time response of the circuit given by its schema in the Fig.\ref{fig_E_circT} and values of its pars from the Table--\ref{table_E_values}. Resulting from the analysis, we want to see mainly time--response performance characteristics and as the necessary middle steps natural, step response and poles and zeros, steady-state value and others. 
+\vspace{0.25in}
+
+
+\marginpar{\textcolor{txt_blue}{Lead compensator}}
+\begin{boxit}
+NOTE: The circuit in the Fig.\ref{fig_E_circT} is one of the important circuits often used in a control systems -- a lead compensator. You can check its transfer function in a book chapter 9, page 498 (Nise). As you have already realized when working on your solution, this circuit has one zero in its transfer function -- its frequency response can be described as a response of the high-pass filter.
+\end{boxit} 
+\vspace{0.25in}
+
+\begin{table}[ht]
+  % increase table row spacing, adjust to taste
+  \renewcommand{\arraystretch}{1.3}
+  % if using array.sty, it might be a good idea to tweak the value of
+  % \extrarowheight as needed to properly center the text within the cells
+  \caption{Assigned values of the electrical parts:}
+  \label{table_E_values}
+  \centering
+	\begin{tabular}{|c|c||c|}
+		\hline
+		Part & Part's Symbol & Value \\[0.5ex]
+		\hline
+		\hline
+		Resistor & $R_1$& $3\Omega$ \\
+		\hline
+		Resistor & $R_2$& $4\Omega$ \\
+		\hline
+		Capacitor & $C$& $14\mu F$ \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+\subsection{Circuit Analysis}
+Let's start with a Laplace domain and a transfer function.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Transfer Function %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+   
+\marginpar{\textcolor{txt_blue}{Transfer Function. Laplace domain.}} 
+In this example might be quite convenient to use a \textsl{voltage divider} theorem. This procedure will be demonstrated here to derive the transfer function of the system. See the resulting transfer function $G(s)$ is in Eq.(\ref{equat_E_TF}).
+
+\begin{equation}
+G(s) = \dfrac{V_{out}(s)}{V_{in}(s)} = \dfrac{s + \dfrac{1}{R_1 \cdot C}}{s + \dfrac{R_1 + R_2}{R_1 \cdot R_2 \cdot C}} \label{equat_E_TF}
+\end{equation}
+
+
+Start with a traslation of our circuit into the Laplace domain. Every element will be expressed as an impedance, and at the same time $R_1$ and $C$ both will be comined in parallel to form impedance $Z_1$ as in the Fig.\ref{fig_E_circI}.
+
+
+The $Z_1$ is:
+\begin{equation}
+Z_1(s) = \dfrac{R_1}{1+R_1Cs}. \label{equat_E_Z1}
+\end{equation}
+
+
+\begin{equation}
+Z_{2}(s) = R2;\label{equat_E_Z2}  
+\end{equation}
+
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=3.5in]{./ch_02/img/circuit_imped01.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Circuit with all parts expressed as impedances, $Z_2$ and $Z_C$ combined in parallel.\label{fig_E_circI}}
+ \end{minipage}
+\end{figure}
+
+
+Now we can solve the circuit for $V_{out}(s)$ using the  \textsl{voltage divider} theorem, see the Fig.\ref{fig_E_circI}.
+\begin{equation}
+V_{out}(s) = V_{in}(s) \cdot \dfrac{Z_2}{Z_1 + Z_2};\label{equat_E_VoutI}  
+\end{equation}
+
+
+Substituting the Eq.(\ref{equat_E_Z1}) for $Z_1$ and Eq.(\ref{equat_E_Z2}) for $Z_2$ we can write:
+\begin{equation}
+V_{out}(s) = V_{in}(s) \cdot \dfrac{R_2}{R_2 + \dfrac{R_1}{1 + R_1Cs}} \label{equat_E_Vout_00}  
+\end{equation}
+
+
+Simplifying, as:
+
+\begin{equation}
+\begin{split}
+\dfrac{V_{out}(s)}{V_{in}(s)} 
+	& = \dfrac{R_2}{ \dfrac{R_2 + R_1R_2Cs + R_1}{1 + R_1Cs} } 	  
+	  = \dfrac{ R_2 + R_1R_2Cs } { R_2 + R_1R_2Cs + R1 } 
+	  = \dfrac{ R_1R_2Cs + R_2 } { R_1R_2Cs + (R_1 + R_2) } \\
+        & = \dfrac{s + \dfrac{R_2}{R_1R_2C}} {s + {\dfrac{R_1 + R_2}{R_1R_2C}}}
+	  = \dfrac{s + \dfrac{1}{R_1C}} {s + {\dfrac{R_1 + R_2}{R_1R_2C}}}
+\end{split}
+\label{equat_E_TFder}
+\end{equation}
+
+we can finaly see the transfer function as it is in Eq.(\ref{equat_E_TF}). 
+
+Before we move to numerical values it might be useful to simplify the transfer function from the Eq.(\ref{equat_E_TF}) by defining:
+\begin{eqnarray}
+	a & = & \dfrac{R_1 + R_2}{R_1R_2C} \nonumber  \\	  
+	b & = & \dfrac{1}{R_1C} \label{equat_E_ab_subst}
+\end{eqnarray}
+
+and re-writting the transfer function Eq.(\ref{equat_E_TF}) into the form:
+\begin{equation}
+G(s) = \dfrac{s + b}{s + a} \label{equat_E_TF_ab}
+\end{equation}
+
+
+
+With numerical values from the Table--\ref{table_E_values} we can write:
+
+\begin{equation}
+a = \dfrac{R_1 + R_2}{R_1 \cdot R_2 \cdot C} =  \dfrac{3 + 4}{3 \cdot 4 \cdot 14\cdot 10^{-6}} = \dfrac{1}{24}\cdot 10^{6}
+\end{equation} 
+
+\begin{equation}
+b = \dfrac{1}{R_1 \cdot C} = \dfrac{1}{3 \cdot 14\cdot 10^{-6}} = \dfrac{1}{42}\cdot 10^{6}
+\end{equation}
+
+
+and the transfer function:
+\begin{equation}
+G(s) = \dfrac{s + \dfrac{1}{42}\cdot 10^{6}}{s + \dfrac{1}{24}\cdot 10^{6}} \label{equat_E_TFn}
+\end{equation}
+\vspace{0.25in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Poles, Zeros %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\marginpar{\textcolor{txt_blue}{Poles and zeros}} 
+From the transfer function Eq.(\ref{equat_E_TFn}) we can write what poles and zeros are:
+
+\begin{table}[ht]
+\renewcommand{\arraystretch}{2}
+\centering
+	\begin{tabular}{|c||c|}
+	\hline
+		Pole & $-\frac{10^{6}}{24}$ \\
+	\hline
+		Zero & $-\frac{10^{6}}{42}$ \\
+	\hline
+	\end{tabular}
+\end{table} 
+\vspace{0.25in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Diff Equat %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+To obtain a differential equation we start with the transfer function (\ref{equat_E_TF}). First separate inputs and outpus:\marginpar{\textcolor{txt_blue}{Differential Equation. Time domain.}} 
+
+\begin{eqnarray}
+V_{out}(s) \cdot (s + \dfrac{R_1 + R_2}{R_1R_2C}) & = & V_{in}(s) \cdot(s + \dfrac{1}{R_1C}) \nonumber \\
+sV_{out}(s) + V_{out}(s)\dfrac{R_1 + R_2}{R_1R_2C} & = & sV_{in}(s) + V_{in}(s) \dfrac{1}{R_1C}
+\label{equat_E_Lapl_eq}
+\end{eqnarray}
+
+
+Then taking the inverse Laplace transformation, the Eq.(\ref{equat_E_Lapl_eq}) will become the required differential equation:
+
+\begin{eqnarray}
+\frac{dv_{out}(t)}{dt} + \dfrac{R_1 + R_2}{R_1R_2C}v_{out}(t) & = & \frac{dv_{in}(t)}{dt} + \dfrac{1}{R_1C}v_{int}(t) \nonumber \\
+R_1R_2C\frac{dv_{out}(t)}{dt} + (R_1 + R_2)v_{out}(t) & = & R_1R_2C\frac{dv_{in}(t)}{dt} + R_2v_{int}(t)
+\label{equat_E_DE}  
+\end{eqnarray}
+
+
+
+\subsection{Time Response Analysis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Step Response %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginpar{\textcolor{txt_blue}{Step Response}} 
+The step response is derived from the transfer function Eq.(\ref{equat_E_TF}), or even better from its simplified version Eq.(\ref{equat_E_TF_ab}). The step response of the system is a response of the system to the step function $u(t)$. The function $u(t)$ becomes $1/s$ when translated to the Laplace domain: 
+
+\begin{equation}
+ V^{STEP}_{in}(s)=\mathscr{L} \{ u(t) \} = \dfrac{1}{s} 
+\end{equation}
+
+The block schema fig.\ref{fig_block_step} is used to derive a natural response $v^{STEP}_{out}(t)$ of the system with the transfer function Eq.(\ref{equat_E_TF_ab}).
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \input{./ch_02/img/fig_block_01.tex}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Block schema of the system to derive the step response.\label{fig_block_step}}
+ \end{minipage}
+\end{figure}
+
+The step response $v^{STEP}_{out}(t)$ is:
+
+\begin{equation}
+ v^{STEP}_{out}(t)=\mathscr{L}^{-1} \{V^{STEP}_{out}(s)\}=\mathscr{L}^{-1} \{ \dfrac{1}{s} \cdot \dfrac {s+b} {s+a} \}
+\end{equation}
+
+Here we want to expand the expression:
+
+\begin{equation}
+ \dfrac {s+b} { s \cdot(s + a)}= \dfrac{A}{s} + \dfrac{B}{s + a}\label{equat_E_Pfe}
+\end{equation}
+
+in order to easily execute the inverse Laplace transform:
+
+\begin{equation}
+ \mathscr{L}^{-1} \{V^{STEP}_{out}(s)\}=\mathscr{L}^{-1} \{ \dfrac{A}{s} + \dfrac{B}{s + a} \} = \mathscr{L}^{-1} \{ \dfrac{A}{s}\} + \mathscr{L}^{-1} \{\dfrac{B}{s + a} \} 
+\end{equation}
+
+\begin{equation}
+ v^{STEP}_{out}(t)=A + Be^{-at}
+\label{equat_Elec_step_res_00}
+\end{equation}
+
+\marginpar{\textcolor{txt_blue}{Partial Fraction Expansion}} 
+The expansion according to the Eq.(\ref{equat_E_Pfe}) will be done using a partial-fraction expansion algorithm, see the book [Nise] \textsl{chapter 2.1, case 1: "Roots of the Denominator Real and Distinct"}:
+
+\begin{equation}
+ A= \dfrac{ 0+b} { a } = \dfrac{b}{a}
+\label{equat_E_exp_A}
+\end{equation}
+
+\begin{equation}
+ B= \dfrac{ -a+b } { -a } = -\dfrac{b-a}{a} 
+\label{equat_E_exp_B}
+\end{equation}
+
+\begin{boxit}
+\textsl{CHECK:} It is very easy to verify that the partial fractal expansion process is correct and I've got the result needed. Let's simplify the right-side of the Eq.(\ref{equat_E_Pfe}) when for $A$ and $B$ we will substitute Eq.(\ref{equat_E_exp_A}) and (\ref{equat_E_exp_B}), respectively.
+The result of such a simplification should be equal to the left-side of the Eq.(\ref{equat_E_Pfe}).
+
+\begin{equation*}
+\begin{split}
+\dfrac{A}{s} + \dfrac{B}{s + a} 
+	& = \dfrac { \dfrac{b}{a} } { s } + \dfrac{ \dfrac{-a+b}{-a} }{ s+a }  
+	  = \dfrac { \dfrac{b}{a} } { s } + \dfrac{ \dfrac{-a+b}{-a} }{ s+a } \\
+	& = \dfrac {b}{as} - \dfrac{b-a}{a(s+a)} 
+	  = \dfrac { b\cdot(s+a) - s\cdot(b-a) } { a\cdot s\cdot (s+a) } \\
+	& = \dfrac { bs + ab - bs + as } { a\cdot s\cdot (s+a) }
+	  = \dfrac { a\cdot (s+b) } { a\cdot s\cdot (s+a) } \\
+	& = \dfrac {s+b} {s \cdot (s+a)}.
+\end{split}
+\end{equation*}
+Proven.
+
+\end{boxit} 
+\vspace{0.25in}
+
+
+The step response then is:
+\begin{equation}
+ v^{STEP}_{out}(t)\mathscr{L}^{-1} \{C_{step}(s)\}=\mathscr{L}^{-1} \{ \dfrac{\dfrac{b}{a}}{s}\} - \mathscr{L}^{-1} \{\dfrac{\dfrac{b-a}{a}}{s + a} \} 
+\end{equation}
+
+\begin{equation}
+ v^{STEP}_{out}(t)=\dfrac{b}{a} - \dfrac{b-a}{a}e^{-at}
+\label{equat_E_step_res}
+\end{equation}
+
+See its plot in the Fig.\ref{fig_E_step}.
+\vspace{0.25in}
+
+\begin{equation}
+ v^{STEP}_{out}(t) = \dfrac{4}{7}+\dfrac{3}{7}e^{-\frac{t}{24\mu s}} 
+\label{equat_E_step_numer}
+\end{equation}
+\marginpar{\textcolor{txt_blue}{Step response - numerically}}
+
+
+\begin{figure}[ht]
+\centering
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=3.7in]{./ch_02/img/step_response.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{The step response $v^{STEP}_{out}$ of the circuit.\label{fig_E_step}}
+ \end{minipage}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Performance %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Performance of the system}
+Now look at the performance metric. The only parameter which characterizes performance of a 1st order system in term of the time response is its \textsl{time constant} $\tau$. Other characteristics --- \textsl{rise time} and \textsl{settling time} --- can be derived from $\tau$.
+
+Another characteristic of the 1st order system is the steady-state value of its step response. It means, what is the final value of the output voltage if the input is at 1V. Obviously it is related to the DC gain.
+
+\marginpar{\textcolor{txt_blue}{Steady-state value}} 
+From the step response we can derive the steady--state value of the output voltage $v^{STEP}_{out}(\infty)$. The steady--state value is the value of the voltage towards which the output voltage $v^{STEP}_{out}(t)$ is approaching.
+
+\begin{equation}
+ v^{STEP}_{out}(\infty)=\dfrac{4}{7} + \dfrac{3}{7}e^{-\frac{10^6}{24}\cdot \infty} = \dfrac{4}{7} - 0 = \dfrac{4}{7} = 0.57143 
+\label{equat_E_steady}
+\end{equation}
+
+To find the steady--state value, we want to see the value of $v^{STEP}_{out}(t)$ at infinity (time $t=\infty$). See [Nise] \textsl{chapter 4.3, part: "First Order Transfer Function via Testing"}.
+
+Therefore, the steady--state value of the output voltge is $\frac{4}{7}$.
+\vspace{0.25in}
+
+\marginpar{\textcolor{txt_blue}{Time Constant}} 
+The time constant $\tau$ of the first order system can be computed as 
+
+\begin{equation}
+ \tau=\dfrac{1}{a} 
+\label{equat_E_gtc},
+\end{equation}
+
+Taking our transfer function from Eq.(\ref{equat_E_TF}) we can write: 
+
+\begin{equation}
+ \tau=\dfrac{R_1 R_2 C}{R_1 + R_2} 
+\label{equat_E_tc_parts}
+\end{equation}
+
+or numerically from (\ref{equat_E_TFn}): 
+
+\begin{equation}
+ \tau=\dfrac{24}{10^{6}} = 24 \mu s.
+\label{equat_E_tc}
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Requirements %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Requirements Check}
+\marginpar{\textcolor{txt_blue}{Steady-state value verification}} 
+According to the requirements the steady-state value of the output voltage needs to be: $v^{STEP}_{out}(\infty)<0.1V$. 
+As computed in the Eq.(\ref{equat_E_steady}) the requirement is not satisfied.
+
+Let's see what we can do to fit with the requrement.
+
+Starting from the Eq.(\ref{equat_E_step_res}), we know that the steady-state value is the "final" value which the $v^{STEP}_{out}(t)$ is approaching when the time is going to infinity $v^{STEP}_{out}(\infty)$. Taking Eq.(\ref{equat_E_step_res}) for $t=\infty$:
+
+\begin{equation}
+ v^{STEP}_{out}(\infty)=\dfrac{b}{a} - \dfrac{b-a}{a}e^{-a\cdot\infty} = \dfrac{b}{a} - 0.
+\end{equation}
+
+Therefore, substituting for $a$ and $b$ from Eq.(\ref{equat_E_ab_subst}):
+
+\begin{equation}
+ v^{STEP}_{out}(\infty)=\dfrac{ \dfrac{1}{R_1C} }{ \dfrac{R_1+R_2}{R_1R_2C} } = \dfrac{R_2}{R_1 + R_2}.
+\label{equat_E_ss}
+\end{equation}
+
+To satisfy the requirement we have to set:
+\begin{equation}
+ 0.1 > \dfrac{R_2}{R_1 + R_2}.
+\label{equat_E_ss_req}
+\end{equation}
+
+\marginpar{\textcolor{txt_blue}{Circuit adjusment}}
+Based on the Eq.(\ref{equat_E_steady_requirements}) we can start to manipulate with parts in our circuit to achieve required stady-state value. But before we start, notice one important aspect of the Eq.(\ref{equat_E_steady_requirements}). The capacitor C cannot change te steady-state value $v^{STEP}_{out}(\infty)$ of the system. Since the steady-stete value depends on the DC gain, it is a sort of ''common sense'' conclusion. The DC gain can be regulated by the ratio between $R_1$ and $R_2$. On top of that, we are going to adjust the DC gain using $R_1$ and $R_2$  connected as a voltage divider! Please, recall how the capacitor behaves for the DC voltage. It is an open circuit. It means, we can simplify our circuit for the DC voltage to become the voltage divider only and from this point our final value -- the steady-state value $v^{STEP}_{out}(\infty)$ -- is the output voltage of the circuit.
+
+Now, let's proceed to the adjustment. It is completely our choice which resistor we want to change. To find the easiest way, we will keep $R_2 = 4\Omega$ and for $R_1$ we can use the Eq.(\ref{equat_E_ss_req}):
+
+\begin{eqnarray}
+	 \dfrac{4}{R_1 + 4} & < & \dfrac{1}{10} \nonumber  \\
+ 	 {R_1 + 4} & > & 40 \nonumber  \\
+	R_1 & > & 36\Omega \label{equat_E_R1req}
+\end{eqnarray}
+
+\begin{boxit}
+\textsl{CHECK:} Taking the Eq.(\ref{equat_E_ss}) we will verify that we meet the requirements with a new value. To comply with the condition Eq.(\ref{equat_E_R1req}) we choose $R_1 = 40\Omega$ and
+
+\begin{equation*}
+\begin{split}
+ v^{STEP}_{out}(\infty) 
+	& = \dfrac{4}{40 + 4}   
+	  = \dfrac{4}{44} \nonumber  \\
+	& = 0.0909 V
+\end{split}
+\end{equation*}
+\end{boxit}
+\vspace{0.25in}
+
+\textsl{CONCLUSION:} When the $R_1$ is selected according to the condition in Eq.(\ref{equat_E_ss_req}) the requirement is satisfied.
+\vspace{0.25in}
+
+Now we have to answer, whether or not the time constant $\tau$ of the circuit is influenced by the adjustment. Using the Eq.(\ref{equat_E_tc_parts}) we set the $R_1 = 36\Omega$ according to the Eq.(\ref{equat_E_R1req}):
+
+
+\begin{equation}
+\begin{split}
+ \tau_{adj}
+	& = \dfrac{R_1 R_2 C}{R_1 + R_2} \\
+	& = \dfrac{36\Omega \cdot 4\Omega 14\mu F}{36\Omega + 4\Omega}\\
+	& = 36 \cdot 14 \cdot 10^{-7}s = 50.4\mu s.
+\label{equat_E_tc_adj}
+\end{split}
+\end{equation}
+
+\textsl{CONCLUSION:} The time constant of the circuit has changed. The original circuit's time constant is $\tau=24\mu$, see Eq.(\ref{equat_E_tc}). After an adjustment described in the Eq.(\ref{equat_E_R1req}) the time constant is $\tau_{adj} = 50.4\mu s$ , see Eq.(\ref{equat_E_tc_adj}).
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,29 @@
+ 
+\tikzstyle{block} = [draw, fill=blue!20, rectangle, 
+    minimum height=3em, minimum width=6em]
+\tikzstyle{sum} = [draw, fill=blue!20, circle, node distance=1cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\tikzstyle{pinstyle} = [pin edge={to-,thin,black}]
+
+
+
+\begin{tikzpicture}[node distance=1.5in,auto,>=latex']
+
+
+% We start by placing the blocks
+    \node [input, name=input] {};
+    
+    \node [block, right of=input] (system_A) {$\dfrac{s+\dfrac{1}{42}\cdot 10^{6}}{s + \dfrac{1}{24}\cdot 10^{6}}$};
+% We draw an edge between the controller and system block to 
+% calculate the coordinate u. We need it to place the measurement block. 
+    \node [output, right of=system_A] (output) {};
+
+
+% Once the nodes are placed, connecting them is easy. 
+    \draw [draw,->] (input) -- node {$V^{NAT}_{in}(s)=1$} (system_A);
+    \draw [->] (system_A) -- node {$V^{NAT}_{out}(s)$} (output);
+\end{tikzpicture}
+
+
+

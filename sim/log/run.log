@@ -1,0 +1,54 @@
+2019-01-22 07:27:46,759 - utils.setup - INFO - Logger implemented and analysis framework starter
+2019-01-22 07:27:46,759 - __main__ - INFO - Main function started.
+2019-01-22 07:27:46,759 - __main__ - DEBUG - Coder analysis configuration file ../cfg/analysis_ssrg_01.cnf
+2019-01-22 07:27:46,759 - __main__ - DEBUG - Setup configuration file ../cfg/setup_ssrg_01.cnf
+2019-01-22 07:27:46,759 - __main__ - DEBUG - Plotting configuration file ../cfg/plotting_ssrg_01.cnf
+2019-01-22 07:27:46,759 - __main__ - DEBUG - Logger output file ../log/run_ssrg_01.log
+2019-01-22 07:27:46,759 - __main__ - DEBUG - Python files ../srcpy/
+2019-01-22 07:27:46,759 - __main__ - DEBUG - SSRG state output file ../data/state_output_ssrg_01.csv
+2019-01-22 07:27:46,759 - __main__ - DEBUG - Coder PRN output file ../data/coder_output_ssrg_01.csv
+2019-01-22 07:27:46,760 - __main__ - DEBUG - ../cfg/analysis_ssrg_01.cnf file read to setup analysis
+2019-01-22 07:27:46,760 - __main__ - DEBUG - initial state of the ssrg, ssrg_init =  [[1 0 0 0 0]] 
+2019-01-22 07:27:46,760 - __main__ - DEBUG - feedback vector of the ssrg, ssrg_fb =  [[0 0 1 0 1]] 
+2019-01-22 07:27:46,760 - siggens.PRN_bitstreams - DEBUG - build_srm function started.
+2019-01-22 07:27:46,760 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 1 [[1. 0. 0. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 1. 0.]
+ [0. 0. 0. 1.]]
+2019-01-22 07:27:46,761 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 2, append vector [[0]
+ [0]
+ [0]
+ [0]]
+2019-01-22 07:27:46,761 - __main__ - DEBUG - srm matrix created, srm =  [[0. 0. 1. 0. 1.]
+ [1. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0.]
+ [0. 0. 1. 0. 0.]
+ [0. 0. 0. 1. 0.]] 
+2019-01-22 07:27:46,761 - __main__ - DEBUG - Number of bits in one period of the code N = 31 bits 
+2019-01-22 07:27:46,762 - __main__ - DEBUG - Number of periods being generated 2 
+2019-01-22 07:27:46,762 - __main__ - DEBUG - code generator setup - number of generated bits 62 
+2019-01-22 07:27:46,779 - __main__ - DEBUG - coder run - binary sequence generated, number of bits 62 
+2019-01-22 07:27:46,779 - __main__ - DEBUG - sampling rate is 24000.0 kHz
+2019-01-22 07:27:46,779 - __main__ - DEBUG - sampling period is 4.1666666666666665e-05 ms
+2019-01-22 07:27:46,779 - __main__ - DEBUG - chiprate is 1000.0 kHz
+2019-01-22 07:27:46,779 - __main__ - DEBUG - chip length is 0.001 ms
+2019-01-22 07:27:46,779 - __main__ - DEBUG - code period is 0.031 ms
+2019-01-22 07:27:46,779 - __main__ - DEBUG - time axis  length  is 0.062 ms
+2019-01-22 07:27:46,779 - __main__ - DEBUG - time axis created, length  1488 samples
+2019-01-22 07:27:46,779 - __main__ - DEBUG - frequency axis for spectral analysis, length  1488
+2019-01-22 07:27:46,779 - __main__ - DEBUG - time axis correlation created, length  2975 samples
+2019-01-22 07:27:46,779 - __main__ - DEBUG - half time axis correlation created, length  1488 samples
+2019-01-22 07:27:46,779 - __main__ - DEBUG - time acceleration factor is 0.8
+2019-01-22 07:27:46,779 - __main__ - DEBUG - Transmitted (accelerated) chip length is 0.0008 ms
+2019-01-22 07:27:46,779 - __main__ - DEBUG - Time offset (delay) of transmitted baseband signal is 0.0 ms
+2019-01-22 07:27:46,780 - siggens.train_pulse - DEBUG - code length 62 
+2019-01-22 07:27:46,780 - siggens.train_pulse - DEBUG - oversampled signal length 1488 
+2019-01-22 07:27:46,781 - __main__ - DEBUG - Oversampled signal with rectangular pulse shape created, number of samples 1488
+2019-01-22 07:27:46,781 - dsp.corrNumpy - DEBUG - Numpy based correlation function called, using fft and ifft from numpy.fft
+2019-01-22 07:27:46,799 - dsp.corrNumpy - DEBUG - operand x1: (1488,), <class 'numpy.ndarray'>, (609+0j)
+2019-01-22 07:27:46,799 - dsp.corrNumpy - DEBUG - operand x2: (1488,), <class 'numpy.ndarray'>, (609+0j)
+2019-01-22 07:27:46,799 - dsp.corrNumpy - DEBUG - result in freq-domain: (1488,), <class 'numpy.ndarray'>, (370881+0j)
+2019-01-22 07:27:46,800 - dsp.corrNumpy - DEBUG - result in time-domain after ifft: (1488,), <class 'numpy.ndarray'>, (609+0j)
+2019-01-22 07:27:46,800 - __main__ - DEBUG - Autocorrelation function calculated, number of samples 1488
+2019-01-22 07:27:46,800 - __main__ - DEBUG - ../cfg/plotting_ssrg_01.cnf file read to setup plotting results
+2019-01-22 07:27:46,874 - matplotlib.legend - WARNING - No handles with labels found to put in legend.

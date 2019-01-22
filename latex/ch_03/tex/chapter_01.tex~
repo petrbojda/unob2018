@@ -1,0 +1,46 @@
+% ********************************** CHAPTER 1 source ***********************************************
+\section{Introduction}
+
+
+\marginpar{\textcolor{txt_blue}{Definition}} 
+It is well known fact, the Doppler effect is a shift in a frequency of a wave radiated, reflected or received by an object in motion. 
+   
+\marginpar{\textcolor{txt_blue}{Monostatic Radar System Doppler Shift}} 
+For the monostatic radar configuration we are supposed to compute two--way doppler shift. The expression can be seen in formula (\ref{eq:ds}) bellow. 
+
+\begin{equation}
+f_D = \frac{2 \cdot v_r}{\lambda} \label{eq:ds}
+\end{equation}
+
+
+\section{Assignment A}
+Your task is to prove that the equation (\ref{eq:ds}) is true. Look at the picture \ref{fig:compress}. It presents how the wavelength of the radio-wave is being compressed due to the motion of the radar and target.\footnote{Assume the aircraft on the left side of the picture carries the radar, the aircraft on the right is the target.} 
+
+\begin{figure}[ht]
+  \includegraphics[width=\textwidth]{./ch_01/img/doppler.eps}
+  \caption{ Compression of the wavelength due to motion of the aircrafts.\label{fig:compress}}
+\end{figure}
+
+\marginpar{\textcolor{txt_blue}{Hint}}
+Try to understand and to express how the two--way distance is being changed when both radar and target are approaching each other. Then use it to find wavelength of the received signal. 
+
+\clearpage
+
+\section{Assignment B}
+Using the equation (\ref{eq:ds}) compute the frequency of the received signal for the scenario from the picture \ref{fig:situation}.   
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=\textwidth]{./ch_01/img/situation.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Geometrical situation.\label{fig:situation}}
+ \end{minipage}
+\end{figure}
+
+\marginpar{\textcolor{txt_blue}{Parameters}}
+The first aircraft \textsl{A1} carying the monostatic radar is flying at altitude 5000 meters. The altitude of the target, aircraft \textsl{A2}, is 3000 meters. Both aircrafts are maintaining their altitude -- they are flying in parallel with the ground. The velocity of the \textsl{A1} is 500 km per hour, the velocity of the \textsl{A2} is 700 km per hour. Radar has measured a time delay between the moment when it transmitted the pulse and the moment when the echo is received is 100 $\mu$s. The carrier frequency of the radio--wave transmitted by the radar is 10 GHz.
+
+ \section{Instructions}
+\marginpar{\textcolor{txt_blue}{How to turn in}}
+Turn in your solution using Canvas system. Accepted are files from MSWord, Libre Office or PDF. Don't turn in the solution only. Express every step taken towards the final result. Any comments are appreciated.

@@ -1,0 +1,55 @@
+\documentclass[twoside,11pt]{article}
+
+\usepackage{LN_EE401_SP2016}
+
+
+\fancyhf{}
+\lhead{\color{bgr_DarkBlue}Test 01 - SOLUTION  }
+\rhead{\color{bgr_DarkBlue}Control Systems Design and Analysis}
+
+\lfoot{\color{bgr_DarkBlue} February 2016}
+\rfoot{\color{bgr_DarkBlue} Page \thepage}
+
+
+\begin{document}
+
+\begin{titlepage}
+
+
+
+\center % Center everything on the page
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+{ \huge \bfseries Test 01 -- Solved}\\[6in] % Title of your document
+
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+\begin{minipage}{0.9\textwidth}
+\begin{flushleft} \large
+\emph{Author:} Petr \textsc{BOJDA}\\
+
+\emph{Course:} EE401 Control System Design and Analysis\\
+\today
+\end{flushleft}
+\end{minipage}
+
+% generates the title
+
+\end{titlepage}
+
+% ********************************** CHAPTER 1 Block Algebra ***********************************************
+\include {./ch_01/tex/chapter_01}
+
+% ********************************** CHAPTER 2 Passive Lead Compensator ***********************************
+\include {./ch_02/tex/chapter_02}
+
+% ********************************** CHAPTER 3 Spring-Damper System ***********************
+\include {./ch_03/tex/chapter_03}
+
+
+\end{document}

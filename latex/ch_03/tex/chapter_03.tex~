@@ -1,0 +1,381 @@
+% ********************************** CHAPTER 3 source ***********************************************
+\section{Time Response - 1st Order Mechanical System}
+
+
+\marginpar{\textcolor{txt_blue}{Analyze the 1st order system}} 
+Unlike the previous problem, we will derive a differential equation first and then we will proceed to a transfer function. It is only a matter of personal preference if you want to go the oposite way -- from a the transfer function to the differential equation.
+The important step before we start to solve anything is to realize what is the input and what is the output of the system. In the assignment we are required to find a transfer function in term of:
+\begin{equation}
+G(s) = \dfrac {X(s)} {F(s)}
+\label{equat_Mech_TF_req}
+\end{equation}
+
+where $X(s)$ is a displacement of our system -- considered as an \textsl{(output)} and $F(s)$ is a force exerted on the object -- considered as an \textsl{(input)}. 
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \includegraphics[width=3in]{./ch_03/img/system_S-D.eps}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Model of the spring-damper system. The mass of the system is negligible with respect to other forces implied. Such a system forms a model of the first order.\label{fig_M_sys}}
+ \end{minipage}
+\end{figure}
+
+
+\begin{table}[ht]
+\renewcommand{\arraystretch}{1.5}
+\caption{Assigned Values of the Mechanical System:}
+\label{table_Elec_values}
+\centering
+
+\begin{tabular}{|c|c||c|}
+\hline
+Characteristic & Symbol & Value \\[0.5ex]
+\hline
+\hline
+Viscous friction of the damper & $b$& $25\frac{Ns}{m}$ \\
+\hline
+Spring coeficient & $K$& $100\frac{N}{m}$ \\
+\hline
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Diff Equation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Model of the System}
+\marginpar{\textcolor{txt_blue}{Differential equation. Time domain.}} 
+Let's start with a time-domain first to derive the differential equation from a \textsl{free-body diagram}. We will use the second Newton's law, setting the mass $M=0$.
+\begin{equation}
+\begin{split}
+f(t) 
+	& = M \dfrac{d^2x(t)}{dt^2} + b \dfrac{x(t)}{t} + Kx(t). \nonumber \\
+	& = b \dfrac{x(t)}{t} + Kx(t).
+\end{split}
+\label{equat_M_DiffE}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Transfer Function %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\marginpar{\textcolor{txt_blue}{Transfer function. Laplace domain.}} 
+Transfer function is computed simply taking a Laplace transform of the differential equation Eq.(\ref{equat_M_DiffE}):
+\begin{equation}
+F(s) = X(s)bs X(s)K.
+\end{equation}
+
+For the transfer function then:
+\begin{equation}
+G(s) = \dfrac{X(s)}{F(s)} = \dfrac{1}{bs+K} = \dfrac{ \dfrac{1}{b}}{s + \dfrac{K}{b}}
+\label{equat_M_TF}
+\end{equation}
+
+
+and numerically:
+\begin{equation}
+G(s) = \dfrac{0.04}{s + 4} 
+\label{equat_M_TFn}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Time Response %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Time Response}
+We are required to derive both natural and step response.
+\vspace{0.25in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Natural Response
+\marginpar{\textcolor{txt_blue}{Natural response}} 
+For the natural response we are going to use a schema in the Fig.\ref{fig_block_naturres}. 
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \input{./ch_03/img/fig_block_00.tex}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Block schema of the system to derive the natural response. Input signal is $f(t)=\delta (t)$.\label{fig_block_naturres}}
+ \end{minipage}
+\end{figure}
+
+The natural response in its general form:
+\begin{equation}
+\begin{split}
+ x^{NAT}(t) 
+	& = \mathscr{L}^{-1} \{F(s)\cdot G(s)\}=\mathscr{L}^{-1} \{1\cdot G(s)\} \nonumber \\
+	& = \mathscr{L}^{-1} \{ \dfrac{ \dfrac{1}{b}}{s + \dfrac{K}{b}} \}
+	  = \mathscr{L}^{-1} \{ \dfrac{1}{b} \cdot  \dfrac{1}{s + \dfrac{K}{b}} \} \nonumber \\
+	& = \dfrac{1}{b} \cdot e^{-\frac{K}{b}t}
+\label{equat_M_naturres}
+\end{split}
+\end{equation}
+
+and the natural response with numeric values:
+\begin{equation}
+ x^{NAT}(t)= 0.04\cdot e^{-4t}
+\label{equat_M_naturres_n}
+\end{equation}
+
+
+\vspace{0.25in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Step Response
+For the step response we are going to use a schema in the Fig.\ref{fig_block_stepres}. 
+\marginpar{\textcolor{txt_blue}{Step response}} 
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \input{./ch_03/img/fig_block_01.tex}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Block schema of the system to derive the step response. Input signal is $f(t)=u(t)$.
+ \label{fig_block_stepres}}
+ \end{minipage}
+\end{figure}
+
+
+The step response in a general form is:
+\begin{equation}
+\begin{split}
+ x^{STEP}(t) 
+	& = \mathscr{L}^{-1} \{ \dfrac{\dfrac{1}{b}}{s(s+\dfrac{K}{b})}\} \nonumber \\
+	& = \mathscr{L}^{-1} \{ \dfrac{\dfrac{1}{K}}{s} \} + \mathscr{L}^{-1} \{ \dfrac{-\dfrac{1}{K}}{s+\dfrac{K}{b}} \} \nonumber \\
+	& = \dfrac{1}{K} -  \dfrac{1}{K}e^{-\frac{K}{b}t}
+\end{split}
+\end{equation}
+
+\begin{equation}
+ x^{STEP}(t) = K^{-1} -  K^{-1}e^{-\frac{K}{b}t}
+\label{equat_M_stepres}
+\end{equation}
+
+The step response with numbers is:
+\begin{equation}
+\begin{split}
+ x^{STEP}(t) 
+	& = \mathscr{L}^{-1} \{ \dfrac{0.04}{s(s+4)}\} \nonumber \\
+	& = \mathscr{L}^{-1} \{ \dfrac{0.01}{s} \} + \mathscr{L}^{-1} \{ \dfrac{-0.01}{s+4} \} 
+\end{split}
+\end{equation}
+
+\begin{equation}
+ x^{STEP}(t) = 0.01 - 0.01e^{-4t}
+\label{equat_M_stepres_n}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Performance %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Performance Analysis}
+Here we will derive a steady-state value of the step response and the time constant. 
+\vspace{0.25in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% SS Value
+\marginpar{\textcolor{txt_blue}{Steady-state value}}
+The steady-state  value of $x^{STEP}(t)$ is derived as a displacement at the time $t=\infty$ from the Eq.(\ref{equat_M_stepres}):
+\begin{equation}
+ x^{STEP}(\infty)=\dfrac{1}{K} + \dfrac{1}{K}e^{-\frac{K}{b}\cdot \infty} = \dfrac{1}{K} - 0 = \dfrac{1}{K} 
+\label{equat_M_ss}
+\end{equation}
+
+With numbers from Eq.(\ref{equat_M_stepres_n}) or Eq.(\ref{equat_M_ss}):
+\begin{equation}
+ x^{STEP}(\infty)= \dfrac{1}{100} = 0.01m
+\label{equat_M_ss_n}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Time Constant
+\marginpar{\textcolor{txt_blue}{Time constant}}
+Now we will find the time constant $\tau$ of the system using its transfer function Eq.(\ref{equat_M_TF}) and Eq.(\ref{equat_M_TFn}):
+\begin{equation}
+\tau =  \dfrac{1}{ \dfrac{K}{b} } = \dfrac{1}{ \dfrac{100}{25} } = 0.25s
+\label{equat_M_tc}
+\end{equation}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% f(t) = 100 u(t) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Input Force Changed}
+\marginpar{\textcolor{txt_blue}{Increase the input force}}
+Now let's see how the system responds if different input force is applied. The force $f(t)$ is now a step function with magnitude 100N:
+\begin{equation}
+ f(t) = 100 \cdot u(t)
+\end{equation}
+
+Transfered into Laplace domain:
+\begin{equation}
+ F(s) = \mathscr{L} \{100 \cdot u(t) \} = \dfrac{100}{s}
+\end{equation}
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \input{./ch_03/img/fig_block_02.tex}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{Block schema of the system to derive the step response. Input signal is $f(t)=100\cdot u(t)$.
+ \label{fig_block_100stepres}}
+ \end{minipage}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Step Response
+\marginpar{\textcolor{txt_blue}{Step response for $f(t) = 100u(t)$}}
+The step response in a general form is:
+\begin{equation}
+\begin{split}
+ x^{STEP}(t) 
+	& = \mathscr{L}^{-1} \{ \dfrac{100\cdot \dfrac{1}{b}}{s(s+\dfrac{K}{b})}\} \nonumber \\
+	& = \mathscr{L}^{-1} \{ \dfrac{\dfrac{100}{K}}{s} \} + \mathscr{L}^{-1} \{ \dfrac{-\dfrac{100}{K}}{s+\dfrac{K}{b}} \} \nonumber \\
+	& = \dfrac{100}{K} -  \dfrac{100}{K}e^{-\frac{K}{b}t}
+\end{split}
+\end{equation}
+
+\begin{equation}
+ x^{STEP}(t) = 100K^{-1} -  100K^{-1}e^{-\frac{K}{b}t}
+\label{equat_M_stepres100}
+\end{equation}
+
+The step response with numbers is:
+\begin{equation}
+\begin{split}
+ x^{STEP}(t) 
+	& = \mathscr{L}^{-1} \{ \dfrac{4}{s(s+4)}\} \nonumber \\
+	& = \mathscr{L}^{-1} \{ \dfrac{1}{s} \} + \mathscr{L}^{-1} \{ \dfrac{-1}{s+4} \} 
+\end{split}
+\end{equation}
+
+\begin{equation}
+ x^{STEP}(t) = 1 - 1e^{-4t}
+\label{equat_M_stepres100_n}
+\end{equation}
+ 
+\vspace{0.25in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% SS Value
+\marginpar{\textcolor{txt_blue}{Steady-state value for $f(t) = 100u(t)$}}
+The steady-state  value of $x^{STEP}(t)$ is derived as a displacement at the time $t=\infty$ from the Eq.(\ref{equat_M_stepres100}):
+\begin{equation}
+ x^{STEP}(\infty)=\dfrac{1}{K} + \dfrac{1}{K}e^{-\frac{K}{b}\cdot \infty} = \dfrac{1}{K} - 0 = \dfrac{1}{K} 
+\label{equat_M_ss100}
+\end{equation}
+
+With numbers from Eq.(\ref{equat_M_stepres100_n}) or Eq.(\ref{equat_M_ss100}):
+\begin{equation}
+ x^{STEP}(\infty)= \dfrac{100}{100} = 1m
+\label{equat_M_ss100_n}
+\end{equation}
+
+The steady-state value of $x^{STEP}(t)$ depends on the input force. Therefore the $x^{STEP}(\infty)$ will change if different force is applied.
+\vspace{0.25in}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Time Constant
+\marginpar{\textcolor{txt_blue}{Time constant}}
+The time constant $\tau$ of the system is computed from its transfer function, see Eq.(\ref{equat_M_TF}) and Eq.(\ref{equat_M_TFn}). The time constant does not depend on the input force. Time constant depends on parameters of the system only and that is a reasuon why it does not change.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Requirements %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Requirements Verification}
+\marginpar{\textcolor{txt_blue}{Settling time}}
+Required settling time for the system is $0.7s$ or shorter. Let's see, what the real settling time is:
+\begin{equation}
+T_s =  4\cdot \tau = 4 \cdot 0.25s = 1s
+\label{equat_M_tsn}
+\end{equation}
+
+Required is shorter settling time. So do the adjustment. At first we have to look at the general form of the settling time to make decision which parameter we want to change:
+\begin{equation}
+T_s =   \dfrac{4b}{K} 
+\label{equat_M_ts}
+\end{equation}
+
+Let's change the viscous friction coeficient of the damper $b$:
+\begin{eqnarray}
+	 \dfrac{4b}{100} & < & 0.7   \nonumber  \\
+ 	 4b & < & 70   \nonumber  \\
+	 b & < & 17.5\frac{Ns}{m}  
+\label{equat_M_breq}
+\end{eqnarray}
+ 
+
+
+\begin{boxit}
+\textsl{CHECK:} Taking the Eq.(\ref{equat_M_ts}) we will verify that we've met the requirements with a new value for damper $b$. To comply with the condition Eq.(\ref{equat_M_breq}) we choose $b = 15\frac{Ns}{m}$ and
+\begin{equation*}
+\begin{split}
+    T_s 
+	& = \dfrac{4b}{K}   
+	  = \dfrac{4\cdot 15}{100} \nonumber  \\
+	& = \dfrac{6}{10}s
+	  = 0.6s
+\end{split}
+\end{equation*}
+\end{boxit}
+\vspace{0.25in}
+
+\textsl{CONCLUSION:} When the $b$ is adjusted according to the condition in Eq.(\ref{equat_M_breq}) the requirement is satisfied.
+\vspace{0.25in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Feedback System %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{System with Feedback}
+
+\begin{figure}[ht]
+ \begin{minipage}[c]{0.65\textwidth}
+  \input{./ch_03/img/fig_canonical.tex}
+ \end{minipage}\hfill
+ \begin{minipage}[t]{0.3\textwidth}
+  \caption{The system $G(s)$ connected to a canonical feedback loop.
+ \label{fig_canonical}}
+ \end{minipage}
+\end{figure}
+
+
+\marginpar{\textcolor{txt_blue}{Transfer function of the feedback system}}
+The $T(s)$ is the transfer function of the system depicted in the Fig.\ref{fig_canonical}. The transfer function of the original system from Eq.(\ref{equat_M_TF}), or with numerical values Eq.(\ref{equat_M_TFn}) is used to calculate a negative feedback loop: 
+\begin{equation}
+\begin{split}
+    T(s) 
+	& = \dfrac{G(s)}{1 + G(s)}   
+	  = \dfrac{ \dfrac{ b^{-1} }{ s + Kb^{-1} } } {1 +  \dfrac{ b^{-1} }{ s + Kb^{-1} }}  \\
+	& = \dfrac{ b^{-1} }{ s + (K+1)b^{-1} } \\
+	& = \dfrac{0.04}{s + 0.04\cdot101}
+	  = \dfrac{0.04}{s + 4.04}
+\end{split}
+\label{equat_M_TF_fb}
+\end{equation}
+\vspace{0.25in}
+
+\marginpar{\textcolor{txt_blue}{Time constant of the feedback system}}
+From the Eq.(\ref{equat_M_TF_fb}) the time constant $\tau_{fb}$ is:
+\begin{equation}
+\tau_{fb} =   \dfrac{b}{K+1} = \dfrac{25}{101} = 0.247s
+\label{equat_M_tc_fb}
+\end{equation}
+\vspace{0.25in}
+
+\marginpar{\textcolor{txt_blue}{Step response of the feedback system}}
+Firstly a step response of the feedback system $x^{STEP}_{fb}(t)$ is found as:
+\begin{equation}
+\begin{split}
+    T^{STEP}(s) 
+	& = \dfrac{1}{s} \cdot \dfrac{ b^{-1} }{ s + (K+1)b^{-1} } \\
+	& = \dfrac{(K+1)^{-1}}{s}  -  \dfrac{ (K+1)^{-1} }{ s + (K+1)b^{-1} }  \\
+\end{split}
+\end{equation}
+
+\begin{equation}
+\begin{split}
+    x^{STEP}_{fb}(t) 
+	& = \mathscr{L}^{-1} \{\dfrac{(K+1)^{-1}}{s}\}  -  \mathscr{L}^{-1} \{\dfrac{ (K+1)^{-1} }{ s + (K+1)b^{-1} } \} \\
+	& = \mathscr{L}^{-1} \{\dfrac{101^{-1}}{s}\}  -  \mathscr{L}^{-1} \{\dfrac{ 101^{-1} }{ s + 101\cdot0.04 } \} \\
+	& = \dfrac{1}{101} - \dfrac{1}{101}e^{\frac{1}{0.247}t}
+\end{split}
+\label{equat_M_stepres_fb}
+\end{equation}
+
+
+\marginpar{\textcolor{txt_blue}{Steady-state value of the feedback system}}
+From the Eq.(\ref{equat_M_stepres_fb}):
+\begin{equation}
+	x^{STEP}_{fb}(\infty) = \dfrac{1}{101}.
+\label{equat_M_ss_fb}
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
