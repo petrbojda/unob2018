@@ -5,8 +5,12 @@ GNSS and Wireless Communications* by Jack K. Holmes.
 
 Returned binary sequences are numpy arrays of the type *bool*.
 """
+import sys
+sys.path.append("../src")
+
 import numpy as np
 import logging
+from utils import csv_interfaces as csvi
 
 def build_srm(fb_vector):
     logger = logging.getLogger(__name__)
@@ -36,6 +40,43 @@ def proceed_ssrg_onestep(x,srm):
     out = (srm * x)%2
     return out.astype(int)
 
+
+def gold_gps_seq(x1, x2, **args):
+    init = np.array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1])
+    srm1 = build_srm(np.array([0, 0, 1, 0, 0, 0, 0, 0, 0, 1]))
+    srm2 = build_srm(np.array([0, 1, 1, 0, 0, 1, 0, 1, 1, 1]))
+    p1 = init.T
+    p2 = init.T
+    code = np.zeros(1)
+    if 'n_o_bits' in args:
+        n_o_bits = int(args['n_o_bits'])
+    else:
+        n_o_bits = 1023
+
+    if 'n_o_periods' in args:
+        n_o_periods = int(args['n_o_periods'])
+    else:
+        n_o_periods = 1
+
+    out_seq = np.zeros(1)
+    for i1 in range(1, 0, n_o_periods * n_o_bits):
+        p1 = proceed_ssrg_onestep(p1, srm1)
+        p2 = proceed_ssrg_onestep(p2, srm2)
+
+        g1 = p1[9]
+        g2 = (p2[x1 - 1] + p2[x2 - 1]) % 2
+        out_seq = np.append(out_seq,(g1 + g2) % 2)
+
+        if 'ssrg_state_output_filename' in args:
+            csvi.write_csv(x, args['ssrg_state_output_filename'], i1)
+
+        if 'coder_output_filename' in args:
+            csvi.write_csv(x[-1], args['coder_output_filename'], i1)
+
+        code = np.append(code, x[-1])
+
+    out_seq = (p1 + p2)%2
+    return out_seq.astype(int)
 
 
 def gold_seq(x1, x2, **args):

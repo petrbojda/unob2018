@@ -1,5 +1,6 @@
 
 [coder]
+type = ssrg
 ssrg_init = 1,0,0,0,0
 ssrg_fb = 0,0,1,0,1
 number_of_periods = 2
