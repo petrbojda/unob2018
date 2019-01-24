@@ -1,70 +1,44 @@
-2019-01-24 15:16:53,490 - utils.setup - INFO - Logger implemented for analysis
-2019-01-24 15:16:53,490 - __main__ - INFO - ----------- main function started ------------
-2019-01-24 15:16:53,490 - __main__ - DEBUG - Analysis configuration file ../analysis/cfg/analysis.cnf
-2019-01-24 15:16:53,490 - __main__ - DEBUG - Coder configuration file ../analysis/cfg/coder.cnf
-2019-01-24 15:16:53,490 - __main__ - DEBUG - Setup configuration file ../analysis/cfg/setup.cnf
-2019-01-24 15:16:53,490 - __main__ - DEBUG - Plotting configuration file ../analysis/cfg/plotting.cnf
-2019-01-24 15:16:53,490 - __main__ - DEBUG - SSRG state output file ../analysis/data/state_output.csv
-2019-01-24 15:16:53,490 - __main__ - DEBUG - Coder PRN output file ../analysis/data/coder_output.csv
-2019-01-24 15:16:53,490 - __main__ - DEBUG - ---------- analysis setup ---------------
-2019-01-24 15:16:53,490 - utils.setup - DEBUG - Parsing of the file ../analysis/cfg/analysis.cnf started.
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - sections in a cnf file: ['type', 'baseband', 'signaling'] 
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - baseband section exists
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - signaling section exists
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - configuring a type-of-analysis section
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - A type-of-analysis section exists in a ../analysis/cfg/analysis.cnf file.
-2019-01-24 15:16:53,506 - __main__ - DEBUG - ../analysis/cfg/analysis.cnf file read to setup analysis
-2019-01-24 15:16:53,506 - __main__ - DEBUG - ---------- code generator ---------------
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - Parsing of the file ../analysis/cfg/coder.cnf started.
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - sections in a cnf file: ['ssrg', 'kasami', 'kasami_poly', 'gold', 'gold_gps'] 
-2019-01-24 15:16:53,506 - utils.setup - WARNING - more than one type of the coder is specified in a file ../analysis/cfg/coder.cnf
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - SSRG coder is selected
-2019-01-24 15:16:53,506 - utils.setup - DEBUG - A degree of a generating polynomial is 6.
-2019-01-24 15:16:53,506 - __main__ - DEBUG - ../analysis/cfg/coder.cnf file read to setup analysis
-2019-01-24 15:16:53,506 - __main__ - DEBUG - initial state of the ssrg, ssrg_init =  [[1 0 0 0 0 0]] 
-2019-01-24 15:16:53,506 - __main__ - DEBUG - feedback vector of the ssrg, ssrg_fb =  [[0 0 1 0 1 1]] 
-2019-01-24 15:16:53,506 - siggens.PRN_bitstreams - DEBUG - build_srm function started.
-2019-01-24 15:16:53,506 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 1 [[1. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0.]
- [0. 0. 1. 0. 0.]
- [0. 0. 0. 1. 0.]
- [0. 0. 0. 0. 1.]]
-2019-01-24 15:16:53,506 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 2, append vector [[0]
- [0]
- [0]
+2019-01-24 18:09:27,249 - utils.setup - INFO - Logger implemented for analysis
+2019-01-24 18:09:27,249 - __main__ - INFO - ----------- main function started ------------
+2019-01-24 18:09:27,249 - __main__ - DEBUG - Analysis configuration file ../analysis/cfg/analysis.cnf
+2019-01-24 18:09:27,249 - __main__ - DEBUG - Coder configuration file ../analysis/cfg/coder.cnf
+2019-01-24 18:09:27,249 - __main__ - DEBUG - Setup configuration file ../analysis/cfg/setup.cnf
+2019-01-24 18:09:27,249 - __main__ - DEBUG - Plotting configuration file ../analysis/cfg/plotting.cnf
+2019-01-24 18:09:27,249 - __main__ - DEBUG - SSRG state output file ../analysis/data/state_output.csv
+2019-01-24 18:09:27,249 - __main__ - DEBUG - Coder PRN output file ../analysis/data/coder_output.csv
+2019-01-24 18:09:27,249 - __main__ - DEBUG - ---------- analysis setup ---------------
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - Parsing of the file ../analysis/cfg/analysis.cnf started.
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - sections in a cnf file: ['type', 'baseband', 'signaling'] 
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - baseband section exists
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - signaling section exists
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - configuring a type-of-analysis section
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - A type-of-analysis section exists in a ../analysis/cfg/analysis.cnf file.
+2019-01-24 18:09:27,249 - __main__ - DEBUG - ../analysis/cfg/analysis.cnf file read to setup analysis
+2019-01-24 18:09:27,249 - __main__ - DEBUG - ---------- code generator ---------------
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - Parsing of the file ../analysis/cfg/coder.cnf started.
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - sections in a cnf file: ['ssrg', 'kasami', 'kasami_poly', 'gold', 'gold_gps'] 
+2019-01-24 18:09:27,249 - utils.setup - WARNING - more than one type of the coder is specified in a file ../analysis/cfg/coder.cnf
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - SSRG coder is selected
+2019-01-24 18:09:27,249 - utils.setup - WARNING - A vector of feedbacks of the ssrg is not specified in a file ../analysis/cfg/coder.cnf, No option 'ssrg_fb' in section: 'ssrg'
+2019-01-24 18:09:27,249 - utils.setup - WARNING - Default is a vector [[1 0 1 1]].
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - A degree of a generating polynomial is 4.
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - A size of an init vector is (1, 6).
+2019-01-24 18:09:27,249 - utils.setup - DEBUG - Initialization vector is [[1 0 0 0 0 0]].
+2019-01-24 18:09:27,249 - __main__ - DEBUG - ../analysis/cfg/coder.cnf file read to setup analysis
+2019-01-24 18:09:27,249 - __main__ - DEBUG - initial state of the ssrg, ssrg_init =  [[1 0 0 0 0 0]] 
+2019-01-24 18:09:27,249 - __main__ - DEBUG - feedback vector of the ssrg, ssrg_fb =  [[1 0 1 1]] 
+2019-01-24 18:09:27,249 - __main__ - DEBUG - initialization vector of the ssrg, ssrg_init =  [[1 0 0 0 0 0]] 
+2019-01-24 18:09:27,249 - siggens.PRN_bitstreams - DEBUG - build_srm function started.
+2019-01-24 18:09:27,249 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 1 [[1. 0. 0.]
+ [0. 1. 0.]
+ [0. 0. 1.]]
+2019-01-24 18:09:27,249 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 2, append vector [[0]
  [0]
  [0]]
-2019-01-24 15:16:53,506 - __main__ - DEBUG - srm matrix created, srm =  [[0. 0. 1. 0. 1. 1.]
- [1. 0. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0. 0.]
- [0. 0. 1. 0. 0. 0.]
- [0. 0. 0. 1. 0. 0.]
- [0. 0. 0. 0. 1. 0.]] 
-2019-01-24 15:16:53,506 - __main__ - DEBUG - Number of bits in one period of the code N = 63 bits 
-2019-01-24 15:16:53,506 - __main__ - DEBUG - Number of periods being generated 2 
-2019-01-24 15:16:53,506 - __main__ - DEBUG - code generator setup - number of generated bits 126 
-2019-01-24 15:16:53,890 - __main__ - DEBUG - coder run - binary sequence generated, number of bits 126 
-2019-01-24 15:16:53,890 - __main__ - DEBUG - ---------- time related baseband-signal simulation ---------------
-2019-01-24 15:16:53,890 - __main__ - DEBUG - sampling rate is 24000.0 kHz
-2019-01-24 15:16:53,890 - __main__ - DEBUG - sampling period is 4.1666666666666665e-05 ms
-2019-01-24 15:16:53,890 - __main__ - DEBUG - chiprate is 1000.0 kHz
-2019-01-24 15:16:53,891 - __main__ - DEBUG - chip length is 0.001 ms
-2019-01-24 15:16:53,891 - __main__ - DEBUG - time axis  length  is 0.126 ms
-2019-01-24 15:16:53,891 - __main__ - DEBUG - time axis created, length  3024 samples
-2019-01-24 15:16:53,891 - __main__ - DEBUG - frequency axis for spectral analysis, length  3024
-2019-01-24 15:16:53,891 - __main__ - DEBUG - time axis correlation created, length  6048 samples
-2019-01-24 15:16:53,891 - __main__ - DEBUG - half time axis correlation created, length  3024 samples
-2019-01-24 15:16:53,891 - __main__ - DEBUG - time acceleration factor is 0.8
-2019-01-24 15:16:53,891 - __main__ - DEBUG - Transmitted (accelerated) chip length is 0.0008 ms
-2019-01-24 15:16:53,891 - __main__ - DEBUG - Time offset (delay) of transmitted baseband signal is 0.0 ms
-2019-01-24 15:16:53,891 - siggens.train_pulse - DEBUG - code length 126 
-2019-01-24 15:16:53,891 - siggens.train_pulse - DEBUG - oversampled signal length 3024 
-2019-01-24 15:16:53,891 - __main__ - DEBUG - Oversampled signal with rectangular pulse shape created, number of samples 3024
-2019-01-24 15:16:53,891 - dsp.corrNumpy - DEBUG - Numpy based correlation function called, using fft and ifft from numpy.fft
-2019-01-24 15:16:53,906 - dsp.corrNumpy - DEBUG - operand x1: (3024,), <class 'numpy.ndarray'>, (1126+0j)
-2019-01-24 15:16:53,906 - dsp.corrNumpy - DEBUG - operand x2: (3024,), <class 'numpy.ndarray'>, (1126+0j)
-2019-01-24 15:16:53,906 - dsp.corrNumpy - DEBUG - result in freq-domain: (3024,), <class 'numpy.ndarray'>, (1267876+0j)
-2019-01-24 15:16:53,907 - dsp.corrNumpy - DEBUG - result in time-domain after ifft: (3024,), <class 'numpy.ndarray'>, (1126+0j)
-2019-01-24 15:16:53,907 - __main__ - DEBUG - Autocorrelation function calculated, number of samples 3024
-2019-01-24 15:16:53,907 - __main__ - DEBUG - ../analysis/cfg/plotting.cnf file read to setup plotting results
-2019-01-24 15:16:54,027 - matplotlib.legend - WARNING - No handles with labels found to put in legend.
+2019-01-24 18:09:27,249 - __main__ - DEBUG - srm matrix created, srm =  [[1. 0. 1. 1.]
+ [1. 0. 0. 0.]
+ [0. 1. 0. 0.]
+ [0. 0. 1. 0.]] 
+2019-01-24 18:09:27,249 - __main__ - DEBUG - Number of bits in one period of the code N = 15 bits 
+2019-01-24 18:09:27,249 - __main__ - DEBUG - Number of periods being generated 2 
+2019-01-24 18:09:27,249 - __main__ - DEBUG - code generator setup - number of generated bits 30 

@@ -43,7 +43,11 @@ def main(setup_data):
     ssrg_init = coder_setup["ssrg_init"]
     logger.debug("initial state of the ssrg, ssrg_init =  %s ", ssrg_init)
     ssrg_fb = coder_setup["ssrg_fb"]
+    if ssrg_init.size != ssrg_init.size:
+        logger.critical("The feedback vector is not of the same size as the initialization vector")
+        # TODO: this comparator doesn't work correctly "!="
     logger.debug("feedback vector of the ssrg, ssrg_fb =  %s ", ssrg_fb)
+    logger.debug("initialization vector of the ssrg, ssrg_init =  %s ", ssrg_init)
     srm = prn.build_srm(ssrg_fb)
     logger.debug("srm matrix created, srm =  %s ", srm)
     logger.debug("Number of bits in one period of the code N = %s bits ", coder_setup["code_period"])

@@ -283,11 +283,14 @@ def coder_cnf_file_parser(cnf_file):
         logger.debug("A degree of a generating polynomial is %s.",poly_degree)
         try:
             ssrg_init = np.matrix(np.fromstring(config.get('ssrg', 'ssrg_init'), dtype=int, sep=','))
+            logger.debug("A size of an init vector is %s.", ssrg_init.shape)
+            logger.debug("Initialization vector is %s.", ssrg_init)
         except configparser.NoOptionError as err:
-            ssrg_init = np.append(1, np.matrix(np.zeros(poly_degree - 1)))
+            ssrg_init = np.matrix(np.append(1, np.array(np.zeros(poly_degree - 1))))
             ssrg_init.astype(int)
             logger.warning("An initialization vector of the ssrg is not specified in a file %s, %s", cnf_file, err)
             logger.warning("Default is a vector %s.", ssrg_init)
+            logger.debug("A size of an init vector is %s.", ssrg_init.shape)
         code_period = 2**poly_degree - 1
         coder_setup = {"type": "ssrg",
                        "ssrg_init": ssrg_init,
