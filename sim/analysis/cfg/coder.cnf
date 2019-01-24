@@ -1,13 +1,13 @@
 
-# [coder]
-# type = kasami
-# type = ssrg
-# type = gold
-# type = gold_gps
+# possible coder types
+# a) kasami
+# b) ssrg
+# c) gold
+# d) gold_gps
 
 [ssrg]
-ssrg_init = 1,1,1,1
-ssrg_fb =   0,0,1,0
+ssrg_init = 1,0,0,0,0,0
+ssrg_fb =   0,0,1,0,1,1
 number_of_periods = 2
 
 [kasami]

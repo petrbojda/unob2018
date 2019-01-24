@@ -24,7 +24,7 @@ def main(setup_data):
 
     stp.logger_setup(setup_data["setup"])
     logger = logging.getLogger(__name__)
-    logger.info("Main function started.")
+    logger.info("----------- main function started ------------")
 
     logger.debug("Analysis configuration file %s", setup_data["analysis_cnf"])
     logger.debug("Coder configuration file %s", setup_data["coder_cnf"])
@@ -33,13 +33,11 @@ def main(setup_data):
     logger.debug("SSRG state output file %s", setup_data["data_state"])
     logger.debug("Coder PRN output file %s", setup_data["data_code"])
 
-
-    ##################### analysis setup ###############################
+    logger.debug("---------- analysis setup ---------------")
     analysis_setup = stp.analysis_cnf_file_parser(setup_data["analysis_cnf"])
     logger.debug("%s file read to setup analysis", setup_data["analysis_cnf"])
 
-
-    ##################### code generator ###############################
+    logger.debug("---------- code generator ---------------")
     coder_setup = stp.coder_cnf_file_parser(setup_data["coder_cnf"])
     logger.debug("%s file read to setup analysis", setup_data["coder_cnf"])
     ssrg_init = coder_setup["ssrg_init"]
@@ -65,15 +63,15 @@ def main(setup_data):
     logger.debug("coder run - binary sequence generated, number of bits %s ", code.size)
 
     # TODO: rewrite to allow different type of analysis and type of coder
-
-    ################## time related baseband-signal simulation ######################
+    n_o_samples = n_of_bits * analysis_setup["oversampling_factor"]
+    logger.debug("---------- time related baseband-signal simulation ---------------")
     f_sampl = analysis_setup["chip_rate"] * analysis_setup["oversampling_factor"]
     logger.debug("sampling rate is %s kHz", f_sampl)
     logger.debug("sampling period is %s ms", 1/f_sampl)
     logger.debug("chiprate is %s kHz", analysis_setup["chip_rate"])
     Ts = 1/analysis_setup["chip_rate"] # transmitted symbol interval or a chip length
     logger.debug("chip length is %s ms", Ts)
-    T_int = analysis_setup["n_o_samples"] / f_sampl
+    T_int = n_o_samples / f_sampl
     logger.debug("time axis  length  is %s ms", T_int)
     t = np.arange(0, T_int, 1 / f_sampl)  # time axis
     logger.debug("time axis created, length  %s samples", t.size)

@@ -142,8 +142,6 @@ def setup_cnf_file_parser(cnf_file):
 
 
 def analysis_cnf_file_parser(cnf_file):
-    #TODO: add configurations for two coders and different king of coders (Kasami, etc)
-
     logger = logging.getLogger(__name__)
     logger.debug("Parsing of the file %s started.", cnf_file)
 
@@ -256,7 +254,6 @@ def analysis_cnf_file_parser(cnf_file):
 
 def coder_cnf_file_parser(cnf_file):
     # TODO: add configurations for two coders and different king of coders (Kasami, etc)
-
     logger = logging.getLogger(__name__)
     logger.debug("Parsing of the file %s started.", cnf_file)
 
@@ -292,16 +289,11 @@ def coder_cnf_file_parser(cnf_file):
             logger.warning("An initialization vector of the ssrg is not specified in a file %s, %s", cnf_file, err)
             logger.warning("Default is a vector %s.", ssrg_init)
         code_period = 2**poly_degree - 1
-
-    # TODO: Rewrite the number of samples to be generated - now each baseband and coder settings are separate
-    # n_o_samples = n_o_periods * code_period * analysis_setup["oversampling_factor"]
-    # SOLUTION: n_o_samples will not be computed in a parser but inside of the main analysis function
-
-        coder_setup = {   "type": "ssrg",
-                          "ssrg_init": ssrg_init,
-                          "ssrg_fb": ssrg_fb,
-                          "n_o_periods": n_o_periods,
-                          "code_period":code_period}
+        coder_setup = {"type": "ssrg",
+                       "ssrg_init": ssrg_init,
+                       "ssrg_fb": ssrg_fb,
+                       "n_o_periods": n_o_periods,
+                       "code_period":code_period}
     else:
         coder_setup = {"type": "not_selected"}
 
