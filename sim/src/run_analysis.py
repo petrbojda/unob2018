@@ -26,25 +26,31 @@ def main(setup_data):
     logger = logging.getLogger(__name__)
     logger.info("Main function started.")
 
-    logger.debug("Coder analysis configuration file %s", setup_data["cnf"])
+    logger.debug("Analysis configuration file %s", setup_data["analysis_cnf"])
+    logger.debug("Coder configuration file %s", setup_data["coder_cnf"])
     logger.debug("Setup configuration file %s", setup_data["setup"])
     logger.debug("Plotting configuration file %s",setup_data["plt"])
     logger.debug("SSRG state output file %s", setup_data["data_state"])
     logger.debug("Coder PRN output file %s", setup_data["data_code"])
 
 
+    ##################### analysis setup ###############################
+    analysis_setup = stp.analysis_cnf_file_parser(setup_data["analysis_cnf"])
+    logger.debug("%s file read to setup analysis", setup_data["analysis_cnf"])
+
+
     ##################### code generator ###############################
-    analysis_setup = stp.analysis_cnf_file_parser(setup_data["cnf"])
-    logger.debug("%s file read to setup analysis", setup_data["cnf"])
-    ssrg_init = analysis_setup["ssrg_init"]
+    coder_setup = stp.coder_cnf_file_parser(setup_data["coder_cnf"])
+    logger.debug("%s file read to setup analysis", setup_data["coder_cnf"])
+    ssrg_init = coder_setup["ssrg_init"]
     logger.debug("initial state of the ssrg, ssrg_init =  %s ", ssrg_init)
-    ssrg_fb = analysis_setup["ssrg_fb"]
+    ssrg_fb = coder_setup["ssrg_fb"]
     logger.debug("feedback vector of the ssrg, ssrg_fb =  %s ", ssrg_fb)
     srm = prn.build_srm(ssrg_fb)
     logger.debug("srm matrix created, srm =  %s ", srm)
-    logger.debug("Number of bits in one period of the code N = %s bits ", analysis_setup["code_period"])
-    logger.debug("Number of periods being generated %s ", analysis_setup["n_o_periods"])
-    n_of_bits = analysis_setup["code_period"] * analysis_setup["n_o_periods"]
+    logger.debug("Number of bits in one period of the code N = %s bits ", coder_setup["code_period"])
+    logger.debug("Number of periods being generated %s ", coder_setup["n_o_periods"])
+    n_of_bits = coder_setup["code_period"] * coder_setup["n_o_periods"]
     logger.debug("code generator setup - number of generated bits %s ", n_of_bits)
 
     x = ssrg_init.T
@@ -58,7 +64,7 @@ def main(setup_data):
 
     # TODO: rewrite to allow different type of analysis and type of coder
 
-    ################## time related simulation ######################
+    ################## time related baseband-signal simulation ######################
     f_sampl = analysis_setup["chip_rate"] * analysis_setup["oversampling_factor"]
     logger.debug("sampling rate is %s kHz", f_sampl)
     logger.debug("sampling period is %s ms", 1/f_sampl)

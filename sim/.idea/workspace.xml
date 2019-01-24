@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="073aaf8e-4880-4193-b87a-7fcb1a82fe06" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/coding.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/coding.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis_template/cfg/analysis_template.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_template/cfg/analysis_template.cnf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analysis_template/cfg/setup_template.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/analysis_template/cfg/setup_template.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/cfg/analysis.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/cfg/analysis.cnf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analysis/cfg/setup.cnf" beforeDir="false" afterPath="$PROJECT_DIR$/analysis/cfg/setup.cnf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/run.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/run.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/run_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/run_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/siggens/PRN_bitstreams.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/siggens/PRN_bitstreams.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/setup.py" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -20,14 +16,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7033457">
+    <splitter split-orientation="horizontal" split-proportion="0.6404887">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/utils/setup.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="78">
-                  <caret line="246" selection-start-line="246" selection-end-line="246" />
+                <state relative-caret-position="369">
+                  <caret line="281" column="109" selection-start-line="281" selection-start-column="109" selection-end-line="281" selection-end-column="109" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
                   </folding>
@@ -38,8 +34,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/log/run.log">
               <provider selected="true" editor-type-id="LogFileEditorProvider">
-                <state relative-caret-position="367">
-                  <caret line="78" selection-start-line="78" selection-end-line="78" />
+                <state relative-caret-position="34">
+                  <caret line="15" selection-start-line="15" selection-end-line="15" />
                 </state>
               </provider>
             </entry>
@@ -57,25 +53,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/analysis_template/cfg/plotting_template.cnf">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/run_analysis.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-413">
-                  <caret line="24" column="31" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="31" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/analysis_template/cfg/setup_template.cnf">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="14" selection-start-line="14" selection-end-line="14" />
+                <state relative-caret-position="165">
+                  <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
                 </state>
               </provider>
             </entry>
@@ -89,11 +71,34 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/analysis_template/cfg/analysis_template.cnf">
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/analysis/cfg/analysis.cnf">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="2" column="16" selection-start-line="2" selection-end-line="2" selection-end-column="16" />
+                <state relative-caret-position="102">
+                  <caret line="6" selection-start-line="6" selection-end-line="6" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/analysis/cfg/coder.cnf">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="17">
+                  <caret line="1" selection-start-line="1" selection-end-line="1" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/analysis/cfg/plotting.cnf">
+              <provider selected="true" editor-type-id="text-editor" />
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/analysis/cfg/setup.cnf">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="306">
+                  <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
                 </state>
               </provider>
             </entry>
@@ -137,9 +142,12 @@
         <option value="$PROJECT_DIR$/src/dsp/corrNumpy.py" />
         <option value="$PROJECT_DIR$/cfg/setup_ssrg_01.cnf" />
         <option value="$PROJECT_DIR$/src/siggens/PRN_bitstreams.py" />
-        <option value="$PROJECT_DIR$/src/run_analysis.py" />
         <option value="$PROJECT_DIR$/analysis_template/cfg/setup_template.cnf" />
         <option value="$PROJECT_DIR$/analysis_template/cfg/analysis_template.cnf" />
+        <option value="$PROJECT_DIR$/analysis/cfg/setup.cnf" />
+        <option value="$PROJECT_DIR$/analysis/cfg/analysis.cnf" />
+        <option value="$PROJECT_DIR$/analysis/cfg/coder.cnf" />
+        <option value="$PROJECT_DIR$/src/run_analysis.py" />
         <option value="$PROJECT_DIR$/src/utils/setup.py" />
       </list>
     </option>
@@ -167,13 +175,19 @@
             <path>
               <item name="sim" type="b2602c69:ProjectViewProjectNode" />
               <item name="sim" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis_template" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sim" type="b2602c69:ProjectViewProjectNode" />
               <item name="sim" type="462c0819:PsiDirectoryNode" />
-              <item name="analysis_template" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
               <item name="cfg" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="sim" type="b2602c69:ProjectViewProjectNode" />
+              <item name="sim" type="462c0819:PsiDirectoryNode" />
+              <item name="analysis" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="sim" type="b2602c69:ProjectViewProjectNode" />
@@ -380,13 +394,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
     <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47557002" weight="0.14795539" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47557002" visible="true" weight="0.14795539" />
       <window_info id="Structure" order="1" sideWeight="0.52443" side_tool="true" weight="0.18335901" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="Query Editor" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32980132" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34569538" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34569538" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -493,6 +507,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/run_kasami.py" />
     <entry file="file://$PROJECT_DIR$/cfg/setup_ssrg_01.cnf" />
+    <entry file="file://$USER_HOME$/Anaconda3/envs/py37scimatyaml/Lib/logging/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/log/run.log">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="107" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="LogFileEditorProvider">
+        <state relative-caret-position="34">
+          <caret line="15" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/siggens/PRN_bitstreams.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1207">
@@ -503,6 +536,20 @@
     <entry file="file://$PROJECT_DIR$/analysis_template/cfg/plotting_template.cnf">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/analysis_template/cfg/setup_template.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis_template/cfg/analysis_template.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" lean-forward="true" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/Anaconda3/envs/py37scimatyaml/Lib/site-packages/numpy/core/numeric.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="156">
@@ -510,50 +557,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Anaconda3/envs/py37scimatyaml/Lib/logging/config.py">
+    <entry file="file://$PROJECT_DIR$/analysis/cfg/plotting.cnf">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/analysis/cfg/setup.cnf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="156">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
+        <state relative-caret-position="306">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/analysis_template/cfg/setup_template.cnf">
+    <entry file="file://$PROJECT_DIR$/analysis/cfg/analysis.cnf">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/log/run.log">
-      <provider selected="true" editor-type-id="LogFileEditorProvider">
-        <state relative-caret-position="367">
-          <caret line="78" selection-start-line="78" selection-end-line="78" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="107" selection-start-line="10" selection-start-column="107" selection-end-line="10" selection-end-column="107" />
+    <entry file="file://$PROJECT_DIR$/analysis/cfg/coder.cnf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/run_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-413">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/analysis_template/cfg/analysis_template.cnf">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="16" selection-start-line="2" selection-end-line="2" selection-end-column="16" />
+        <state relative-caret-position="165">
+          <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/setup.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="246" selection-start-line="246" selection-end-line="246" />
+        <state relative-caret-position="369">
+          <caret line="281" column="109" selection-start-line="281" selection-start-column="109" selection-end-line="281" selection-end-column="109" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>

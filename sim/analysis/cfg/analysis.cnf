@@ -1,8 +1,8 @@
 
-[coder]
-ssrg_init = 1,1,1,1,1,1,1,1,1,1,1,1,1
-ssrg_fb = 0,0,1,0,1,1,0,0,0,1,1,0,1
-number_of_periods = 2
+[type]
+auto_correlation = on
+cross_correlation = off
+spectral_analysis = on
 
 [baseband]
 chip_rate = 1e3

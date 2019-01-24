@@ -34,6 +34,7 @@ def setup_cnf_file_parser(cnf_file):
     config = configparser.ConfigParser()
     config.read(cnf_file)  # "../setup.cnf"
 
+# Folder settings
     # Read a path to a folder with python modules
     try:
         path_home = config.get('paths', 'home_dir')
@@ -74,7 +75,7 @@ def setup_cnf_file_parser(cnf_file):
         print("The section which defines paths to folders missing.", err)
         path_cnf = "cfg"
 
-
+# Filenames settings
     # Read a name of the csv file where a sequence of the ssrg states is stored
     try:
         filename_state = config.get('filenames', 'ssrg_state_output_filename')
@@ -93,15 +94,24 @@ def setup_cnf_file_parser(cnf_file):
     except configparser.NoSectionError as err:
         print("The section which defines filenames missing.", err)
         filename_code = "coder_sequence_output.csv"
-    # Read a name of the cnf file to configure coder and analysis
+    # Read a name of the cnf file to configure analysis
     try:
-        filename_cnf = config.get('filenames', 'config_filename')
+        filename_analysis_cnf = config.get('filenames', 'analysis_config_filename')
     except configparser.NoOptionError as err:
         print("The filename of cnf file to configure coder and analysis not defined.", err)
-        filename_cnf = "analysis.cnf"
+        filename_analysis_cnf = "analysis.cnf"
     except configparser.NoSectionError as err:
         print("The section which defines filenames missing.", err)
-        filename_cnf = "analysis.cnf"
+        filename_analysis_cnf = "analysis.cnf"
+    # Read a name of the cnf file to configure coder
+    try:
+        filename_coder_cnf = config.get('filenames', 'coder_config_filename')
+    except configparser.NoOptionError as err:
+        print("The filename of cnf file to configure coder  not defined.", err)
+        filename_coder_cnf = "coder.cnf"
+    except configparser.NoSectionError as err:
+        print("The section which defines filenames missing.", err)
+        filename_coder_cnf = "coder.cnf"
     # Read a name of the cnf file to setup basic paths to files
     try:
         filename_setup = config.get('filenames', 'setup_filename')
@@ -125,7 +135,8 @@ def setup_cnf_file_parser(cnf_file):
                   "data_state": path_home + '/' + path_analysis + '/' + path_data + '/' + filename_state,
                   "data_code": path_home + '/' + path_analysis + '/' + path_data + '/' + filename_code,
                   "setup":path_home + '/' + path_analysis + '/' + path_cnf + '/' + filename_setup,
-                  "cnf": path_home + '/' + path_analysis + '/' + path_cnf + '/' + filename_cnf,
+                  "analysis_cnf": path_home + '/' + path_analysis + '/' + path_cnf + '/' + filename_analysis_cnf,
+                  "coder_cnf": path_home + '/' + path_analysis + '/' + path_cnf + '/' + filename_coder_cnf,
                   "plt": path_home + '/' + path_analysis + '/' + path_cnf + '/' + filename_plt_cnf}
     return setup_data
 
@@ -138,12 +149,12 @@ def analysis_cnf_file_parser(cnf_file):
 
     # Reads the configuration file
     config = configparser.ConfigParser()
-    config.read(cnf_file)  # "../analysis.cnf"
-    analysis_sections = config.sections()
-    logger.debug("sections in a cnf file: %s ", analysis_sections)
+    config.read(cnf_file)  # "../code.cnf"
+    analysis_config_sections = config.sections()
+    logger.debug("sections in a cnf file: %s ", analysis_config_sections)
 
-    logger.debug("configuring a baseband section", analysis_sections)
-    if "baseband" in analysis_sections:
+    logger.debug("configuring a baseband section", analysis_config_sections)
+    if "baseband" in analysis_config_sections:
         logger.debug("baseband section exists")
         try:
             analysis_setup = {"chip_rate": float(config.get('baseband', 'chip_rate'))}
@@ -165,8 +176,8 @@ def analysis_cnf_file_parser(cnf_file):
         logger.warning("default values are set: chip rate = %s oversampling factor = %s",
                       analysis_setup["chiprate"], analysis_setup["oversampling_factor"])
 
-    logger.debug("configuring a signaling section", analysis_sections)
-    if "signaling" in analysis_sections:
+    logger.debug("configuring a signaling section", analysis_config_sections)
+    if "signaling" in analysis_config_sections:
         logger.debug("signaling section exists")
         try:
             analysis_setup = {"time_accelerating_factor": float(config.get('signaling', 'time_accelerating_factor'))}
@@ -182,7 +193,7 @@ def analysis_cnf_file_parser(cnf_file):
             logger.warning("A time_offset not specified in the signaling section, default value is set: %s %s",
                            analysis_setup["time_offset"], err)
         try:
-            analysis_setup.update({"pulse_shape": float(config.get('signaling', 'pulse_shape'))})
+            analysis_setup.update({"pulse_shape": config.get('signaling', 'pulse_shape')})
         except configparser.NoOptionError as err:
             analysis_setup.update({"pulse_shape": "rect"})
             logger.warning("A pulse_shape not specified in the signaling section, default value is set: %s %s",
@@ -196,8 +207,8 @@ def analysis_cnf_file_parser(cnf_file):
                        analysis_setup["time_accelerating_factor"], analysis_setup["time_offset"],
                        analysis_setup["pulse_shape"])
 
-    logger.debug("configuring a type-of-analysis section", analysis_sections)
-    if "type" in analysis_sections:
+    logger.debug("configuring a type-of-analysis section", analysis_config_sections)
+    if "type" in analysis_config_sections:
         logger.debug("A type-of-analysis section exists in a %s file.", cnf_file)
         try:
             auto_correlation_switch = config.get('type', 'auto_correlation').lower()
@@ -254,19 +265,21 @@ def coder_cnf_file_parser(cnf_file):
     # Reads the configuration file
     config = configparser.ConfigParser()
     config.read(cnf_file)  # "../analysis.cnf"
-    analysis_sections = config.sections()
-    logger.debug("sections in a cnf file: %s ", analysis_sections)
-    # TODO: finish parser - include type of analysis and type of coder selection
+    coder_config_sections = config.sections()
+    logger.debug("sections in a cnf file: %s ", coder_config_sections)
+
     n_o_periods = int(config.get('coder', 'number_of_periods'))
     ssrg_init = np.matrix(np.fromstring(config.get('coder', 'ssrg_init'), dtype=int, sep=','))
     poly_degree = ssrg_init.size
     ssrg_fb = np.matrix(np.fromstring(config.get('coder', 'ssrg_fb'), dtype=int, sep=','))
+    logger.debug("Setting the SSRG coder parameters.")
 
     tau = float(config.get('signaling', 'time_accelerating_factor'))
     td = float(config.get('signaling', 'time_offset'))
 
 
     code_period = 2**poly_degree - 1
+    # TODO: Rewrite the number of samples to be generated - now each baseband and coder settings are separate
     n_o_samples = n_o_periods * code_period * analysis_setup["oversampling_factor"]
 
     analysis_setup.update({
