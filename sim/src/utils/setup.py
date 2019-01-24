@@ -4,6 +4,30 @@ import logging
 import logging.config
 import numpy as np
 
+def parse_CMDLine():
+    # Parses a set of input arguments coming from a command line
+    parser = argparse.ArgumentParser(
+        description='''
+                            SSRG based pseudorandom sequence
+                            generator and its analysis.''')
+    #      Read command line arguments to get a scenario
+    parser.add_argument("-s", "--setup_file", help='''Define a path and filename to 
+                                                      initial setup cnf file.''')
+    argv = parser.parse_args()
+
+    if argv.setup_file:
+        setup_file = argv.setup_file
+    else:
+        setup_file = "setup.cnf"
+
+    return setup_file
+
+
+def logger_setup(cnf_logger_file):
+    logging.config.fileConfig(cnf_logger_file)
+    logger = logging.getLogger(__name__)
+    logger.info("Logger implemented for analysis")
+
 
 def setup_cnf_file_parser(cnf_file):
     # Reads the configuration file
@@ -50,15 +74,6 @@ def setup_cnf_file_parser(cnf_file):
         print("The section which defines paths to folders missing.", err)
         path_cnf = "cfg"
 
-    # Read a path to a folder with data
-    try:
-        path_log = config.get('paths', 'logger_dir')
-    except configparser.NoOptionError as err:
-        print("The path to a folder containing the project's log files not defined.", err)
-        path_log = "log"
-    except configparser.NoSectionError as err:
-        print("The section which defines paths to folders missing.", err)
-        path_log = "log"
 
     # Read a name of the csv file where a sequence of the ssrg states is stored
     try:
@@ -115,30 +130,6 @@ def setup_cnf_file_parser(cnf_file):
     return setup_data
 
 
-def parse_CMDLine():
-    # Parses a set of input arguments coming from a command line
-    parser = argparse.ArgumentParser(
-        description='''
-                            SSRG based pseudorandom sequence
-                            generator and its analysis.''')
-    #      Read command line arguments to get a scenario
-    parser.add_argument("-s", "--setup_file", help='''Define a path and filename to 
-                                                      initial setup cnf file.''')
-    argv = parser.parse_args()
-
-    if argv.setup_file:
-        setup_file = argv.setup_file
-    else:
-        setup_file = "setup.cnf"
-
-    return setup_file
-
-
-def logger_setup(cnf_logger_file):
-    logging.config.fileConfig(cnf_logger_file)
-    logger = logging.getLogger(__name__)
-    logger.info("Logger implemented for analysis")
-
 def analysis_cnf_file_parser(cnf_file):
     #TODO: add configurations for two coders and different king of coders (Kasami, etc)
 
@@ -148,19 +139,124 @@ def analysis_cnf_file_parser(cnf_file):
     # Reads the configuration file
     config = configparser.ConfigParser()
     config.read(cnf_file)  # "../analysis.cnf"
-    logger.debug("sections in a cnf file: %s ", config.sections())
+    analysis_sections = config.sections()
+    logger.debug("sections in a cnf file: %s ", analysis_sections)
 
-    # configure logging options
-    try:
-        analysis_setup = {"chip_rate": float(config.get('baseband', 'chip_rate'))}
-    except configparser.NoOptionError as err:
-        print("The path to a log config file is not defined in a main config file; ", err)
-        analysis_setup = {"chip_rate": 0.0}
-    except configparser.NoSectionError as err:
-        print("The section which defines a path to a log config file missing in a main config file; ", err)
-        analysis_setup = {"chip_rate": 0.0}
+    logger.debug("configuring a baseband section", analysis_sections)
+    if "baseband" in analysis_sections:
+        logger.debug("baseband section exists")
+        try:
+            analysis_setup = {"chip_rate": float(config.get('baseband', 'chip_rate'))}
+        except configparser.NoOptionError as err:
+            analysis_setup = {"chip_rate": 1e3}
+            logger.warning("A chip rate not specified in the baseband section, default value is set: %s %s",
+                           analysis_setup["chiprate"], err)
 
-    oversampling_factor = float(config.get('baseband', 'oversampling_factor'))
+        try:
+            analysis_setup.update({"oversampling_factor": float(config.get('baseband', 'oversampling_factor'))})
+        except configparser.NoOptionError as err:
+            analysis_setup.update({"oversampling_factor": 16.0})
+            logger.warning("An oversampling factor not specified in the baseband section, default value is set: %s %s",
+                           analysis_setup["chiprate"], err)
+    else:
+        analysis_setup = {"chip_rate": 1e3,
+                          "oversampling_factor": 16.0}
+        logger.warning("A baseband section not defined in the config file %s, ",  cnf_file)
+        logger.warning("default values are set: chip rate = %s oversampling factor = %s",
+                      analysis_setup["chiprate"], analysis_setup["oversampling_factor"])
+
+    logger.debug("configuring a signaling section", analysis_sections)
+    if "signaling" in analysis_sections:
+        logger.debug("signaling section exists")
+        try:
+            analysis_setup = {"time_accelerating_factor": float(config.get('signaling', 'time_accelerating_factor'))}
+        except configparser.NoOptionError as err:
+            analysis_setup = {"time_accelerating_factor": 1.0}
+            logger.warning("A time accelerating factor not specified in the signaling section, "
+                           "default value is set: %s %s",
+                           analysis_setup["time_accelerating_factor"], err)
+        try:
+            analysis_setup.update({"time_offset": float(config.get('signaling', 'time_offset'))})
+        except configparser.NoOptionError as err:
+            analysis_setup.update({"time_offset": 0.0})
+            logger.warning("A time_offset not specified in the signaling section, default value is set: %s %s",
+                           analysis_setup["time_offset"], err)
+        try:
+            analysis_setup.update({"pulse_shape": float(config.get('signaling', 'pulse_shape'))})
+        except configparser.NoOptionError as err:
+            analysis_setup.update({"pulse_shape": "rect"})
+            logger.warning("A pulse_shape not specified in the signaling section, default value is set: %s %s",
+                           analysis_setup["pulse_shape"], err)
+    else:
+        analysis_setup = {"time_accelerating_factor": 1.0,
+                          "time_offset": 0.0,
+                          "pulse_shape": "rect"}
+        logger.warning("A signaling section not defined in the config file %s, ", cnf_file)
+        logger.warning("default values are set: time_accelerating_factor = %s time_offset = %s pulse_shape = %s",
+                       analysis_setup["time_accelerating_factor"], analysis_setup["time_offset"],
+                       analysis_setup["pulse_shape"])
+
+    logger.debug("configuring a type-of-analysis section", analysis_sections)
+    if "type" in analysis_sections:
+        logger.debug("A type-of-analysis section exists in a %s file.", cnf_file)
+        try:
+            auto_correlation_switch = config.get('type', 'auto_correlation').lower()
+        except configparser.NoOptionError as err:
+            auto_correlation_switch = 'off'
+            logger.warning("An auto-correlation-option is not specified in the signaling section")
+            logger.warning("Auto-correlation analysis is switched off. %s ", err)
+        try:
+            cross_correlation_switch = config.get('type', 'cross_correlation').lower()
+        except configparser.NoOptionError as err:
+            cross_correlation_switch = 'off'
+            logger.warning("A cross-correlation-option is not specified in the signaling section")
+            logger.warning("Cross-correlation analysis is switched off. %s ", err)
+        try:
+            spectral_analysis_switch = config.get('type', 'spectral_analysis').lower()
+        except configparser.NoOptionError as err:
+            spectral_analysis_switch = 'off'
+            logger.warning("A spectral-analysis-option is not specified in the signaling section")
+            logger.warning("Spectral-analysis analysis is switched off. %s ", err)
+
+        if auto_correlation_switch == 'on':
+            auto_correlation_switch_b = True
+        else:
+            auto_correlation_switch_b = False
+
+        if cross_correlation_switch == 'on':
+            cross_correlation_switch_b = True
+        else:
+            cross_correlation_switch_b = False
+
+        if spectral_analysis_switch == 'on':
+            spectral_analysis_switch_b = True
+        else:
+            spectral_analysis_switch_b = False
+    else:
+        logger.warning("A type-of-analysis section is not defined in the config file %s, ", cnf_file)
+        logger.warning("All analyses are switched off.")
+        auto_correlation_switch_b = False
+        cross_correlation_switch_b = False
+        spectral_analysis_switch_b = False
+
+    analysis_setup.update({"auto_correlation_switch": auto_correlation_switch_b,
+                           "cross_correlation_switch": cross_correlation_switch_b,
+                           "spectral_analysis_switch": spectral_analysis_switch_b})
+    return analysis_setup
+
+
+def coder_cnf_file_parser(cnf_file):
+    # TODO: add configurations for two coders and different king of coders (Kasami, etc)
+
+    logger = logging.getLogger(__name__)
+    logger.debug("Parsing of the file %s started.", cnf_file)
+
+    # Reads the configuration file
+    config = configparser.ConfigParser()
+    config.read(cnf_file)  # "../analysis.cnf"
+    analysis_sections = config.sections()
+    logger.debug("sections in a cnf file: %s ", analysis_sections)
+    # TODO: finish parser - include type of analysis and type of coder selection
     n_o_periods = int(config.get('coder', 'number_of_periods'))
     ssrg_init = np.matrix(np.fromstring(config.get('coder', 'ssrg_init'), dtype=int, sep=','))
     poly_degree = ssrg_init.size
@@ -171,10 +267,9 @@ def analysis_cnf_file_parser(cnf_file):
 
 
     code_period = 2**poly_degree - 1
-    n_o_samples = n_o_periods * code_period * oversampling_factor
+    n_o_samples = n_o_periods * code_period * analysis_setup["oversampling_factor"]
 
     analysis_setup.update({
-                      "oversampling_factor": oversampling_factor,
                       "poly_degree": poly_degree,
                       "ssrg_init": ssrg_init,
                       "ssrg_fb": ssrg_fb,
@@ -218,78 +313,3 @@ def plotting_cnf_file_parser(cnf_file):
                       "plot_saving_format": plot_saving_format}
     return plotting_setup
 
-def cnf_file_read(cnf_file):
-    # Read the configuration file
-    config = configparser.ConfigParser()
-    config.read(cnf_file)  # "./setup.cnf"
-
-    # Get a path to a folder with data
-    try:
-        conf_data = {"radar_datafile": config.get('Datasets', 'radar_01')}
-    except configparser.NoOptionError as err:
-        print("The path to radar data file is not defined in a main config file; ", err)
-        conf_data.update({"radar_datafile": 0})
-    except configparser.NoSectionError as err:
-        print("The section which defines path to the radar data file missing in a main config file; ", err)
-        conf_data.update({"radar_datafile": 0})
-
-    try:
-        conf_data.update({"dgps_datafile": config.get('Datasets', 'dgps_01')})
-    except configparser.NoOptionError as err:
-        print("The path to DGPS data file is not defined in a main config file; ", err)
-        conf_data.update({"dgps_datafile": 0})
-    except configparser.NoSectionError as err:
-        print("The section which defines path to the DGPS data file missing in a main config file; ", err)
-        conf_data.update({"dgps_datafile": 0})
-
-    # Get list of parameters in a radar detection point
-    try:
-        conf_data.update({"radar_detection_attributes": config.get('RADAR_detections', 'attributes')})
-    except configparser.NoOptionError as err:
-        print("The attributes of the radar detections are not defined in a main config file; ", err)
-        conf_data.update({"radar_detection_attributes": 0})
-    except configparser.NoSectionError as err:
-        print("The section which defines attributes of the radar detections missing in a main config file; ", err)
-        conf_data.update({"radar_detection_attributes": 0})
-
-    # Get list of parameters in a dgps reference point
-    try:
-        conf_data.update({"DGPS_reference_attributes": config.get('DGPS_references', 'attributes')})
-    except configparser.NoOptionError as err:
-        print("The attributes of the DGPS references are not defined in a main config file; ", err)
-        conf_data.update({"DGPS_reference_attributes": 0})
-    except configparser.NoSectionError as err:
-        print("The section which defines attributes of the DGPS references missing in a main config file; ", err)
-        conf_data.update({"DGPS_reference_attributes": 0})
-
-    # configure logging options
-    try:
-        conf_data.update({"log_config_filename": config.get('LOG_file', 'cfg_filename')})
-    except configparser.NoOptionError as err:
-        print("The path to a log config file is not defined in a main config file; ", err)
-        conf_data.update({"log_config_filename": 0})
-    except configparser.NoSectionError as err:
-        print("The section which defines a path to a log config file missing in a main config file; ", err)
-        conf_data.update({"log_config_filename": 0})
-
-        # Get a format of a csv file
-    try:
-        conf_data.update({"radar_csv_header": config.get('CSV_Headers', 'detections_XY')})
-    except configparser.NoOptionError as err:
-        print("The format of the radar CSV file is not defined in a main config file; ", err)
-        conf_data.update({"radar_csv_header": 0})
-    except configparser.NoSectionError as err:
-        print("The section which would describe radar CSV file missing in a main config file; ", err)
-        conf_data.update({"radar_csv_header": 0})
-
-    try:
-        conf_data.update({"dgps_csv_header": config.get('CSV_Headers', 'references_XY')})
-    except configparser.NoOptionError as err:
-        print("The format of the DGPS CSV file is not defined in a main config file; ", err)
-        conf_data.update({"dgps_csv_header": 0})
-    except configparser.NoSectionError as err:
-        print("The section which would describe DGPS CSV file missing in a main config file; ", err)
-        conf_data.update({"dgps_csv_header": 0})
-
-    print(conf_data)
-    return conf_data

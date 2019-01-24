@@ -1,54 +1,78 @@
-2019-01-22 16:23:40,828 - utils.setup - INFO - Logger implemented for analysis
-2019-01-22 16:23:40,828 - __main__ - INFO - Main function started.
-2019-01-22 16:23:40,828 - __main__ - DEBUG - Coder analysis configuration file ../analysis_template/cfg/analysis_template.cnf
-2019-01-22 16:23:40,828 - __main__ - DEBUG - Setup configuration file ../analysis_template/cfg/setup_template.cnf
-2019-01-22 16:23:40,828 - __main__ - DEBUG - Plotting configuration file ../analysis_template/cfg/plotting_template.cnf
-2019-01-22 16:23:40,828 - __main__ - DEBUG - SSRG state output file ../analysis_template/data/state_output_template.csv
-2019-01-22 16:23:40,828 - __main__ - DEBUG - Coder PRN output file ../analysis_template/data/coder_output_template.csv
-2019-01-22 16:23:40,828 - utils.setup - DEBUG - Parsing of the file ../analysis_template/cfg/analysis_template.cnf started.
-2019-01-22 16:23:40,828 - utils.setup - DEBUG - sections in a cnf file: ['coder', 'baseband', 'signaling'] 
-2019-01-22 16:23:40,828 - __main__ - DEBUG - ../analysis_template/cfg/analysis_template.cnf file read to setup analysis
-2019-01-22 16:23:40,828 - __main__ - DEBUG - initial state of the ssrg, ssrg_init =  [[1 0 0 0 0]] 
-2019-01-22 16:23:40,829 - __main__ - DEBUG - feedback vector of the ssrg, ssrg_fb =  [[0 0 1 0 1]] 
-2019-01-22 16:23:40,829 - siggens.PRN_bitstreams - DEBUG - build_srm function started.
-2019-01-22 16:23:40,829 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 1 [[1. 0. 0. 0.]
- [0. 1. 0. 0.]
- [0. 0. 1. 0.]
- [0. 0. 0. 1.]]
-2019-01-22 16:23:40,829 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 2, append vector [[0]
+2019-01-24 05:54:07,396 - utils.setup - INFO - Logger implemented for analysis
+2019-01-24 05:54:07,396 - __main__ - INFO - Main function started.
+2019-01-24 05:54:07,396 - __main__ - DEBUG - Coder analysis configuration file ../analysis/cfg/analysis.cnf
+2019-01-24 05:54:07,396 - __main__ - DEBUG - Setup configuration file ../analysis/cfg/setup.cnf
+2019-01-24 05:54:07,396 - __main__ - DEBUG - Plotting configuration file ../analysis/cfg/plotting.cnf
+2019-01-24 05:54:07,396 - __main__ - DEBUG - SSRG state output file ../analysis/data/state_output.csv
+2019-01-24 05:54:07,396 - __main__ - DEBUG - Coder PRN output file ../analysis/data/coder_output.csv
+2019-01-24 05:54:07,396 - utils.setup - DEBUG - Parsing of the file ../analysis/cfg/analysis.cnf started.
+2019-01-24 05:54:07,396 - utils.setup - DEBUG - sections in a cnf file: ['coder', 'baseband', 'signaling'] 
+2019-01-24 05:54:07,396 - __main__ - DEBUG - ../analysis/cfg/analysis.cnf file read to setup analysis
+2019-01-24 05:54:07,396 - __main__ - DEBUG - initial state of the ssrg, ssrg_init =  [[1 1 1 1 1 1 1 1 1 1 1 1 1]] 
+2019-01-24 05:54:07,396 - __main__ - DEBUG - feedback vector of the ssrg, ssrg_fb =  [[0 0 1 0 1 1 0 0 0 1 1 0 1]] 
+2019-01-24 05:54:07,396 - siggens.PRN_bitstreams - DEBUG - build_srm function started.
+2019-01-24 05:54:07,396 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 1 [[1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1.]]
+2019-01-24 05:54:07,396 - siggens.PRN_bitstreams - DEBUG - srm matrix , step 2, append vector [[0]
+ [0]
+ [0]
+ [0]
+ [0]
+ [0]
+ [0]
+ [0]
+ [0]
  [0]
  [0]
  [0]]
-2019-01-22 16:23:40,829 - __main__ - DEBUG - srm matrix created, srm =  [[0. 0. 1. 0. 1.]
- [1. 0. 0. 0. 0.]
- [0. 1. 0. 0. 0.]
- [0. 0. 1. 0. 0.]
- [0. 0. 0. 1. 0.]] 
-2019-01-22 16:23:40,830 - __main__ - DEBUG - Number of bits in one period of the code N = 31 bits 
-2019-01-22 16:23:40,830 - __main__ - DEBUG - Number of periods being generated 2 
-2019-01-22 16:23:40,830 - __main__ - DEBUG - code generator setup - number of generated bits 62 
-2019-01-22 16:23:40,845 - __main__ - DEBUG - coder run - binary sequence generated, number of bits 62 
-2019-01-22 16:23:40,845 - __main__ - DEBUG - sampling rate is 24000.0 kHz
-2019-01-22 16:23:40,845 - __main__ - DEBUG - sampling period is 4.1666666666666665e-05 ms
-2019-01-22 16:23:40,845 - __main__ - DEBUG - chiprate is 1000.0 kHz
-2019-01-22 16:23:40,845 - __main__ - DEBUG - chip length is 0.001 ms
-2019-01-22 16:23:40,845 - __main__ - DEBUG - code period is 0.031 ms
-2019-01-22 16:23:40,845 - __main__ - DEBUG - time axis  length  is 0.062 ms
-2019-01-22 16:23:40,845 - __main__ - DEBUG - time axis created, length  1488 samples
-2019-01-22 16:23:40,845 - __main__ - DEBUG - frequency axis for spectral analysis, length  1488
-2019-01-22 16:23:40,845 - __main__ - DEBUG - time axis correlation created, length  2975 samples
-2019-01-22 16:23:40,846 - __main__ - DEBUG - half time axis correlation created, length  1488 samples
-2019-01-22 16:23:40,846 - __main__ - DEBUG - time acceleration factor is 0.8
-2019-01-22 16:23:40,846 - __main__ - DEBUG - Transmitted (accelerated) chip length is 0.0008 ms
-2019-01-22 16:23:40,846 - __main__ - DEBUG - Time offset (delay) of transmitted baseband signal is 0.0 ms
-2019-01-22 16:23:40,846 - siggens.train_pulse - DEBUG - code length 62 
-2019-01-22 16:23:40,846 - siggens.train_pulse - DEBUG - oversampled signal length 1488 
-2019-01-22 16:23:40,847 - __main__ - DEBUG - Oversampled signal with rectangular pulse shape created, number of samples 1488
-2019-01-22 16:23:40,847 - dsp.corrNumpy - DEBUG - Numpy based correlation function called, using fft and ifft from numpy.fft
-2019-01-22 16:23:40,865 - dsp.corrNumpy - DEBUG - operand x1: (1488,), <class 'numpy.ndarray'>, (609+0j)
-2019-01-22 16:23:40,865 - dsp.corrNumpy - DEBUG - operand x2: (1488,), <class 'numpy.ndarray'>, (609+0j)
-2019-01-22 16:23:40,865 - dsp.corrNumpy - DEBUG - result in freq-domain: (1488,), <class 'numpy.ndarray'>, (370881+0j)
-2019-01-22 16:23:40,866 - dsp.corrNumpy - DEBUG - result in time-domain after ifft: (1488,), <class 'numpy.ndarray'>, (609+0j)
-2019-01-22 16:23:40,866 - __main__ - DEBUG - Autocorrelation function calculated, number of samples 1488
-2019-01-22 16:23:40,866 - __main__ - DEBUG - ../analysis_template/cfg/plotting_template.cnf file read to setup plotting results
-2019-01-22 16:23:40,948 - matplotlib.legend - WARNING - No handles with labels found to put in legend.
+2019-01-24 05:54:07,396 - __main__ - DEBUG - srm matrix created, srm =  [[0. 0. 1. 0. 1. 1. 0. 0. 0. 1. 1. 0. 1.]
+ [1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0. 0.]
+ [0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 0. 1. 0.]] 
+2019-01-24 05:54:07,396 - __main__ - DEBUG - Number of bits in one period of the code N = 8191 bits 
+2019-01-24 05:54:07,396 - __main__ - DEBUG - Number of periods being generated 2 
+2019-01-24 05:54:07,396 - __main__ - DEBUG - code generator setup - number of generated bits 16382 
+2019-01-24 05:54:32,203 - __main__ - DEBUG - coder run - binary sequence generated, number of bits 16382 
+2019-01-24 05:54:32,203 - __main__ - DEBUG - sampling rate is 24000.0 kHz
+2019-01-24 05:54:32,203 - __main__ - DEBUG - sampling period is 4.1666666666666665e-05 ms
+2019-01-24 05:54:32,203 - __main__ - DEBUG - chiprate is 1000.0 kHz
+2019-01-24 05:54:32,203 - __main__ - DEBUG - chip length is 0.001 ms
+2019-01-24 05:54:32,203 - __main__ - DEBUG - code period is 8.191 ms
+2019-01-24 05:54:32,203 - __main__ - DEBUG - time axis  length  is 16.382 ms
+2019-01-24 05:54:32,203 - __main__ - DEBUG - time axis created, length  393169 samples
+2019-01-24 05:54:32,203 - __main__ - DEBUG - frequency axis for spectral analysis, length  393169
+2019-01-24 05:54:32,218 - __main__ - DEBUG - time axis correlation created, length  786337 samples
+2019-01-24 05:54:32,218 - __main__ - DEBUG - half time axis correlation created, length  393169 samples
+2019-01-24 05:54:32,218 - __main__ - DEBUG - time acceleration factor is 0.8
+2019-01-24 05:54:32,218 - __main__ - DEBUG - Transmitted (accelerated) chip length is 0.0008 ms
+2019-01-24 05:54:32,218 - __main__ - DEBUG - Time offset (delay) of transmitted baseband signal is 0.0 ms
+2019-01-24 05:54:32,218 - siggens.train_pulse - DEBUG - code length 16382 
+2019-01-24 05:54:32,218 - siggens.train_pulse - DEBUG - oversampled signal length 393169 
+2019-01-24 05:56:24,941 - __main__ - DEBUG - Oversampled signal with rectangular pulse shape created, number of samples 393169
+2019-01-24 05:56:24,957 - dsp.corrNumpy - DEBUG - Numpy based correlation function called, using fft and ifft from numpy.fft
+2019-01-24 05:56:25,081 - dsp.corrNumpy - DEBUG - operand x1: (393169,), <class 'numpy.ndarray'>, (155588+0j)
+2019-01-24 05:56:25,081 - dsp.corrNumpy - DEBUG - operand x2: (393169,), <class 'numpy.ndarray'>, (155588+0j)
+2019-01-24 05:56:25,097 - dsp.corrNumpy - DEBUG - result in freq-domain: (393169,), <class 'numpy.ndarray'>, (24207625744+0j)
+2019-01-24 05:56:25,144 - dsp.corrNumpy - DEBUG - result in time-domain after ifft: (393169,), <class 'numpy.ndarray'>, (155588-1.81920684821206e-12j)
+2019-01-24 05:56:25,144 - __main__ - DEBUG - Autocorrelation function calculated, number of samples 393169
+2019-01-24 05:56:25,144 - __main__ - DEBUG - ../analysis/cfg/plotting.cnf file read to setup plotting results
+2019-01-24 05:56:25,238 - matplotlib.legend - WARNING - No handles with labels found to put in legend.

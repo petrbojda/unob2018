@@ -6,17 +6,18 @@
 # setting paths to folders
 [paths]
 home_dir: ..
-analysis_dir: analysis_template
+modules_dir: srcpy
+analysis_dir: analysis
 data_dir: data
 config_dir: cfg
 
 # setting names of particular files
 [filenames]
-ssrg_state_output_filename: state_output_template.csv
-coder_output_filename: coder_output_template.csv
-config_filename: analysis_template.cnf
-setup_filename: setup_template.cnf
-plotting_filename: plotting_template.cnf
+ssrg_state_output_filename: state_output.csv
+coder_output_filename: coder_output.csv
+config_filename: analysis.cnf
+setup_filename: setup.cnf
+plotting_filename: plotting.cnf
 
 
 ############### setting parameters of the logger ########

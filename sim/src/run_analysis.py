@@ -56,7 +56,9 @@ def main(setup_data):
         code = np.append(code,x[-1])
     logger.debug("coder run - binary sequence generated, number of bits %s ", code.size)
 
-    #################### time related simulation ######################
+    # TODO: rewrite to allow different type of analysis and type of coder
+
+    ################## time related simulation ######################
     f_sampl = analysis_setup["chip_rate"] * analysis_setup["oversampling_factor"]
     logger.debug("sampling rate is %s kHz", f_sampl)
     logger.debug("sampling period is %s ms", 1/f_sampl)
