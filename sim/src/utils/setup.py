@@ -149,7 +149,7 @@ def analysis_cnf_file_parser(cnf_file):
 
     # Reads the configuration file
     config = configparser.ConfigParser()
-    config.read(cnf_file)  # "../code.cnf"
+    config.read(cnf_file)  # "../analysis.cnf"
     analysis_config_sections = config.sections()
     logger.debug("sections in a cnf file: %s ", analysis_config_sections)
 
@@ -264,35 +264,41 @@ def coder_cnf_file_parser(cnf_file):
 
     # Reads the configuration file
     config = configparser.ConfigParser()
-    config.read(cnf_file)  # "../analysis.cnf"
+    config.read(cnf_file)  # "../coder.cnf"
     coder_config_sections = config.sections()
     logger.debug("sections in a cnf file: %s ", coder_config_sections)
+    if len(coder_config_sections)>1:
+        logger.warning("more than one type of the coder is specified in a file %s", cnf_file)
 
-    n_o_periods = int(config.get('coder', 'number_of_periods'))
-    ssrg_init = np.matrix(np.fromstring(config.get('coder', 'ssrg_init'), dtype=int, sep=','))
-    poly_degree = ssrg_init.size
-    ssrg_fb = np.matrix(np.fromstring(config.get('coder', 'ssrg_fb'), dtype=int, sep=','))
-    logger.debug("Setting the SSRG coder parameters.")
+    if "ssrg" in coder_config_sections:
 
-    tau = float(config.get('signaling', 'time_accelerating_factor'))
-    td = float(config.get('signaling', 'time_offset'))
+        n_o_periods = int(config.get('coder', 'number_of_periods'))
+        ssrg_init = np.matrix(np.fromstring(config.get('coder', 'ssrg_init'), dtype=int, sep=','))
+        poly_degree = ssrg_init.size
+        ssrg_fb = np.matrix(np.fromstring(config.get('coder', 'ssrg_fb'), dtype=int, sep=','))
+        logger.debug("Setting the SSRG coder parameters.")
+
+        tau = float(config.get('signaling', 'time_accelerating_factor'))
+        td = float(config.get('signaling', 'time_offset'))
 
 
-    code_period = 2**poly_degree - 1
+        code_period = 2**poly_degree - 1
     # TODO: Rewrite the number of samples to be generated - now each baseband and coder settings are separate
-    n_o_samples = n_o_periods * code_period * analysis_setup["oversampling_factor"]
+    # n_o_samples = n_o_periods * code_period * analysis_setup["oversampling_factor"]
+    # SOLUTION: n_o_samples will not be computed in a parser but inside of the main analysis function
 
-    analysis_setup.update({
-                      "poly_degree": poly_degree,
-                      "ssrg_init": ssrg_init,
-                      "ssrg_fb": ssrg_fb,
-                      "n_o_periods": n_o_periods,
-                      "code_period":code_period,
-                      "n_o_samples":n_o_samples,
-                      "time_accelerating_factor": tau,
-                      "time_offset": td})
+        coder_setup = {   "type": "ssrg",
+                          "poly_degree": poly_degree,
+                          "ssrg_init": ssrg_init,
+                          "ssrg_fb": ssrg_fb,
+                          "n_o_periods": n_o_periods,
+                          "code_period":code_period,
+                          "time_accelerating_factor": tau,
+                          "time_offset": td}
+    else:
+        coder_setup = {"type": "not_selected"}
 
-    return analysis_setup
+    return coder_setup
 
 
 def plotting_cnf_file_parser(cnf_file):
