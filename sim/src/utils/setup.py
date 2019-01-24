@@ -153,7 +153,6 @@ def analysis_cnf_file_parser(cnf_file):
     analysis_config_sections = config.sections()
     logger.debug("sections in a cnf file: %s ", analysis_config_sections)
 
-    logger.debug("configuring a baseband section", analysis_config_sections)
     if "baseband" in analysis_config_sections:
         logger.debug("baseband section exists")
         try:
@@ -176,13 +175,12 @@ def analysis_cnf_file_parser(cnf_file):
         logger.warning("default values are set: chip rate = %s oversampling factor = %s",
                       analysis_setup["chiprate"], analysis_setup["oversampling_factor"])
 
-    logger.debug("configuring a signaling section", analysis_config_sections)
     if "signaling" in analysis_config_sections:
         logger.debug("signaling section exists")
         try:
-            analysis_setup = {"time_accelerating_factor": float(config.get('signaling', 'time_accelerating_factor'))}
+            analysis_setup.update({"time_accelerating_factor": float(config.get('signaling', 'time_accelerating_factor'))})
         except configparser.NoOptionError as err:
-            analysis_setup = {"time_accelerating_factor": 1.0}
+            analysis_setup.update({"time_accelerating_factor": 1.0})
             logger.warning("A time accelerating factor not specified in the signaling section, "
                            "default value is set: %s %s",
                            analysis_setup["time_accelerating_factor"], err)
@@ -207,7 +205,7 @@ def analysis_cnf_file_parser(cnf_file):
                        analysis_setup["time_accelerating_factor"], analysis_setup["time_offset"],
                        analysis_setup["pulse_shape"])
 
-    logger.debug("configuring a type-of-analysis section", analysis_config_sections)
+    logger.debug("configuring a type-of-analysis section")
     if "type" in analysis_config_sections:
         logger.debug("A type-of-analysis section exists in a %s file.", cnf_file)
         try:
@@ -271,30 +269,39 @@ def coder_cnf_file_parser(cnf_file):
         logger.warning("more than one type of the coder is specified in a file %s", cnf_file)
 
     if "ssrg" in coder_config_sections:
-
-        n_o_periods = int(config.get('coder', 'number_of_periods'))
-        ssrg_init = np.matrix(np.fromstring(config.get('coder', 'ssrg_init'), dtype=int, sep=','))
-        poly_degree = ssrg_init.size
-        ssrg_fb = np.matrix(np.fromstring(config.get('coder', 'ssrg_fb'), dtype=int, sep=','))
-        logger.debug("Setting the SSRG coder parameters.")
-
-        tau = float(config.get('signaling', 'time_accelerating_factor'))
-        td = float(config.get('signaling', 'time_offset'))
-
-
+        logger.debug("SSRG coder is selected")
+        try:
+            n_o_periods = int(config.get('ssrg', 'number_of_periods'))
+        except configparser.NoOptionError as err:
+            n_o_periods = 1
+            logger.warning("A number of periods of the code is not specified in a file %s, %s", cnf_file, err)
+            logger.warning("It will be generated %s period(s).", n_o_periods)
+        try:
+            ssrg_fb = np.matrix(np.fromstring(config.get('ssrg', 'ssrg_fb'), dtype=int, sep=','))
+        except configparser.NoOptionError as err:
+            ssrg_fb = np.matrix([1,0,1,1], dtype=int)
+            logger.warning("A vector of feedbacks of the ssrg is not specified in a file %s, %s", cnf_file, err)
+            logger.warning("Default is a vector %s.", ssrg_fb)
+        poly_degree = ssrg_fb.size
+        logger.debug("A degree of a generating polynomial is %s.",poly_degree)
+        try:
+            ssrg_init = np.matrix(np.fromstring(config.get('ssrg', 'ssrg_init'), dtype=int, sep=','))
+        except configparser.NoOptionError as err:
+            ssrg_init = np.append(1, np.matrix(np.zeros(poly_degree - 1)))
+            ssrg_init.astype(int)
+            logger.warning("An initialization vector of the ssrg is not specified in a file %s, %s", cnf_file, err)
+            logger.warning("Default is a vector %s.", ssrg_init)
         code_period = 2**poly_degree - 1
+
     # TODO: Rewrite the number of samples to be generated - now each baseband and coder settings are separate
     # n_o_samples = n_o_periods * code_period * analysis_setup["oversampling_factor"]
     # SOLUTION: n_o_samples will not be computed in a parser but inside of the main analysis function
 
         coder_setup = {   "type": "ssrg",
-                          "poly_degree": poly_degree,
                           "ssrg_init": ssrg_init,
                           "ssrg_fb": ssrg_fb,
                           "n_o_periods": n_o_periods,
-                          "code_period":code_period,
-                          "time_accelerating_factor": tau,
-                          "time_offset": td}
+                          "code_period":code_period}
     else:
         coder_setup = {"type": "not_selected"}
 

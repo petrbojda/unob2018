@@ -53,6 +53,8 @@ def main(setup_data):
     n_of_bits = coder_setup["code_period"] * coder_setup["n_o_periods"]
     logger.debug("code generator setup - number of generated bits %s ", n_of_bits)
 
+    # logger.debug("code period is %s ms", analysis_setup["code_period"] / analysis_setup["chip_rate"])
+
     x = ssrg_init.T
     code = np.zeros(1)
     for i1 in range (1,n_of_bits):
@@ -71,7 +73,6 @@ def main(setup_data):
     logger.debug("chiprate is %s kHz", analysis_setup["chip_rate"])
     Ts = 1/analysis_setup["chip_rate"] # transmitted symbol interval or a chip length
     logger.debug("chip length is %s ms", Ts)
-    logger.debug("code period is %s ms", analysis_setup["code_period"] / analysis_setup["chip_rate"])
     T_int = analysis_setup["n_o_samples"] / f_sampl
     logger.debug("time axis  length  is %s ms", T_int)
     t = np.arange(0, T_int, 1 / f_sampl)  # time axis
