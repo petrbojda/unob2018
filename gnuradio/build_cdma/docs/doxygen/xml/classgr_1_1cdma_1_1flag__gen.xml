@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1flag__gen" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::cdma::flag_gen</compoundname>
+    <basecompoundref prot="public" virt="virtual">sync_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1cdma_1_1flag__gen__impl" prot="public" virt="non-virtual">gr::cdma::flag_gen_impl</derivedcompoundref>
+    <includes refid="flag__gen_8h" local="no">flag_gen.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1cdma_1_1flag__gen_1adbe254d4d6b76174e5352d66b75ad0e0" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1cdma_1_1flag__gen" kindref="compound">flag_gen</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;flag_gen&gt; gr::cdma::flag_gen::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/flag_gen.h" line="56" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/flag_gen.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1flag__gen_1a77be8b62c3afe528d90963a464eb0a4e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1cdma_1_1flag__gen_1adbe254d4d6b76174e5352d66b75ad0e0" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::cdma::flag_gen::make</definition>
+        <argsstring>(int period, int acq)</argsstring>
+        <name>make</name>
+        <param>
+          <type>int</type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>acq</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1cdma_1_1flag__gen" kindref="compound">cdma::flag_gen</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1cdma_1_1flag__gen" kindref="compound">cdma::flag_gen</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1cdma_1_1flag__gen_1a77be8b62c3afe528d90963a464eb0a4e" kindref="member">cdma::flag_gen::make</ref> is the public interface for creating new instances.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>acq</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the mode selector. Takes values {0, 1}. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>period</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the period of output flags when acq=0. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/flag_gen.h" line="69" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1flag__gen_1a7e752cff4887f9e21dc941de35743a86" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::cdma::flag_gen::set_acq</definition>
+        <argsstring>(int acq)=0</argsstring>
+        <name>set_acq</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1flag__gen__impl_1a5c7a7bf772c0d97d42f7340ecc74c2e4">set_acq</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>acq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/flag_gen.h" line="70" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This block either passes through the input stream (assumed to be zeros or ones) when its internal state is acq=1, or it outputs a stream of zeros with periodic ones (with given period) when its internal state is acq=0. </para>    </briefdescription>
+    <detaileddescription>
+<para>The purpose of this block is to be used right after the timing/frequency acquisition block. The timing/frequency acquisition block outputs a stream of 0s and 1s, with 1s indicating the begining of a cdma frame.<linebreak/>
+When the system is in acquisition mode (acq=1), the <ref refid="classgr_1_1cdma_1_1flag__gen" kindref="compound">flag_gen</ref> block just passes through its input stream, which comes from the timing/frequency acquisition block.<linebreak/>
+When the system is in tracking mode (acq=0), the timing/frequency acquisition block is not supposed to produce any meaningful output flags. In this case, the <ref refid="classgr_1_1cdma_1_1flag__gen" kindref="compound">flag_gen</ref> block produces periodical flags (with given period equal to the frame length) starting from the last flag produced by the timing/frequency acquisition block, in order to provide timing information for the remaining of the system.<linebreak/>
+ For example, when period is 4 the input and output streams will look like:<linebreak/>
+acq:---<mdash/>&gt;111111000000000...<linebreak/>
+input:-<mdash/>&gt;010100000000000...<linebreak/>
+output:<ndash/>&gt;010100010001000...<linebreak/>
+where the first 1 in the input and output is for example due to a false acquisition. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="23">
+        <label>sync_block</label>
+      </node>
+      <node id="22">
+        <label>gr::cdma::flag_gen</label>
+        <link refid="classgr_1_1cdma_1_1flag__gen"/>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>gr::cdma::flag_gen_impl</label>
+        <link refid="classgr_1_1cdma_1_1flag__gen__impl"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="26">
+        <label>sync_block</label>
+      </node>
+      <node id="25">
+        <label>gr::cdma::flag_gen</label>
+        <link refid="classgr_1_1cdma_1_1flag__gen"/>
+        <childnode refid="26" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/flag_gen.h" line="54" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/flag_gen.h" bodystart="53" bodyend="71"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1flag__gen_1a77be8b62c3afe528d90963a464eb0a4e" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen_1a7e752cff4887f9e21dc941de35743a86" prot="public" virt="pure-virtual"><scope>gr::cdma::flag_gen</scope><name>set_acq</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen_1adbe254d4d6b76174e5352d66b75ad0e0" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="classgr_1_1cdma_1_1amp__var__est" kind="class"><name>gr::cdma::amp_var_est</name>
+    <member refid="classgr_1_1cdma_1_1amp__var__est_1aaa02578c8a6b66bbb2bc87a09d993b54" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est_1a7e79d2e82a1b82403ffbe6cae239a6d4" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est_1a74c312f3ba98da5be99b8b98efb920ce" kind="function"><name>alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est_1a962ce9187c7a64d80a6002b0ae810eca" kind="function"><name>set_alpha</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1amp__var__est__impl" kind="class"><name>gr::cdma::amp_var_est_impl</name>
+    <member refid="classgr_1_1cdma_1_1amp__var__est__impl_1a768a0568c483a855a5547f017229ba60" kind="variable"><name>d_alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est__impl_1a024e2e7cb2f83461996f7fd24b1d2fea" kind="variable"><name>pre0</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est__impl_1a40938b226d276e298bf67f52f248ecbe" kind="variable"><name>pre1</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est__impl_1a252f49c388dafceaf126e55a10b5b1b2" kind="function"><name>alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est__impl_1a19dbd643280bbe0b895b52ca2bf2a5c3" kind="function"><name>set_alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est__impl_1a96a477cc9803c0b6c59a82727dfe071c" kind="function"><name>amp_var_est_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est__impl_1a991907ba87bf1f2d92e25b410b579bc0" kind="function"><name>~amp_var_est_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est__impl_1a8c3d21225fea6c46ddab28fd57c81ea4" kind="function"><name>work</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1chopper" kind="class"><name>gr::cdma::chopper</name>
+    <member refid="classgr_1_1cdma_1_1chopper_1aff1c210e2ba8e905661422d96c81d9cc" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper_1adf659553f9ae9c8a07af9c6124aefea2" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1chopper__impl" kind="class"><name>gr::cdma::chopper_impl</name>
+    <member refid="classgr_1_1cdma_1_1chopper__impl_1a8f4dfa255b50be389e48070011f5eecf" kind="variable"><name>d_itemsize</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper__impl_1a73059d5acc595d54fcb9b04aeca8bd52" kind="variable"><name>d_lengtho</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper__impl_1a14e3cc5edeffdf163fe679bfd5e39be8" kind="variable"><name>d_lengthi</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper__impl_1a951bac2f1539b5986da6d831cd5ea6c7" kind="variable"><name>d_found</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper__impl_1a1cec3f70f0004ee62c238f6e9cd6b9a5" kind="function"><name>chopper_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper__impl_1a7a59a157a11e27298a23807f47d60831" kind="function"><name>~chopper_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper__impl_1a1245be558bdd57cbfa2a6491100228e2" kind="function"><name>forecast</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper__impl_1a6049378ecd2d6df4b4a7d4f4a0e05c42" kind="function"><name>general_work</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1flag__gen" kind="class"><name>gr::cdma::flag_gen</name>
+    <member refid="classgr_1_1cdma_1_1flag__gen_1adbe254d4d6b76174e5352d66b75ad0e0" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen_1a77be8b62c3afe528d90963a464eb0a4e" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen_1a7e752cff4887f9e21dc941de35743a86" kind="function"><name>set_acq</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1flag__gen__impl" kind="class"><name>gr::cdma::flag_gen_impl</name>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1a1a6b6d42d73269250683c6d3f104271b" kind="variable"><name>d_period</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1afa74c63467400a98977f7dd104de4609" kind="variable"><name>d_acq</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1ad1548be2bfe5d01293f2b9bb811df249" kind="variable"><name>d_counter</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1ade5ae9c2b83381bf51a32ab37ede2db5" kind="function"><name>flag_gen_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1a0cfd924232d0de2cd70af959e772cfc0" kind="function"><name>~flag_gen_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1afa29286cabcc5c68094935a1d1033e6a" kind="function"><name>get_period</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1abda9362aaad74d52aff6c341ff2f7541" kind="function"><name>get_acq</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1a5c7a7bf772c0d97d42f7340ecc74c2e4" kind="function"><name>set_acq</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen__impl_1a719f89bcf304b57053aa64ecc2fb6611" kind="function"><name>work</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1pac__err__cal" kind="class"><name>gr::cdma::pac_err_cal</name>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1a879772ac278c851e8580e4cc0da6a3d7" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1a3910e29234ac4eaf3059a032ca292dd7" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1ab04aac210da28ccdc4b39e0fb899d08e" kind="function"><name>set_winsize</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1a8188e0007d5edeeb103ca81f1404cbb1" kind="function"><name>set_cycsize</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1a85282d5e582b33f61f25dabba29b3e5c" kind="function"><name>set_pkt_num_tag</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1pac__err__cal__impl" kind="class"><name>gr::cdma::pac_err_cal_impl</name>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1aa61e3f5a9f32ff8c0d90f47f55d351b0" kind="variable"><name>d_winsize</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a01d3ba791f8f1abc7b043f0ba3761095" kind="variable"><name>d_cycsize</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1afea1e1a29fb2da08d0978c42dda497be" kind="variable"><name>d_count_pktsent</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1ac16b5a7aa4e092a83a2a6c4706c9fb63" kind="variable"><name>d_count_errs</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a38812c357d8dfa1f32e1dc098e88d182" kind="variable"><name>d_curnum</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1ad14118992fa2b9c007179e207a0d78bc" kind="variable"><name>d_prev</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a73b4605e6c50352cdf441c5c50e3cb20" kind="variable"><name>d_erate</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a9a919caa8a9636b505f111663eceb7f8" kind="variable"><name>d_pkt_num_tag</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a016cd3a97d184c4fabe27411e3638521" kind="function"><name>print</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a096ab86477f334143ab3d4d259d2c0b7" kind="function"><name>errCal</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1ac0e6d17f5ab42c80b29ee8f1a959fc7e" kind="function"><name>pac_err_cal_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a062880ed34ec1671c8a79c5358de289b" kind="function"><name>~pac_err_cal_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a7b148986a1938a89eb13c882fe0ac6dd" kind="function"><name>set_winsize</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1ac0a3a13da5f6f2f5116513f4c7020982" kind="function"><name>set_cycsize</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1af55a6e82e8794887f43b3486922fa37c" kind="function"><name>set_pkt_num_tag</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1packet__header2" kind="class"><name>gr::cdma::packet_header2</name>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1ad1b0cc3554b11df7e8f59704dd22290d" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a14d9dc791e37b30521861ec30acdc9ab" kind="variable"><name>d_tcm_tag_key</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1af5f2e3c865bbc60e084d0d2711c966c9" kind="variable"><name>d_tcm_type</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a8cf8888117c004b3627e030305ebe44e" kind="function"><name>packet_header2</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1af16e81f5371d1bb7b708ebe2d8b0cd72" kind="function"><name>~packet_header2</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1ae05dbca1300dfcb69d07a3e056be64e9" kind="function"><name>set_tcm_type</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a071071f71d3c650302bca89ead24c2ae" kind="function"><name>num_tag_key</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1ac7f98e0fc29cddc9d3926a7376298a25" kind="function"><name>header_formatter</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a023479acec9a2e8febc7a5ea01957d25" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1switched__peak__detector__fb" kind="class"><name>gr::cdma::switched_peak_detector_fb</name>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a2cc99ed4390736d8f6de5fca7b234098" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ad987012ddadc44a78c1d8b95e4fef9a3" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a7a63847168f132a32405c02d136a1b28" kind="function"><name>set_threshold_factor_rise</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a3e3886692910564795ded3e7d19ed27c" kind="function"><name>set_threshold_factor_fall</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a14d01d53c9a6fc9d778a056bcf5f89ff" kind="function"><name>set_look_ahead</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1af46cc0c4f630391dc23ad38a0463f0c1" kind="function"><name>set_alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a93ff6d2d2c0745e3b727cad5c8728ef6" kind="function"><name>set_on</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ab174c18fe0068af8f08fd954342f0bf4" kind="function"><name>threshold_factor_rise</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1abe4f5e98071715760e0a618ce10bebc8" kind="function"><name>threshold_factor_fall</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ab074a0baca4ab81b79d6ef6fe55d83a5" kind="function"><name>look_ahead</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a705fa7cbe58763edd7280329479cdeba" kind="function"><name>alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a111f4c74f2702c067cc204bc6fbe7dd7" kind="function"><name>on</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl" kind="class"><name>gr::cdma::switched_peak_detector_fb_impl</name>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1ac240fdf4a378bc900e94bd0f7e843e0b" kind="variable"><name>d_threshold_factor_rise</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a2ac86f3891bbe1f2ee2cc93cbae391f0" kind="variable"><name>d_threshold_factor_fall</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1affe2476936966e470852ec2ecbc6d637" kind="variable"><name>d_look_ahead</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a59c5d09c88f74e837497c510391873a3" kind="variable"><name>d_avg_alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1ac344d2900f3fa927aaaf25dc3f98ac06" kind="variable"><name>d_avg</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1acc59d7a3c42b2b35855f2630396d14f8" kind="variable"><name>d_found</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a9c5ecf1017d1ac96adbb4d461de4b254" kind="variable"><name>d_on</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a21ee82d45ff88c7fa6bbbb34da614cc6" kind="variable"><name>d_state</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1aa5d4f5b9f36cb330b1fdc465deed0df6" kind="function"><name>switched_peak_detector_fb_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1adc30745f3d5187c743eaf22eabebef6a" kind="function"><name>~switched_peak_detector_fb_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a8d002efbeb6717ae87f0e216504612e6" kind="function"><name>set_threshold_factor_rise</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a3afcf6dba7437f92be5da33f526da9fd" kind="function"><name>set_threshold_factor_fall</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a95f48d726bddc2edbaa37c47e301f51f" kind="function"><name>set_look_ahead</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1aa9cd1caf74fdfae94c2dc84cc1f6b854" kind="function"><name>set_alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a3fa2af88daff62fb2e9a86510d85111c" kind="function"><name>set_on</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a9be4e3588baf354b5c6ccfcae03fd263" kind="function"><name>threshold_factor_rise</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1ad9c9e717d96fbaffdeed03d38c9faf21" kind="function"><name>threshold_factor_fall</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a20fec50cc0e398c6bccaaef4dead3913" kind="function"><name>look_ahead</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a4f0c7eeb4680416eb180115cf606831d" kind="function"><name>alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a52673c3f9d8b72e4e32d43718f9bd3ce" kind="function"><name>on</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1ade4a3328068ad95ee196a4bcd48c151a" kind="function"><name>work</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1vector__insert2" kind="class"><name>gr::cdma::vector_insert2</name>
+    <member refid="classgr_1_1cdma_1_1vector__insert2_1af55b4df991cb00b9ec22805e3a4d2ff6" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1vector__insert2_1aa1721c17c5eecc9b722931c24403e36e" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1vector__insert2__impl" kind="class"><name>gr::cdma::vector_insert2_impl</name>
+    <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1ad6167bbb02f097f28a7fc9001b911e5a" kind="variable"><name>d_data</name></member>
+    <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1a815f18c40c93f24ac9c71205a2945e46" kind="variable"><name>d_offset</name></member>
+    <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1abf0847eecc1f25c2ef54bc955cb3bee1" kind="variable"><name>d_periodicity</name></member>
+    <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1afe335defe9e8359012e1fe4e57f7b9e8" kind="function"><name>vector_insert2_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1a76d0bff46b35e11882e4c4637ecda5b3" kind="function"><name>~vector_insert2_impl</name></member>
+    <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1af009150f5a812203c0623c7ee90940d1" kind="function"><name>forecast</name></member>
+    <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1aa90b68e48d9d22dd3bc771531de9f6ca" kind="function"><name>general_work</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1cdma" kind="namespace"><name>gr::cdma</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="amp__var__est_8h" kind="file"><name>amp_var_est.h</name>
+  </compound>
+  <compound refid="amp__var__est__impl_8h" kind="file"><name>amp_var_est_impl.h</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1ae3ba9abcbb033511480f4e938f175945" kind="define"><name>CDMA_API</name></member>
+  </compound>
+  <compound refid="chopper_8h" kind="file"><name>chopper.h</name>
+  </compound>
+  <compound refid="chopper__impl_8h" kind="file"><name>chopper_impl.h</name>
+  </compound>
+  <compound refid="flag__gen_8h" kind="file"><name>flag_gen.h</name>
+  </compound>
+  <compound refid="flag__gen__impl_8h" kind="file"><name>flag_gen_impl.h</name>
+  </compound>
+  <compound refid="group__defs_8dox" kind="file"><name>group_defs.dox</name>
+  </compound>
+  <compound refid="main__page_8dox" kind="file"><name>main_page.dox</name>
+  </compound>
+  <compound refid="pac__err__cal_8h" kind="file"><name>pac_err_cal.h</name>
+  </compound>
+  <compound refid="pac__err__cal__impl_8h" kind="file"><name>pac_err_cal_impl.h</name>
+  </compound>
+  <compound refid="packet__header2_8h" kind="file"><name>packet_header2.h</name>
+  </compound>
+  <compound refid="packet__headerparser__b2_8h" kind="file"><name>packet_headerparser_b2.h</name>
+  </compound>
+  <compound refid="packet__headerparser__b2__impl_8h" kind="file"><name>packet_headerparser_b2_impl.h</name>
+  </compound>
+  <compound refid="switched__peak__detector__fb_8h" kind="file"><name>switched_peak_detector_fb.h</name>
+  </compound>
+  <compound refid="switched__peak__detector__fb__impl_8h" kind="file"><name>switched_peak_detector_fb_impl.h</name>
+  </compound>
+  <compound refid="vector__insert2_8h" kind="file"><name>vector_insert2.h</name>
+  </compound>
+  <compound refid="vector__insert2__impl_8h" kind="file"><name>vector_insert2_impl.h</name>
+  </compound>
+  <compound refid="group__block" kind="group"><name>block</name>
+  </compound>
+  <compound refid="dir_973c43dc5af2968d84946b97e31c5c08" kind="dir"><name>cdma</name>
+  </compound>
+  <compound refid="dir_17950b42dfa537f415d3e0601f4253c4" kind="dir"><name>gr-cdma</name>
+  </compound>
+  <compound refid="dir_dc2caf9491ceead857d86316e69f418e" kind="dir"><name>include</name>
+  </compound>
+  <compound refid="dir_fde86bdf2492acce8edf885ad9f79223" kind="dir"><name>lib</name>
+  </compound>
+  <compound refid="indexpage" kind="page"><name>index</name>
+  </compound>
+</doxygenindex>

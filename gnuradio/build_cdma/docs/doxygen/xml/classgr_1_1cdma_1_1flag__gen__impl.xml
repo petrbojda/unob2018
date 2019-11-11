@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1flag__gen__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::cdma::flag_gen_impl</compoundname>
+    <basecompoundref refid="classgr_1_1cdma_1_1flag__gen" prot="public" virt="non-virtual">gr::cdma::flag_gen</basecompoundref>
+    <includes refid="flag__gen__impl_8h" local="no">flag_gen_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1flag__gen__impl_1a1a6b6d42d73269250683c6d3f104271b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::cdma::flag_gen_impl::d_period</definition>
+        <argsstring></argsstring>
+        <name>d_period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="32" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1flag__gen__impl_1afa74c63467400a98977f7dd104de4609" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::cdma::flag_gen_impl::d_acq</definition>
+        <argsstring></argsstring>
+        <name>d_acq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="33" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1flag__gen__impl_1ad1548be2bfe5d01293f2b9bb811df249" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::cdma::flag_gen_impl::d_counter</definition>
+        <argsstring></argsstring>
+        <name>d_counter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="34" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1flag__gen__impl_1ade5ae9c2b83381bf51a32ab37ede2db5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::flag_gen_impl::flag_gen_impl</definition>
+        <argsstring>(int period, int acq)</argsstring>
+        <name>flag_gen_impl</name>
+        <param>
+          <type>int</type>
+          <declname>period</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>acq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="37" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1flag__gen__impl_1a0cfd924232d0de2cd70af959e772cfc0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::flag_gen_impl::~flag_gen_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~flag_gen_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1flag__gen__impl_1afa29286cabcc5c68094935a1d1033e6a" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::cdma::flag_gen_impl::get_period</definition>
+        <argsstring>() const </argsstring>
+        <name>get_period</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="39" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" bodystart="39" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1flag__gen__impl_1abda9362aaad74d52aff6c341ff2f7541" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::cdma::flag_gen_impl::get_acq</definition>
+        <argsstring>() const </argsstring>
+        <name>get_acq</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="40" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" bodystart="40" bodyend="40"/>
+        <references refid="classgr_1_1cdma_1_1flag__gen__impl_1a5c7a7bf772c0d97d42f7340ecc74c2e4">set_acq</references>
+        <references refid="classgr_1_1cdma_1_1flag__gen__impl_1a719f89bcf304b57053aa64ecc2fb6611">work</references>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1flag__gen__impl_1a5c7a7bf772c0d97d42f7340ecc74c2e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="virtual">
+        <type>void</type>
+        <definition>void gr::cdma::flag_gen_impl::set_acq</definition>
+        <argsstring>(int acq)</argsstring>
+        <name>set_acq</name>
+        <reimplements refid="classgr_1_1cdma_1_1flag__gen_1a7e752cff4887f9e21dc941de35743a86">set_acq</reimplements>
+        <param>
+          <type>int</type>
+          <declname>acq</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="41" column="1"/>
+        <referencedby refid="classgr_1_1cdma_1_1flag__gen__impl_1abda9362aaad74d52aff6c341ff2f7541" compoundref="flag__gen__impl_8h" startline="40" endline="40">get_acq</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1flag__gen__impl_1a719f89bcf304b57053aa64ecc2fb6611" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::cdma::flag_gen_impl::work</definition>
+        <argsstring>(int noutput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="45" column="1"/>
+        <referencedby refid="classgr_1_1cdma_1_1flag__gen__impl_1abda9362aaad74d52aff6c341ff2f7541" compoundref="flag__gen__impl_8h" startline="40" endline="40">get_acq</referencedby>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="29">
+        <label>sync_block</label>
+      </node>
+      <node id="28">
+        <label>gr::cdma::flag_gen</label>
+        <link refid="classgr_1_1cdma_1_1flag__gen"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>gr::cdma::flag_gen_impl</label>
+        <link refid="classgr_1_1cdma_1_1flag__gen__impl"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="32">
+        <label>sync_block</label>
+      </node>
+      <node id="31">
+        <label>gr::cdma::flag_gen</label>
+        <link refid="classgr_1_1cdma_1_1flag__gen"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="30">
+        <label>gr::cdma::flag_gen_impl</label>
+        <link refid="classgr_1_1cdma_1_1flag__gen__impl"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" line="30" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/flag_gen_impl.h" bodystart="29" bodyend="48"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1afa74c63467400a98977f7dd104de4609" prot="private" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>d_acq</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1ad1548be2bfe5d01293f2b9bb811df249" prot="private" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>d_counter</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1a1a6b6d42d73269250683c6d3f104271b" prot="private" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>d_period</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1ade5ae9c2b83381bf51a32ab37ede2db5" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>flag_gen_impl</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1abda9362aaad74d52aff6c341ff2f7541" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>get_acq</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1afa29286cabcc5c68094935a1d1033e6a" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>get_period</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen_1a77be8b62c3afe528d90963a464eb0a4e" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1a5c7a7bf772c0d97d42f7340ecc74c2e4" prot="public" virt="virtual"><scope>gr::cdma::flag_gen_impl</scope><name>set_acq</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen_1adbe254d4d6b76174e5352d66b75ad0e0" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1a719f89bcf304b57053aa64ecc2fb6611" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>work</name></member>
+      <member refid="classgr_1_1cdma_1_1flag__gen__impl_1a0cfd924232d0de2cd70af959e772cfc0" prot="public" virt="non-virtual"><scope>gr::cdma::flag_gen_impl</scope><name>~flag_gen_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

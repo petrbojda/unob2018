@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1vector__insert2" kind="class" language="C++" prot="public">
+    <compoundname>gr::cdma::vector_insert2</compoundname>
+    <basecompoundref prot="public" virt="virtual">block</basecompoundref>
+    <includes refid="vector__insert2_8h" local="no">vector_insert2.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1cdma_1_1vector__insert2_1af55b4df991cb00b9ec22805e3a4d2ff6" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1cdma_1_1vector__insert2" kindref="compound">vector_insert2</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;vector_insert2&gt; gr::cdma::vector_insert2::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/vector_insert2.h" line="44" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/vector_insert2.h" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1vector__insert2_1aa1721c17c5eecc9b722931c24403e36e" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1cdma_1_1vector__insert2_1af55b4df991cb00b9ec22805e3a4d2ff6" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::cdma::vector_insert2::make</definition>
+        <argsstring>(const std::vector&lt; gr_complex &gt; data, int periodicity, int offset)</argsstring>
+        <name>make</name>
+        <param>
+          <type>const std::vector&lt; gr_complex &gt;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>periodicity</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1cdma_1_1vector__insert2" kindref="compound">cdma::vector_insert2</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1cdma_1_1vector__insert2" kindref="compound">cdma::vector_insert2</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1cdma_1_1vector__insert2_1aa1721c17c5eecc9b722931c24403e36e" kindref="member">cdma::vector_insert2::make</ref> is the public interface for creating new instances.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>data</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the vector to be inserted </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>periodicity</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the period of the input stream. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>offset</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>the offset within the input stream that the vector will be inserted. Takes values in {0,...,<computeroutput>periodicity}</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/vector_insert2.h" line="58" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Insert a specified (complex) vector periodically in the (complex) input stream. </para>    </briefdescription>
+    <detaileddescription>
+<para>For example, with data=(x,y), periodicity=3, and offset=1, the input and output streams will look like <linebreak/>
+input: abcdefghijk... <linebreak/>
+output: axybcdxyefgxyhijxyk... </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="28">
+        <label>gr::cdma::vector_insert2</label>
+        <link refid="classgr_1_1cdma_1_1vector__insert2"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>gr::block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="30">
+        <label>gr::cdma::vector_insert2</label>
+        <link refid="classgr_1_1cdma_1_1vector__insert2"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>gr::block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/vector_insert2.h" line="42" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/vector_insert2.h" bodystart="41" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1vector__insert2_1aa1721c17c5eecc9b722931c24403e36e" prot="public" virt="non-virtual"><scope>gr::cdma::vector_insert2</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2_1af55b4df991cb00b9ec22805e3a4d2ff6" prot="public" virt="non-virtual"><scope>gr::cdma::vector_insert2</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="packet__headerparser__b2_8h" kind="file" language="C++">
+    <compoundname>packet_headerparser_b2.h</compoundname>
+    <includes refid="api_8h" local="no">cdma/api.h</includes>
+    <includes local="no">gnuradio/sync_block.h</includes>
+    <includes refid="packet__header2_8h" local="no">cdma/packet_header2.h</includes>
+    <includedby refid="packet__headerparser__b2__impl_8h" local="no">packet_headerparser_b2_impl.h</includedby>
+    <incdepgraph>
+      <node id="80">
+        <label>packet_headerparser_b2.h</label>
+        <link refid="packet_headerparser_b2.h"/>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>gnuradio/digital/packet_header_default.h</label>
+      </node>
+      <node id="83">
+        <label>gnuradio/sync_block.h</label>
+      </node>
+      <node id="85">
+        <label>gnuradio/tags.h</label>
+      </node>
+      <node id="82">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="84">
+        <label>cdma/packet_header2.h</label>
+        <link refid="packet__header2_8h"/>
+        <childnode refid="85" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="81">
+        <label>cdma/api.h</label>
+        <link refid="api_8h"/>
+        <childnode refid="82" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="87">
+        <label>packet_headerparser_b2.h</label>
+        <link refid="packet_headerparser_b2.h"/>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>packet_headerparser_b2_impl.h</label>
+        <link refid="packet__headerparser__b2__impl_8h_source"/>
+      </node>
+    </invincdepgraph>
+    <innernamespace refid="namespacegr">gr</innernamespace>
+    <innernamespace refid="namespacegr_1_1cdma">gr::cdma</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_headerparser_b2.h"/>
+  </compounddef>
+</doxygen>

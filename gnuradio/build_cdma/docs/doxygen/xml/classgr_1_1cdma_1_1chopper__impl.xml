@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1chopper__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::cdma::chopper_impl</compoundname>
+    <basecompoundref refid="classgr_1_1cdma_1_1chopper" prot="public" virt="non-virtual">gr::cdma::chopper</basecompoundref>
+    <includes refid="chopper__impl_8h" local="no">chopper_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1chopper__impl_1a8f4dfa255b50be389e48070011f5eecf" prot="private" static="no" mutable="no">
+        <type>size_t</type>
+        <definition>size_t gr::cdma::chopper_impl::d_itemsize</definition>
+        <argsstring></argsstring>
+        <name>d_itemsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="32" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1chopper__impl_1a73059d5acc595d54fcb9b04aeca8bd52" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::cdma::chopper_impl::d_lengtho</definition>
+        <argsstring></argsstring>
+        <name>d_lengtho</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="33" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1chopper__impl_1a14e3cc5edeffdf163fe679bfd5e39be8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::cdma::chopper_impl::d_lengthi</definition>
+        <argsstring></argsstring>
+        <name>d_lengthi</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="34" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1chopper__impl_1a951bac2f1539b5986da6d831cd5ea6c7" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool gr::cdma::chopper_impl::d_found</definition>
+        <argsstring></argsstring>
+        <name>d_found</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="35" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1chopper__impl_1a1cec3f70f0004ee62c238f6e9cd6b9a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::chopper_impl::chopper_impl</definition>
+        <argsstring>(int length_out, int length_in, size_t vector_length)</argsstring>
+        <name>chopper_impl</name>
+        <param>
+          <type>int</type>
+          <declname>length_out</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>length_in</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>vector_length</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="39" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1chopper__impl_1a7a59a157a11e27298a23807f47d60831" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::chopper_impl::~chopper_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~chopper_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="40" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1chopper__impl_1a1245be558bdd57cbfa2a6491100228e2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::cdma::chopper_impl::forecast</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items_required)</argsstring>
+        <name>forecast</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items_required</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="43" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1chopper__impl_1a6049378ecd2d6df4b4a7d4f4a0e05c42" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::cdma::chopper_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="45" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>gr::cdma::chopper</label>
+        <link refid="classgr_1_1cdma_1_1chopper"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>gr::cdma::chopper_impl</label>
+        <link refid="classgr_1_1cdma_1_1chopper__impl"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="18">
+        <label>block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>gr::cdma::chopper</label>
+        <link refid="classgr_1_1cdma_1_1chopper"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>gr::cdma::chopper_impl</label>
+        <link refid="classgr_1_1cdma_1_1chopper__impl"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="21">
+        <label>block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" line="30" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/chopper_impl.h" bodystart="29" bodyend="49"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1chopper__impl_1a1cec3f70f0004ee62c238f6e9cd6b9a5" prot="public" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>chopper_impl</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper__impl_1a951bac2f1539b5986da6d831cd5ea6c7" prot="private" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>d_found</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper__impl_1a8f4dfa255b50be389e48070011f5eecf" prot="private" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>d_itemsize</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper__impl_1a14e3cc5edeffdf163fe679bfd5e39be8" prot="private" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>d_lengthi</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper__impl_1a73059d5acc595d54fcb9b04aeca8bd52" prot="private" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>d_lengtho</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper__impl_1a1245be558bdd57cbfa2a6491100228e2" prot="public" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>forecast</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper__impl_1a6049378ecd2d6df4b4a7d4f4a0e05c42" prot="public" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper_1adf659553f9ae9c8a07af9c6124aefea2" prot="public" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper_1aff1c210e2ba8e905661422d96c81d9cc" prot="public" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1cdma_1_1chopper__impl_1a7a59a157a11e27298a23807f47d60831" prot="public" virt="non-virtual"><scope>gr::cdma::chopper_impl</scope><name>~chopper_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

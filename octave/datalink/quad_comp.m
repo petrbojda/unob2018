@@ -1,0 +1,41 @@
+function x = quad_comp (I,Q,t,f0,p0,pE,jtr,fig)
+
+%   x = quad_comp (I,Q,t,f0,fig)
+%
+%   Function represents the quadratic modulator
+%       I,Q .... baseband signal, complex envelope
+%       t ...... time scale vector
+%       f0 ..... carrier frequecy of real signal
+%       p0 .... starting phase of the LO signal (phase disbalance)
+%       pE .... phase error between LO and LO+pi/2 signals
+%       jtr .... sampling jitter (percent of sample period)
+%       fig .... figure number
+
+trange = max(t)-min(t);
+tstep = (trange/(length(t)-1));
+t_jitter = jtr*tstep/100 * randn(size(t));
+t_noisy = t + t_jitter;
+
+s_I = cos(2*pi*f0*t_noisy + p0);
+s_Q = sin(2*pi*f0*t_noisy + p0 + pE);
+
+x = I .* s_I + Q .* s_Q;
+
+if(nargin > 7),
+    figure(fig);
+    subplot(3,1,1);plot(t,I,'-b');title('I - baseband');
+    grid on;axis([min(t),max(t),-1.1,1.1]);
+    subplot(3,1,2);plot(t,Q,'-b');title('Q - baseband');
+    grid on;axis([min(t),max(t),-1.1,1.1]);
+    subplot(3,1,3);plot(t,x,'-r');title('composite signal');
+    grid on;axis([min(t),max(t),1.1*min(x),1.1*max(x)]);
+%     fft_spektrum(x,t,fig+1);
+    
+%     figure(fig + 1);
+%     plot(t,t_jitter); title('clock jitter');
+%     grid on;
+end
+
+
+    
+

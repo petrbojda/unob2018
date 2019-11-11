@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_17950b42dfa537f415d3e0601f4253c4" kind="dir">
+    <compoundname>/home/petr/Projects/Bajer/gnuradio/gr-cdma</compoundname>
+    <innerdir refid="dir_dc2caf9491ceead857d86316e69f418e">/home/petr/Projects/Bajer/gnuradio/gr-cdma/include</innerdir>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/"/>
+  </compounddef>
+</doxygen>

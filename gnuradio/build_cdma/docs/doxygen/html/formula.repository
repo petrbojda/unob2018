@@ -1,0 +1,10 @@
+\form#0:$ y=\sqrt E_s \exp(j \phi) +n = (\sqrt E_s \cos(\phi)+n_1)+j(\sqrt E_s \sin(\phi)+n_2) $
+\form#1:$n_1$
+\form#2:$n_2$
+\form#3:$\sigma^2$
+\form#4:$ A=E^2(\sqrt E_s \cos(\phi)+n_1)= E_s \cos^2(\phi) $
+\form#5:$ B = E[ ( \sqrt E_s \cos(\phi)+n_1)^2] = E_s \cos^2(\phi)+\sigma^2 $
+\form#6:$ B^2-A = \sigma^2 $
+\form#7:$2^m$
+\form#8:$ N_0 $
+\form#9:$m$

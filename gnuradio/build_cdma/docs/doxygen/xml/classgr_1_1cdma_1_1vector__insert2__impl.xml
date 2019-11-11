@@ -1,0 +1,189 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1vector__insert2__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::cdma::vector_insert2_impl</compoundname>
+    <basecompoundref refid="classgr_1_1cdma_1_1vector__insert2" prot="public" virt="non-virtual">gr::cdma::vector_insert2</basecompoundref>
+    <includes refid="vector__insert2__impl_8h" local="no">vector_insert2_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1vector__insert2__impl_1ad6167bbb02f097f28a7fc9001b911e5a" prot="private" static="no" mutable="no">
+        <type>std::vector&lt; gr_complex &gt;</type>
+        <definition>std::vector&lt; gr_complex &gt; gr::cdma::vector_insert2_impl::d_data</definition>
+        <argsstring></argsstring>
+        <name>d_data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" line="32" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1vector__insert2__impl_1a815f18c40c93f24ac9c71205a2945e46" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::cdma::vector_insert2_impl::d_offset</definition>
+        <argsstring></argsstring>
+        <name>d_offset</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" line="33" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1vector__insert2__impl_1abf0847eecc1f25c2ef54bc955cb3bee1" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::cdma::vector_insert2_impl::d_periodicity</definition>
+        <argsstring></argsstring>
+        <name>d_periodicity</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" line="34" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1vector__insert2__impl_1afe335defe9e8359012e1fe4e57f7b9e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::vector_insert2_impl::vector_insert2_impl</definition>
+        <argsstring>(const std::vector&lt; gr_complex &gt; data, int periodicity, int offset)</argsstring>
+        <name>vector_insert2_impl</name>
+        <param>
+          <type>const std::vector&lt; gr_complex &gt;</type>
+          <declname>data</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>periodicity</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>offset</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" line="37" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1vector__insert2__impl_1a76d0bff46b35e11882e4c4637ecda5b3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::vector_insert2_impl::~vector_insert2_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~vector_insert2_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" line="38" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1vector__insert2__impl_1af009150f5a812203c0623c7ee90940d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::cdma::vector_insert2_impl::forecast</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items_required)</argsstring>
+        <name>forecast</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items_required</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" line="41" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1vector__insert2__impl_1aa90b68e48d9d22dd3bc771531de9f6ca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>int</type>
+        <definition>int gr::cdma::vector_insert2_impl::general_work</definition>
+        <argsstring>(int noutput_items, gr_vector_int &amp;ninput_items, gr_vector_const_void_star &amp;input_items, gr_vector_void_star &amp;output_items)</argsstring>
+        <name>general_work</name>
+        <param>
+          <type>int</type>
+          <declname>noutput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_int &amp;</type>
+          <declname>ninput_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_const_void_star &amp;</type>
+          <declname>input_items</declname>
+        </param>
+        <param>
+          <type>gr_vector_void_star &amp;</type>
+          <declname>output_items</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" line="43" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="64">
+        <label>gr::cdma::vector_insert2_impl</label>
+        <link refid="classgr_1_1cdma_1_1vector__insert2__impl"/>
+        <childnode refid="65" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="65">
+        <label>gr::cdma::vector_insert2</label>
+        <link refid="classgr_1_1cdma_1_1vector__insert2"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>gr::block</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="67">
+        <label>gr::cdma::vector_insert2_impl</label>
+        <link refid="classgr_1_1cdma_1_1vector__insert2__impl"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>gr::cdma::vector_insert2</label>
+        <link refid="classgr_1_1cdma_1_1vector__insert2"/>
+        <childnode refid="69" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="69">
+        <label>gr::block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" line="30" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/vector_insert2_impl.h" bodystart="29" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1ad6167bbb02f097f28a7fc9001b911e5a" prot="private" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>d_data</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1a815f18c40c93f24ac9c71205a2945e46" prot="private" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>d_offset</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1abf0847eecc1f25c2ef54bc955cb3bee1" prot="private" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>d_periodicity</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1af009150f5a812203c0623c7ee90940d1" prot="public" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>forecast</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1aa90b68e48d9d22dd3bc771531de9f6ca" prot="public" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>general_work</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2_1aa1721c17c5eecc9b722931c24403e36e" prot="public" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2_1af55b4df991cb00b9ec22805e3a4d2ff6" prot="public" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1afe335defe9e8359012e1fe4e57f7b9e8" prot="public" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>vector_insert2_impl</name></member>
+      <member refid="classgr_1_1cdma_1_1vector__insert2__impl_1a76d0bff46b35e11882e4c4637ecda5b3" prot="public" virt="non-virtual"><scope>gr::cdma::vector_insert2_impl</scope><name>~vector_insert2_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

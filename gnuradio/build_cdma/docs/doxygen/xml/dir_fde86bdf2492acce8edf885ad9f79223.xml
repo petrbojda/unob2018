@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_fde86bdf2492acce8edf885ad9f79223" kind="dir">
+    <compoundname>lib</compoundname>
+    <innerfile refid="amp__var__est__impl_8h">amp_var_est_impl.h</innerfile>
+    <innerfile refid="chopper__impl_8h">chopper_impl.h</innerfile>
+    <innerfile refid="flag__gen__impl_8h">flag_gen_impl.h</innerfile>
+    <innerfile refid="pac__err__cal__impl_8h">pac_err_cal_impl.h</innerfile>
+    <innerfile refid="packet__headerparser__b2__impl_8h">packet_headerparser_b2_impl.h</innerfile>
+    <innerfile refid="switched__peak__detector__fb__impl_8h">switched_peak_detector_fb_impl.h</innerfile>
+    <innerfile refid="vector__insert2__impl_8h">vector_insert2_impl.h</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/"/>
+  </compounddef>
+</doxygen>

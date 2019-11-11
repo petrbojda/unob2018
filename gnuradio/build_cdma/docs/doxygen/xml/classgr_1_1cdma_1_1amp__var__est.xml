@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1amp__var__est" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::cdma::amp_var_est</compoundname>
+    <basecompoundref prot="public" virt="virtual">sync_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1cdma_1_1amp__var__est__impl" prot="public" virt="non-virtual">gr::cdma::amp_var_est_impl</derivedcompoundref>
+    <includes refid="amp__var__est_8h" local="no">amp_var_est.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1cdma_1_1amp__var__est_1aaa02578c8a6b66bbb2bc87a09d993b54" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1cdma_1_1amp__var__est" kindref="compound">amp_var_est</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;amp_var_est&gt; gr::cdma::amp_var_est::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/amp_var_est.h" line="53" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/amp_var_est.h" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1amp__var__est_1a7e79d2e82a1b82403ffbe6cae239a6d4" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1cdma_1_1amp__var__est_1aaa02578c8a6b66bbb2bc87a09d993b54" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::cdma::amp_var_est::make</definition>
+        <argsstring>(float alpha)</argsstring>
+        <name>make</name>
+        <param>
+          <type>float</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1cdma_1_1amp__var__est" kindref="compound">cdma::amp_var_est</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1cdma_1_1amp__var__est" kindref="compound">cdma::amp_var_est</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1cdma_1_1amp__var__est_1a7e79d2e82a1b82403ffbe6cae239a6d4" kindref="member">cdma::amp_var_est::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/amp_var_est.h" line="64" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1amp__var__est_1a74c312f3ba98da5be99b8b98efb920ce" prot="public" static="no" const="yes" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float gr::cdma::amp_var_est::alpha</definition>
+        <argsstring>() const =0</argsstring>
+        <name>alpha</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1amp__var__est__impl_1a252f49c388dafceaf126e55a10b5b1b2">alpha</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/amp_var_est.h" line="66" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1amp__var__est_1a962ce9187c7a64d80a6002b0ae810eca" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::cdma::amp_var_est::set_alpha</definition>
+        <argsstring>(float k)=0</argsstring>
+        <name>set_alpha</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1amp__var__est__impl_1a19dbd643280bbe0b895b52ca2bf2a5c3">set_alpha</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>k</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/amp_var_est.h" line="68" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Assumes as input a constant complex signal with complex noise s[i]=(A+j B) + (wr[i]+j wi[i]) Estimates the signal power on the real part A^2 and real noise variance sigma^2. </para>    </briefdescription>
+    <detaileddescription>
+<para>First convert the input stream from complex type to real type, so r[i]=A + wr[i]. <linebreak/>
+Then split the stream into two branches: <linebreak/>
+ 1) Pass the first branch through a single-pole IIR filter (averaging), square the result, and obtain an estimate of the signal power A^2. <linebreak/>
+ 2) Square the second branch, pass the result through a single-pole IIR filter, subtract the estimated signal power and obtain an estimate of the noise power sigma^2.<linebreak/>
+ <linebreak/>
+ For the IIR filter, the parameter alpha controls the averaging length. See equation below: <linebreak/>
+ y[i] = (1-alpha)*y[i-1] + alpha*x[i]. <linebreak/>
+ <linebreak/>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="0">
+        <label>gr::cdma::amp_var_est</label>
+        <link refid="classgr_1_1cdma_1_1amp__var__est"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="1">
+        <label>gr::sync_block</label>
+      </node>
+      <node id="2">
+        <label>gr::cdma::amp_var_est_impl</label>
+        <link refid="classgr_1_1cdma_1_1amp__var__est__impl"/>
+        <childnode refid="0" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="3">
+        <label>gr::cdma::amp_var_est</label>
+        <link refid="classgr_1_1cdma_1_1amp__var__est"/>
+        <childnode refid="4" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>gr::sync_block</label>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/amp_var_est.h" line="51" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/amp_var_est.h" bodystart="50" bodyend="70"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1amp__var__est_1a74c312f3ba98da5be99b8b98efb920ce" prot="public" virt="pure-virtual"><scope>gr::cdma::amp_var_est</scope><name>alpha</name></member>
+      <member refid="classgr_1_1cdma_1_1amp__var__est_1a7e79d2e82a1b82403ffbe6cae239a6d4" prot="public" virt="non-virtual"><scope>gr::cdma::amp_var_est</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1amp__var__est_1a962ce9187c7a64d80a6002b0ae810eca" prot="public" virt="pure-virtual"><scope>gr::cdma::amp_var_est</scope><name>set_alpha</name></member>
+      <member refid="classgr_1_1cdma_1_1amp__var__est_1aaa02578c8a6b66bbb2bc87a09d993b54" prot="public" virt="non-virtual"><scope>gr::cdma::amp_var_est</scope><name>sptr</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

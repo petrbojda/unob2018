@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1switched__peak__detector__fb" kind="class" language="C++" prot="public" abstract="yes">
+    <compoundname>gr::cdma::switched_peak_detector_fb</compoundname>
+    <basecompoundref prot="public" virt="virtual">sync_block</basecompoundref>
+    <derivedcompoundref refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl" prot="public" virt="non-virtual">gr::cdma::switched_peak_detector_fb_impl</derivedcompoundref>
+    <includes refid="switched__peak__detector__fb_8h" local="no">switched_peak_detector_fb.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1a2cc99ed4390736d8f6de5fca7b234098" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1cdma_1_1switched__peak__detector__fb" kindref="compound">switched_peak_detector_fb</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;switched_peak_detector_fb&gt; gr::cdma::switched_peak_detector_fb::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="39" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1ad987012ddadc44a78c1d8b95e4fef9a3" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a2cc99ed4390736d8f6de5fca7b234098" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::cdma::switched_peak_detector_fb::make</definition>
+        <argsstring>(float threshold_factor_rise=0.25, float threshold_factor_fall=0.40, int look_ahead=10, float alpha=0.001, int on=1)</argsstring>
+        <name>make</name>
+        <param>
+          <type>float</type>
+          <declname>threshold_factor_rise</declname>
+          <defval>0.25</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>threshold_factor_fall</declname>
+          <defval>0.40</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>look_ahead</declname>
+          <defval>10</defval>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>alpha</declname>
+          <defval>0.001</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>on</declname>
+          <defval>1</defval>
+        </param>
+        <briefdescription>
+<para>Return a shared_ptr to a new instance of <ref refid="classgr_1_1cdma_1_1switched__peak__detector__fb" kindref="compound">cdma::switched_peak_detector_fb</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>To avoid accidental use of raw pointers, <ref refid="classgr_1_1cdma_1_1switched__peak__detector__fb" kindref="compound">cdma::switched_peak_detector_fb</ref>&apos;s constructor is in a private implementation class. <ref refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ad987012ddadc44a78c1d8b95e4fef9a3" kindref="member">cdma::switched_peak_detector_fb::make</ref> is the public interface for creating new instances. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="49" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1a7a63847168f132a32405c02d136a1b28" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::cdma::switched_peak_detector_fb::set_threshold_factor_rise</definition>
+        <argsstring>(float thr)=0</argsstring>
+        <name>set_threshold_factor_rise</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a8d002efbeb6717ae87f0e216504612e6">set_threshold_factor_rise</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>thr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="55" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1a3e3886692910564795ded3e7d19ed27c" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::cdma::switched_peak_detector_fb::set_threshold_factor_fall</definition>
+        <argsstring>(float thr)=0</argsstring>
+        <name>set_threshold_factor_fall</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a3afcf6dba7437f92be5da33f526da9fd">set_threshold_factor_fall</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>thr</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1a14d01d53c9a6fc9d778a056bcf5f89ff" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::cdma::switched_peak_detector_fb::set_look_ahead</definition>
+        <argsstring>(int look)=0</argsstring>
+        <name>set_look_ahead</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a95f48d726bddc2edbaa37c47e301f51f">set_look_ahead</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>look</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="57" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1af46cc0c4f630391dc23ad38a0463f0c1" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::cdma::switched_peak_detector_fb::set_alpha</definition>
+        <argsstring>(float alpha)=0</argsstring>
+        <name>set_alpha</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1aa9cd1caf74fdfae94c2dc84cc1f6b854">set_alpha</reimplementedby>
+        <param>
+          <type>float</type>
+          <declname>alpha</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1a93ff6d2d2c0745e3b727cad5c8728ef6" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>void</type>
+        <definition>virtual void gr::cdma::switched_peak_detector_fb::set_on</definition>
+        <argsstring>(int on)=0</argsstring>
+        <name>set_on</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a3fa2af88daff62fb2e9a86510d85111c">set_on</reimplementedby>
+        <param>
+          <type>int</type>
+          <declname>on</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="59" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1ab174c18fe0068af8f08fd954342f0bf4" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float gr::cdma::switched_peak_detector_fb::threshold_factor_rise</definition>
+        <argsstring>()=0</argsstring>
+        <name>threshold_factor_rise</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a9be4e3588baf354b5c6ccfcae03fd263">threshold_factor_rise</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="60" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1abe4f5e98071715760e0a618ce10bebc8" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float gr::cdma::switched_peak_detector_fb::threshold_factor_fall</definition>
+        <argsstring>()=0</argsstring>
+        <name>threshold_factor_fall</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1ad9c9e717d96fbaffdeed03d38c9faf21">threshold_factor_fall</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="61" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1ab074a0baca4ab81b79d6ef6fe55d83a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int gr::cdma::switched_peak_detector_fb::look_ahead</definition>
+        <argsstring>()=0</argsstring>
+        <name>look_ahead</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a20fec50cc0e398c6bccaaef4dead3913">look_ahead</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="62" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1a705fa7cbe58763edd7280329479cdeba" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>float</type>
+        <definition>virtual float gr::cdma::switched_peak_detector_fb::alpha</definition>
+        <argsstring>()=0</argsstring>
+        <name>alpha</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a4f0c7eeb4680416eb180115cf606831d">alpha</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="63" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1switched__peak__detector__fb_1a111f4c74f2702c067cc204bc6fbe7dd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>int</type>
+        <definition>virtual int gr::cdma::switched_peak_detector_fb::on</definition>
+        <argsstring>()=0</argsstring>
+        <name>on</name>
+        <reimplementedby refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl_1a52673c3f9d8b72e4e32d43718f9bd3ce">on</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="64" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>&lt;+description of block+&gt; </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="50">
+        <label>gr::cdma::switched_peak_detector_fb_impl</label>
+        <link refid="classgr_1_1cdma_1_1switched__peak__detector__fb__impl"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>sync_block</label>
+      </node>
+      <node id="48">
+        <label>gr::cdma::switched_peak_detector_fb</label>
+        <link refid="classgr_1_1cdma_1_1switched__peak__detector__fb"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="52">
+        <label>sync_block</label>
+      </node>
+      <node id="51">
+        <label>gr::cdma::switched_peak_detector_fb</label>
+        <link refid="classgr_1_1cdma_1_1switched__peak__detector__fb"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" line="37" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/switched_peak_detector_fb.h" bodystart="36" bodyend="65"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a705fa7cbe58763edd7280329479cdeba" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>alpha</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ab074a0baca4ab81b79d6ef6fe55d83a5" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>look_ahead</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ad987012ddadc44a78c1d8b95e4fef9a3" prot="public" virt="non-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a111f4c74f2702c067cc204bc6fbe7dd7" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>on</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1af46cc0c4f630391dc23ad38a0463f0c1" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>set_alpha</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a14d01d53c9a6fc9d778a056bcf5f89ff" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>set_look_ahead</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a93ff6d2d2c0745e3b727cad5c8728ef6" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>set_on</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a3e3886692910564795ded3e7d19ed27c" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>set_threshold_factor_fall</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a7a63847168f132a32405c02d136a1b28" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>set_threshold_factor_rise</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a2cc99ed4390736d8f6de5fca7b234098" prot="public" virt="non-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>sptr</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1abe4f5e98071715760e0a618ce10bebc8" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>threshold_factor_fall</name></member>
+      <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ab174c18fe0068af8f08fd954342f0bf4" prot="public" virt="pure-virtual"><scope>gr::cdma::switched_peak_detector_fb</scope><name>threshold_factor_rise</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

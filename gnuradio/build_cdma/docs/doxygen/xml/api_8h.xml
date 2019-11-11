@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="api_8h" kind="file" language="C++">
+    <compoundname>api.h</compoundname>
+    <includes local="no">gnuradio/attributes.h</includes>
+    <includedby refid="amp__var__est_8h" local="no">amp_var_est.h</includedby>
+    <includedby refid="chopper_8h" local="no">chopper.h</includedby>
+    <includedby refid="flag__gen_8h" local="no">flag_gen.h</includedby>
+    <includedby refid="pac__err__cal_8h" local="no">pac_err_cal.h</includedby>
+    <includedby refid="packet__header2_8h" local="no">packet_header2.h</includedby>
+    <includedby refid="packet__headerparser__b2_8h" local="no">packet_headerparser_b2.h</includedby>
+    <includedby refid="switched__peak__detector__fb_8h" local="no">switched_peak_detector_fb.h</includedby>
+    <includedby refid="vector__insert2_8h" local="no">vector_insert2.h</includedby>
+    <incdepgraph>
+      <node id="13">
+        <label>gnuradio/attributes.h</label>
+      </node>
+      <node id="12">
+        <label>api.h</label>
+        <link refid="api.h"/>
+        <childnode refid="13" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <invincdepgraph>
+      <node id="24">
+        <label>packet_headerparser_b2.h</label>
+        <link refid="packet__headerparser__b2_8h_source"/>
+        <childnode refid="25" relation="include">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>vector_insert2.h</label>
+        <link refid="vector__insert2_8h"/>
+        <childnode refid="29" relation="include">
+        </childnode>
+      </node>
+      <node id="26">
+        <label>switched_peak_detector_fb.h</label>
+        <link refid="switched__peak__detector__fb_8h"/>
+        <childnode refid="27" relation="include">
+        </childnode>
+      </node>
+      <node id="17">
+        <label>chopper.h</label>
+        <link refid="chopper_8h"/>
+        <childnode refid="18" relation="include">
+        </childnode>
+      </node>
+      <node id="29">
+        <label>vector_insert2_impl.h</label>
+        <link refid="vector__insert2__impl_8h"/>
+      </node>
+      <node id="21">
+        <label>pac_err_cal.h</label>
+        <link refid="pac__err__cal_8h"/>
+        <childnode refid="22" relation="include">
+        </childnode>
+      </node>
+      <node id="25">
+        <label>packet_headerparser_b2_impl.h</label>
+        <link refid="packet__headerparser__b2__impl_8h_source"/>
+      </node>
+      <node id="18">
+        <label>chopper_impl.h</label>
+        <link refid="chopper__impl_8h"/>
+      </node>
+      <node id="23">
+        <label>packet_header2.h</label>
+        <link refid="packet__header2_8h"/>
+        <childnode refid="24" relation="include">
+        </childnode>
+      </node>
+      <node id="22">
+        <label>pac_err_cal_impl.h</label>
+        <link refid="pac__err__cal__impl_8h"/>
+      </node>
+      <node id="15">
+        <label>amp_var_est.h</label>
+        <link refid="amp__var__est_8h"/>
+        <childnode refid="16" relation="include">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>amp_var_est_impl.h</label>
+        <link refid="amp__var__est__impl_8h"/>
+      </node>
+      <node id="19">
+        <label>flag_gen.h</label>
+        <link refid="flag__gen_8h"/>
+        <childnode refid="20" relation="include">
+        </childnode>
+      </node>
+      <node id="27">
+        <label>switched_peak_detector_fb_impl.h</label>
+        <link refid="switched__peak__detector__fb__impl_8h"/>
+      </node>
+      <node id="20">
+        <label>flag_gen_impl.h</label>
+        <link refid="flag__gen__impl_8h"/>
+      </node>
+      <node id="14">
+        <label>api.h</label>
+        <link refid="api.h"/>
+        <childnode refid="15" relation="include">
+        </childnode>
+        <childnode refid="17" relation="include">
+        </childnode>
+        <childnode refid="19" relation="include">
+        </childnode>
+        <childnode refid="21" relation="include">
+        </childnode>
+        <childnode refid="23" relation="include">
+        </childnode>
+        <childnode refid="24" relation="include">
+        </childnode>
+        <childnode refid="26" relation="include">
+        </childnode>
+        <childnode refid="28" relation="include">
+        </childnode>
+      </node>
+    </invincdepgraph>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="api_8h_1ae3ba9abcbb033511480f4e938f175945" prot="public" static="no">
+        <name>CDMA_API</name>
+        <initializer>__GR_ATTR_IMPORT</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/api.h" line="30" column="12" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/api.h" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/api.h"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="namespacegr_1_1cdma" kind="namespace" language="C++">
+    <compoundname>gr::cdma</compoundname>
+    <innerclass refid="classgr_1_1cdma_1_1amp__var__est" prot="public">gr::cdma::amp_var_est</innerclass>
+    <innerclass refid="classgr_1_1cdma_1_1chopper" prot="public">gr::cdma::chopper</innerclass>
+    <innerclass refid="classgr_1_1cdma_1_1flag__gen" prot="public">gr::cdma::flag_gen</innerclass>
+    <innerclass refid="classgr_1_1cdma_1_1pac__err__cal" prot="public">gr::cdma::pac_err_cal</innerclass>
+    <innerclass refid="classgr_1_1cdma_1_1packet__header2" prot="public">gr::cdma::packet_header2</innerclass>
+    <innerclass refid="classgr_1_1cdma_1_1packet__headerparser__b2" prot="public">gr::cdma::packet_headerparser_b2</innerclass>
+    <innerclass refid="classgr_1_1cdma_1_1switched__peak__detector__fb" prot="public">gr::cdma::switched_peak_detector_fb</innerclass>
+    <innerclass refid="classgr_1_1cdma_1_1vector__insert2" prot="public">gr::cdma::vector_insert2</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/amp_var_est.h" line="31" column="1"/>
+  </compounddef>
+</doxygen>

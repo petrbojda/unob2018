@@ -1,0 +1,19 @@
+%% Signal generator
+t=0:1/110e3:1;
+I = 2*(train_pulse (t,20,1/20+eps,0,0,[1,1,1,0,0,1,0,1,0,1,1,1,1,0,0,1,0,1,0,1])-.5);
+Q = zeros(size(t));
+x_bpsk = quad_comp (I,Q,t,10.7e3,-pi/12,0,.5); 
+
+
+
+%% Decomposition
+
+
+
+[x_BQ0, x_BI0] = quad_decomp (x_bpsk,t,10.7e3,0,0,10,11);
+[x_BQ1, x_BI1] = quad_decomp (x_bpsk,t,10.70005e3,0,0,2,21);
+[x_BQ2, x_BI2] = quad_decomp (x_bpsk,t,10.7e3,pi/8,pi/16,2,31);
+
+% fft_spektrum(x_bpsk,t,19);
+% fft_spektrum(y_bpsk,t,29);
+% fft_spektrum(m_bpsk,t,39);

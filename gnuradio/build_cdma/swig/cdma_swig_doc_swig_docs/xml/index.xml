@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.11">
+  <compound refid="classgr_1_1cdma_1_1amp__var__est" kind="class"><name>gr::cdma::amp_var_est</name>
+    <member refid="classgr_1_1cdma_1_1amp__var__est_1aaa02578c8a6b66bbb2bc87a09d993b54" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est_1a7e79d2e82a1b82403ffbe6cae239a6d4" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est_1a74c312f3ba98da5be99b8b98efb920ce" kind="function"><name>alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1amp__var__est_1a962ce9187c7a64d80a6002b0ae810eca" kind="function"><name>set_alpha</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1chopper" kind="class"><name>gr::cdma::chopper</name>
+    <member refid="classgr_1_1cdma_1_1chopper_1aff1c210e2ba8e905661422d96c81d9cc" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1chopper_1adf659553f9ae9c8a07af9c6124aefea2" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1flag__gen" kind="class"><name>gr::cdma::flag_gen</name>
+    <member refid="classgr_1_1cdma_1_1flag__gen_1adbe254d4d6b76174e5352d66b75ad0e0" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen_1a77be8b62c3afe528d90963a464eb0a4e" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1flag__gen_1a7e752cff4887f9e21dc941de35743a86" kind="function"><name>set_acq</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1pac__err__cal" kind="class"><name>gr::cdma::pac_err_cal</name>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1a879772ac278c851e8580e4cc0da6a3d7" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1a3910e29234ac4eaf3059a032ca292dd7" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1ab04aac210da28ccdc4b39e0fb899d08e" kind="function"><name>set_winsize</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1a8188e0007d5edeeb103ca81f1404cbb1" kind="function"><name>set_cycsize</name></member>
+    <member refid="classgr_1_1cdma_1_1pac__err__cal_1a85282d5e582b33f61f25dabba29b3e5c" kind="function"><name>set_pkt_num_tag</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1packet__header2" kind="class"><name>gr::cdma::packet_header2</name>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1ad1b0cc3554b11df7e8f59704dd22290d" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a14d9dc791e37b30521861ec30acdc9ab" kind="variable"><name>d_tcm_tag_key</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1af5f2e3c865bbc60e084d0d2711c966c9" kind="variable"><name>d_tcm_type</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a8cf8888117c004b3627e030305ebe44e" kind="function"><name>packet_header2</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1af16e81f5371d1bb7b708ebe2d8b0cd72" kind="function"><name>~packet_header2</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1ae05dbca1300dfcb69d07a3e056be64e9" kind="function"><name>set_tcm_type</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a071071f71d3c650302bca89ead24c2ae" kind="function"><name>num_tag_key</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1ac7f98e0fc29cddc9d3926a7376298a25" kind="function"><name>header_formatter</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a2df3e98cd9064424188ae6654f6bebca" kind="function"><name>header_parser</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__header2_1a023479acec9a2e8febc7a5ea01957d25" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1packet__headerparser__b2" kind="class"><name>gr::cdma::packet_headerparser_b2</name>
+    <member refid="classgr_1_1cdma_1_1packet__headerparser__b2_1a300c4dafca2fd97f4b4437f2fe79aa16" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__headerparser__b2_1a173b1b0dc445b587827fdb965cee55ac" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1packet__headerparser__b2_1a21c84e3ba781d6f5b623511db0402f61" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1switched__peak__detector__fb" kind="class"><name>gr::cdma::switched_peak_detector_fb</name>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a2cc99ed4390736d8f6de5fca7b234098" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ad987012ddadc44a78c1d8b95e4fef9a3" kind="function"><name>make</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a7a63847168f132a32405c02d136a1b28" kind="function"><name>set_threshold_factor_rise</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a3e3886692910564795ded3e7d19ed27c" kind="function"><name>set_threshold_factor_fall</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a14d01d53c9a6fc9d778a056bcf5f89ff" kind="function"><name>set_look_ahead</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1af46cc0c4f630391dc23ad38a0463f0c1" kind="function"><name>set_alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a93ff6d2d2c0745e3b727cad5c8728ef6" kind="function"><name>set_on</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ab174c18fe0068af8f08fd954342f0bf4" kind="function"><name>threshold_factor_rise</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1abe4f5e98071715760e0a618ce10bebc8" kind="function"><name>threshold_factor_fall</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1ab074a0baca4ab81b79d6ef6fe55d83a5" kind="function"><name>look_ahead</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a705fa7cbe58763edd7280329479cdeba" kind="function"><name>alpha</name></member>
+    <member refid="classgr_1_1cdma_1_1switched__peak__detector__fb_1a111f4c74f2702c067cc204bc6fbe7dd7" kind="function"><name>on</name></member>
+  </compound>
+  <compound refid="classgr_1_1cdma_1_1vector__insert2" kind="class"><name>gr::cdma::vector_insert2</name>
+    <member refid="classgr_1_1cdma_1_1vector__insert2_1af55b4df991cb00b9ec22805e3a4d2ff6" kind="typedef"><name>sptr</name></member>
+    <member refid="classgr_1_1cdma_1_1vector__insert2_1aa1721c17c5eecc9b722931c24403e36e" kind="function"><name>make</name></member>
+  </compound>
+  <compound refid="namespacegr" kind="namespace"><name>gr</name>
+  </compound>
+  <compound refid="namespacegr_1_1cdma" kind="namespace"><name>gr::cdma</name>
+  </compound>
+  <compound refid="namespacestd" kind="namespace"><name>std</name>
+  </compound>
+  <compound refid="amp__var__est_8h" kind="file"><name>amp_var_est.h</name>
+  </compound>
+  <compound refid="api_8h" kind="file"><name>api.h</name>
+    <member refid="api_8h_1ae3ba9abcbb033511480f4e938f175945" kind="define"><name>CDMA_API</name></member>
+  </compound>
+  <compound refid="chopper_8h" kind="file"><name>chopper.h</name>
+  </compound>
+  <compound refid="flag__gen_8h" kind="file"><name>flag_gen.h</name>
+  </compound>
+  <compound refid="pac__err__cal_8h" kind="file"><name>pac_err_cal.h</name>
+  </compound>
+  <compound refid="packet__header2_8h" kind="file"><name>packet_header2.h</name>
+  </compound>
+  <compound refid="packet__headerparser__b2_8h" kind="file"><name>packet_headerparser_b2.h</name>
+  </compound>
+  <compound refid="switched__peak__detector__fb_8h" kind="file"><name>switched_peak_detector_fb.h</name>
+  </compound>
+  <compound refid="vector__insert2_8h" kind="file"><name>vector_insert2.h</name>
+  </compound>
+  <compound refid="dir_973c43dc5af2968d84946b97e31c5c08" kind="dir"><name>/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma</name>
+  </compound>
+  <compound refid="dir_17950b42dfa537f415d3e0601f4253c4" kind="dir"><name>/home/petr/Projects/Bajer/gnuradio/gr-cdma</name>
+  </compound>
+  <compound refid="dir_dc2caf9491ceead857d86316e69f418e" kind="dir"><name>/home/petr/Projects/Bajer/gnuradio/gr-cdma/include</name>
+  </compound>
+</doxygenindex>

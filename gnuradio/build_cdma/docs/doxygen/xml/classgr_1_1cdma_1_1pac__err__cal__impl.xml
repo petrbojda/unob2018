@@ -1,0 +1,302 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1pac__err__cal__impl" kind="class" language="C++" prot="public">
+    <compoundname>gr::cdma::pac_err_cal_impl</compoundname>
+    <basecompoundref refid="classgr_1_1cdma_1_1pac__err__cal" prot="public" virt="non-virtual">gr::cdma::pac_err_cal</basecompoundref>
+    <includes refid="pac__err__cal__impl_8h" local="no">pac_err_cal_impl.h</includes>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1pac__err__cal__impl_1aa61e3f5a9f32ff8c0d90f47f55d351b0" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long gr::cdma::pac_err_cal_impl::d_winsize</definition>
+        <argsstring></argsstring>
+        <name>d_winsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="35" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1pac__err__cal__impl_1a01d3ba791f8f1abc7b043f0ba3761095" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long gr::cdma::pac_err_cal_impl::d_cycsize</definition>
+        <argsstring></argsstring>
+        <name>d_cycsize</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="36" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1pac__err__cal__impl_1afea1e1a29fb2da08d0978c42dda497be" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long gr::cdma::pac_err_cal_impl::d_count_pktsent</definition>
+        <argsstring></argsstring>
+        <name>d_count_pktsent</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="38" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="38" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1pac__err__cal__impl_1ac16b5a7aa4e092a83a2a6c4706c9fb63" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long gr::cdma::pac_err_cal_impl::d_count_errs</definition>
+        <argsstring></argsstring>
+        <name>d_count_errs</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="39" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1pac__err__cal__impl_1a38812c357d8dfa1f32e1dc098e88d182" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long gr::cdma::pac_err_cal_impl::d_curnum</definition>
+        <argsstring></argsstring>
+        <name>d_curnum</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="40" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1pac__err__cal__impl_1ad14118992fa2b9c007179e207a0d78bc" prot="private" static="no" mutable="no">
+        <type>unsigned long</type>
+        <definition>unsigned long gr::cdma::pac_err_cal_impl::d_prev</definition>
+        <argsstring></argsstring>
+        <name>d_prev</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="41" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1pac__err__cal__impl_1a73b4605e6c50352cdf441c5c50e3cb20" prot="private" static="no" mutable="no">
+        <type>float</type>
+        <definition>float gr::cdma::pac_err_cal_impl::d_erate</definition>
+        <argsstring></argsstring>
+        <name>d_erate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="42" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1pac__err__cal__impl_1a9a919caa8a9636b505f111663eceb7f8" prot="private" static="no" mutable="no">
+        <type>std::string</type>
+        <definition>std::string gr::cdma::pac_err_cal_impl::d_pkt_num_tag</definition>
+        <argsstring></argsstring>
+        <name>d_pkt_num_tag</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="43" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="43" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1pac__err__cal__impl_1a016cd3a97d184c4fabe27411e3638521" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::cdma::pac_err_cal_impl::print</definition>
+        <argsstring>(pmt::pmt_t msg)</argsstring>
+        <name>print</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="45" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1pac__err__cal__impl_1a096ab86477f334143ab3d4d259d2c0b7" prot="private" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::cdma::pac_err_cal_impl::errCal</definition>
+        <argsstring>(pmt::pmt_t msg)</argsstring>
+        <name>errCal</name>
+        <param>
+          <type>pmt::pmt_t</type>
+          <declname>msg</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="46" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1pac__err__cal__impl_1ac0e6d17f5ab42c80b29ee8f1a959fc7e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::pac_err_cal_impl::pac_err_cal_impl</definition>
+        <argsstring>(unsigned long winsize, unsigned long cycsize, std::string pkt_num_tag)</argsstring>
+        <name>pac_err_cal_impl</name>
+        <param>
+          <type>unsigned long</type>
+          <declname>winsize</declname>
+        </param>
+        <param>
+          <type>unsigned long</type>
+          <declname>cycsize</declname>
+        </param>
+        <param>
+          <type>std::string</type>
+          <declname>pkt_num_tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="49" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1pac__err__cal__impl_1a062880ed34ec1671c8a79c5358de289b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::pac_err_cal_impl::~pac_err_cal_impl</definition>
+        <argsstring>()</argsstring>
+        <name>~pac_err_cal_impl</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="50" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1pac__err__cal__impl_1a7b148986a1938a89eb13c882fe0ac6dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void gr::cdma::pac_err_cal_impl::set_winsize</definition>
+        <argsstring>(unsigned long winsize)</argsstring>
+        <name>set_winsize</name>
+        <reimplements refid="classgr_1_1cdma_1_1pac__err__cal_1ab04aac210da28ccdc4b39e0fb899d08e">set_winsize</reimplements>
+        <param>
+          <type>unsigned long</type>
+          <declname>winsize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="52" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="52" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1pac__err__cal__impl_1ac0a3a13da5f6f2f5116513f4c7020982" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void gr::cdma::pac_err_cal_impl::set_cycsize</definition>
+        <argsstring>(unsigned long cycsize)</argsstring>
+        <name>set_cycsize</name>
+        <reimplements refid="classgr_1_1cdma_1_1pac__err__cal_1a8188e0007d5edeeb103ca81f1404cbb1">set_cycsize</reimplements>
+        <param>
+          <type>unsigned long</type>
+          <declname>cycsize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="53" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="53" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1pac__err__cal__impl_1af55a6e82e8794887f43b3486922fa37c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>void</type>
+        <definition>void gr::cdma::pac_err_cal_impl::set_pkt_num_tag</definition>
+        <argsstring>(std::string pkt_num_tag)</argsstring>
+        <name>set_pkt_num_tag</name>
+        <reimplements refid="classgr_1_1cdma_1_1pac__err__cal_1a85282d5e582b33f61f25dabba29b3e5c">set_pkt_num_tag</reimplements>
+        <param>
+          <type>std::string</type>
+          <declname>pkt_num_tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="54" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="54" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="38">
+        <label>gr::cdma::pac_err_cal_impl</label>
+        <link refid="classgr_1_1cdma_1_1pac__err__cal__impl"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="40">
+        <label>block</label>
+      </node>
+      <node id="39">
+        <label>gr::cdma::pac_err_cal</label>
+        <link refid="classgr_1_1cdma_1_1pac__err__cal"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="41">
+        <label>gr::cdma::pac_err_cal_impl</label>
+        <link refid="classgr_1_1cdma_1_1pac__err__cal__impl"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>block</label>
+      </node>
+      <node id="42">
+        <label>gr::cdma::pac_err_cal</label>
+        <link refid="classgr_1_1cdma_1_1pac__err__cal"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" line="33" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/lib/pac_err_cal_impl.h" bodystart="32" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1ac16b5a7aa4e092a83a2a6c4706c9fb63" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>d_count_errs</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1afea1e1a29fb2da08d0978c42dda497be" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>d_count_pktsent</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a38812c357d8dfa1f32e1dc098e88d182" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>d_curnum</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a01d3ba791f8f1abc7b043f0ba3761095" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>d_cycsize</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a73b4605e6c50352cdf441c5c50e3cb20" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>d_erate</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a9a919caa8a9636b505f111663eceb7f8" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>d_pkt_num_tag</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1ad14118992fa2b9c007179e207a0d78bc" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>d_prev</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1aa61e3f5a9f32ff8c0d90f47f55d351b0" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>d_winsize</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a096ab86477f334143ab3d4d259d2c0b7" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>errCal</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal_1a3910e29234ac4eaf3059a032ca292dd7" prot="public" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1ac0e6d17f5ab42c80b29ee8f1a959fc7e" prot="public" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>pac_err_cal_impl</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a016cd3a97d184c4fabe27411e3638521" prot="private" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>print</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1ac0a3a13da5f6f2f5116513f4c7020982" prot="public" virt="virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>set_cycsize</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1af55a6e82e8794887f43b3486922fa37c" prot="public" virt="virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>set_pkt_num_tag</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a7b148986a1938a89eb13c882fe0ac6dd" prot="public" virt="virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>set_winsize</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal_1a879772ac278c851e8580e4cc0da6a3d7" prot="public" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>sptr</name></member>
+      <member refid="classgr_1_1cdma_1_1pac__err__cal__impl_1a062880ed34ec1671c8a79c5358de289b" prot="public" virt="non-virtual"><scope>gr::cdma::pac_err_cal_impl</scope><name>~pac_err_cal_impl</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="classgr_1_1cdma_1_1packet__header2" kind="class" language="C++" prot="public">
+    <compoundname>gr::cdma::packet_header2</compoundname>
+    <basecompoundref prot="public" virt="virtual">packet_header_default</basecompoundref>
+    <includes refid="packet__header2_8h" local="no">packet_header2.h</includes>
+      <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classgr_1_1cdma_1_1packet__header2_1ad1b0cc3554b11df7e8f59704dd22290d" prot="public" static="no">
+        <type>boost::shared_ptr&lt; <ref refid="classgr_1_1cdma_1_1packet__header2" kindref="compound">packet_header2</ref> &gt;</type>
+        <definition>typedef boost::shared_ptr&lt;packet_header2&gt; gr::cdma::packet_header2::sptr</definition>
+        <argsstring></argsstring>
+        <name>sptr</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="54" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1packet__header2_1a14d9dc791e37b30521861ec30acdc9ab" prot="protected" static="no" mutable="no">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::cdma::packet_header2::d_tcm_tag_key</definition>
+        <argsstring></argsstring>
+        <name>d_tcm_tag_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="110" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" bodystart="110" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classgr_1_1cdma_1_1packet__header2_1af5f2e3c865bbc60e084d0d2711c966c9" prot="protected" static="no" mutable="no">
+        <type>int</type>
+        <definition>int gr::cdma::packet_header2::d_tcm_type</definition>
+        <argsstring></argsstring>
+        <name>d_tcm_type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="111" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" bodystart="111" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1packet__header2_1a8cf8888117c004b3627e030305ebe44e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::packet_header2::packet_header2</definition>
+        <argsstring>(long header_len, const std::string &amp;len_tag_key=&quot;packet_len&quot;, const std::string &amp;num_tag_key=&quot;packet_num&quot;, int bits_per_byte=1, int tcm_type=1, const std::string &amp;tcm_type_key=&quot;tcm_type&quot;)</argsstring>
+        <name>packet_header2</name>
+        <param>
+          <type>long</type>
+          <declname>header_len</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>len_tag_key</declname>
+          <defval>&quot;packet_len&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>num_tag_key</declname>
+          <defval>&quot;packet_num&quot;</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bits_per_byte</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tcm_type</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tcm_type_key</declname>
+          <defval>&quot;tcm_type&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="56" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1packet__header2_1af16e81f5371d1bb7b708ebe2d8b0cd72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>gr::cdma::packet_header2::~packet_header2</definition>
+        <argsstring>()</argsstring>
+        <name>~packet_header2</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="63" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1packet__header2_1ae05dbca1300dfcb69d07a3e056be64e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void gr::cdma::packet_header2::set_tcm_type</definition>
+        <argsstring>(int tcm_type)</argsstring>
+        <name>set_tcm_type</name>
+        <param>
+          <type>int</type>
+          <declname>tcm_type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="65" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" bodystart="65" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1packet__header2_1a071071f71d3c650302bca89ead24c2ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>pmt::pmt_t</type>
+        <definition>pmt::pmt_t gr::cdma::packet_header2::num_tag_key</definition>
+        <argsstring>()</argsstring>
+        <name>num_tag_key</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="66" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" bodystart="66" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1packet__header2_1ac7f98e0fc29cddc9d3926a7376298a25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool gr::cdma::packet_header2::header_formatter</definition>
+        <argsstring>(long packet_len, unsigned char *out, const std::vector&lt; tag_t &gt; &amp;tags=std::vector&lt; tag_t &gt;())</argsstring>
+        <name>header_formatter</name>
+        <param>
+          <type>long</type>
+          <declname>packet_len</declname>
+        </param>
+        <param>
+          <type>unsigned char *</type>
+          <declname>out</declname>
+        </param>
+        <param>
+          <type>const std::vector&lt; tag_t &gt; &amp;</type>
+          <declname>tags</declname>
+          <defval>std::vector&lt; tag_t &gt;()</defval>
+        </param>
+        <briefdescription>
+<para>Encodes the header information in the given tags into bits and places them into <computeroutput>out</computeroutput>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Uses the following header format: Bits 0-11: The packet length (what was stored in the tag with key <computeroutput>len_tag_key</computeroutput>) Bits 12-15: The trellis coded modulation type Bits 16-27: The header number (counts up everytime this function is called) Bit 28-35: 8-Bit CRC All other bits: Are set to zero</para><para>If the header length is smaller than 36, bits are simply left out. For this reason, they always start with the LSB.</para><para>However, it is recommended to stay above 36 Bits, in order to have a working CRC. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="86" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classgr_1_1cdma_1_1packet__header2_1a2df3e98cd9064424188ae6654f6bebca" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool gr::cdma::packet_header2::header_parser</definition>
+        <argsstring>(const unsigned char *header, std::vector&lt; tag_t &gt; &amp;tags)</argsstring>
+        <name>header_parser</name>
+        <param>
+          <type>const unsigned char *</type>
+          <declname>header</declname>
+        </param>
+        <param>
+          <type>std::vector&lt; tag_t &gt; &amp;</type>
+          <declname>tags</declname>
+        </param>
+        <briefdescription>
+<para>Inverse function to <ref refid="classgr_1_1cdma_1_1packet__header2_1ac7f98e0fc29cddc9d3926a7376298a25" kindref="member">header_formatter()</ref>. </para>        </briefdescription>
+        <detaileddescription>
+<para>Reads the bit stream in <computeroutput>header</computeroutput> and writes a corresponding tag into <computeroutput>tags</computeroutput>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="97" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classgr_1_1cdma_1_1packet__header2_1a023479acec9a2e8febc7a5ea01957d25" prot="public" static="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classgr_1_1cdma_1_1packet__header2_1ad1b0cc3554b11df7e8f59704dd22290d" kindref="member">sptr</ref></type>
+        <definition>static sptr gr::cdma::packet_header2::make</definition>
+        <argsstring>(long header_len, const std::string &amp;len_tag_key=&quot;packet_len&quot;, const std::string &amp;num_tag_key=&quot;packet_num&quot;, int bits_per_byte=1, int tcm_type=1, const std::string &amp;tcm_tag_key=&quot;tcm_type&quot;)</argsstring>
+        <name>make</name>
+        <param>
+          <type>long</type>
+          <declname>header_len</declname>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>len_tag_key</declname>
+          <defval>&quot;packet_len&quot;</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>num_tag_key</declname>
+          <defval>&quot;packet_num&quot;</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>bits_per_byte</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>tcm_type</declname>
+          <defval>1</defval>
+        </param>
+        <param>
+          <type>const std::string &amp;</type>
+          <declname>tcm_tag_key</declname>
+          <defval>&quot;tcm_type&quot;</defval>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="101" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Default header formatter for digital packet transmission. </para>    </briefdescription>
+    <detaileddescription>
+<para>For bursty/packetized digital transmission, packets are usually prepended with a packet header, containing the number of bytes etc. This class is not a block, but a tool to create these packet header.</para><para>This is a default packet header (see <ref refid="classgr_1_1cdma_1_1packet__header2_1ac7f98e0fc29cddc9d3926a7376298a25" kindref="member">header_formatter()</ref>) for a description on the header format). To create other header, derive packet header creator classes from this function.</para><para>gr::digital::packet_headergenerator_bb uses header generators derived from this class to create packet headers from data streams. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>gr::digital::packet_header_default</label>
+      </node>
+      <node id="16">
+        <label>gr::cdma::packet_header2</label>
+        <link refid="classgr_1_1cdma_1_1packet__header2"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="19">
+        <label>gr::digital::packet_header_default</label>
+      </node>
+      <node id="18">
+        <label>gr::cdma::packet_header2</label>
+        <link refid="classgr_1_1cdma_1_1packet__header2"/>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" line="52" column="1" bodyfile="/home/petr/Projects/Bajer/gnuradio/gr-cdma/include/cdma/packet_header2.h" bodystart="51" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1a14d9dc791e37b30521861ec30acdc9ab" prot="protected" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>d_tcm_tag_key</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1af5f2e3c865bbc60e084d0d2711c966c9" prot="protected" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>d_tcm_type</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1ac7f98e0fc29cddc9d3926a7376298a25" prot="public" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>header_formatter</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1a2df3e98cd9064424188ae6654f6bebca" prot="public" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>header_parser</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1a023479acec9a2e8febc7a5ea01957d25" prot="public" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>make</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1a071071f71d3c650302bca89ead24c2ae" prot="public" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>num_tag_key</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1a8cf8888117c004b3627e030305ebe44e" prot="public" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>packet_header2</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1ae05dbca1300dfcb69d07a3e056be64e9" prot="public" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>set_tcm_type</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1ad1b0cc3554b11df7e8f59704dd22290d" prot="public" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>sptr</name></member>
+      <member refid="classgr_1_1cdma_1_1packet__header2_1af16e81f5371d1bb7b708ebe2d8b0cd72" prot="public" virt="non-virtual"><scope>gr::cdma::packet_header2</scope><name>~packet_header2</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
